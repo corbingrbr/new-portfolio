@@ -1,33 +1,35 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        'white-black-pattern': "url('/backgrounds/white-black-pattern.jpg')"
-      }
-    }
+        "white-black-pattern": "url('/backgrounds/white-black-pattern.jpg')",
+      },
+      backgroundColor: {
+        cyan: "#00FFFF",
+        magenta: "#FF00FF",
+        yellow: "#FFFF00",
+        green: "#00FF00",
+        red: "#FF0000",
+        blue: "#0000FF",
+      },
+      maxHeight: {
+        128: "32rem",
+      },
+    },
   },
   plugins: [
-    //require('@tailwindcss/forms'),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
   ],
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   variants: {
     extend: {},
-  }
-}
-
-/*
-theme: {
-  extend: {
-    backgroundImage: {
-      'hero-pattern': "url('/img/hero-pattern.svg')",
-      'footer-texture': "url('/img/footer-texture.png')",
-    }
-  }
-}
-*/
+  },
+};

@@ -1,80 +1,74 @@
-import React from 'react';
+import React from "react";
 
-/*import Project from '../interfaces/project.interface'*/
+const ProjectCard = ({ project }) => {
+  return (
+    <li className="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+      <div className="flex-1 flex flex-col p-8">
+        <i className={`fa-4x ${project.getCardIcon()} text-gray-500`} />
 
-import { Link } from 'react-router-dom';
-import TechnologyIcons from './TechnologyIcons';
-
-
-const ProjectCard = ({ project, handleViewRequest, handleDemoRequest }) => {
-
-    let imgStyle = { backgroundColor: "#CCC" }
-
-    return (
-        <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div className="card mb-4 shadow-sm">
-                <div className="card-header" style={imgStyle}>
-                    <i className={`fa-4x ${project.getCardIcon()} text-secondary`} />
-                </div>
-                {/*<div className="card-img-top text-center" style={{ width: "100%", height: 180, backgroundColor: "#000", opacity: 1.0 }}>
-                    <img className="img-fluid" style={imgStyle} src={project.getCardImg()} alt="project"/>
-
-                </div>*/}
-
-                <div className="card-body" /*style={{ minHeight: 250 }}*/>
-
-                    <h3 className="card-title mb-1">{project.getTitle()}
-                        {/*<span className="float-right">
-
-                            {this.props.request.additions.length > 0 ? <AdditionsBadge count={this.props.request.additions.length} /> : null}
-                            {this.props.request.edits.length > 0 ? <UpdatesBadge count={this.props.request.edits.length} /> : null}
-
-    </span>*/}
-                    </h3>
-                    <small className="text-muted text-center">{`${project.getYear()}`}</small>
-
-                    <p className="card-text mt-3">{project.getCardDescription()}</p>
-
-                    <hr />
-
-                    <span className="align-bottom">
-                        <TechnologyIcons technologies={project.getTechnologies().sort()} />
-                    </span>
-                </div>
-
-                <div className="card-footer">
-                    <div className="btn-group">
-                        {
-                            project.hasView() ?
-                                <Link to={`/portfolio/${project.getLinkName()}/view`}>
-                                    <button type="button" className="btn btn-sm btn-outline-primary" onClick={handleViewRequest}>View</button>
-                                </Link>
-                                :
-                                null
-                        }
-                        {
-                            project.hasDemo() ?
-                                <Link to={`/portfolio/${project.getLinkName()}/demo`}>
-                                    <button type="button" className="btn btn-sm btn-outline-success" onClick={handleDemoRequest}>Demo</button>
-                                </Link>
-                                :
-                                null
-                        }
-                        {
-                            project.hasRepository() ?
-                                <button type="button" className="btn btn-sm btn-outline-secondary repository-btn" onClick={() => window.open(project.getRepositoryLink())}>
-                                    <img src={`/assets/icons/git.svg`} alt={`git.svg`} height={18} width={18} />
-                                </button>
-                                :
-                                null
-                        }
-                    </div>
-                </div>
-            </div>
+        <div className="">
+          <h3 className="mt-6 text-gray-900 text-sm font-medium">
+            {project.getTitle()}
+          </h3>
+          <h6 className="text-gray-700 text-xs font-medium">
+            {project.getYear()}
+          </h6>
+          <p className="text-gray-500 text-sm mt-3">
+            {project.getCardDescription()}
+          </p>
         </div>
-    )
-}
+      </div>
 
-export default ProjectCard
+      <div className="mt-3 align-bottom p-4">
+        <div role="list" className="grid grid-cols-5 gap-3">
+          {project
+            .getTechnologies()
+            .sort()
+            .map((technology, ndx) => (
+              <img
+                key={ndx}
+                className="m-auto"
+                src={`/assets/icons/${technology}.svg`}
+                alt={`${technology}.svg`}
+                height={24}
+                width={24}
+              />
+            ))}
+        </div>
+      </div>
+      <div>
+        <div className="-mt-px flex divide-x divide-gray-200">
+          {project.hasView() && (
+            <div className="w-0 flex-1 flex">
+              <a
+                href={`projects/${project.getLinkName()}/view`}
+                className="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500"
+              >
+                <div>
+                  <i className="w-5 h-5 fas fa-info-circle text-gray-400 align-middle" />
+                  <span className="ml-3">Info</span>
+                </div>
+              </a>
+            </div>
+          )}
+          {project.hasDemo() && (
+            <div className="-ml-px w-0 flex-1 flex items-center">
+              <a
+                href={`portfolio/${project.getLinkName()}/demo`}
+                className="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500"
+              >
+                {/*<PhoneIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />*/}
+                <div>
+                  <i className="w-5 h-5 fas fa-play-circle text-gray-400" />
+                  <span className="ml-3">Demo</span>
+                </div>
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </li>
+  );
+};
 
-
+export default ProjectCard;
