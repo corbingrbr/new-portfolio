@@ -1,46 +1,37 @@
 import Project from "../interfaces/project.interface";
 
-export const FloodFill: Project = {
-  getRepositoryLink(): string {
-    return "https://github.com/MatheusFaria/flood-fill";
-  },
-  hasRepository(): boolean {
-    return true;
-  },
-  getLinkName(): string {
-    return "flood-fill";
-  },
-  getTechnologies(): string[] {
-    return ["cpp", "opengl"];
-  },
-  getCardIcon(): string {
-    return "fas fa-cubes";
-  },
-  getCardImg(): string {
-    return "/assets/flood/flood.png";
-  },
-  getImages(): string[] {
-    return ["/assets/flood/flood.png"];
-  },
-  getTitle(): string {
-    return "FloodFill";
-  },
-  getCardDescription(): string {
-    return "A puzzle game involving color and physics within a voxel level design.";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2015;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return false;
-  },
+const FloodFill: Project = {
+  name: "FloodFill",
+  year: 2015,
+  month: 0,
+  technologies: ["cpp", "opengl"],
+  repositoryLink: "https://github.com/MatheusFaria/flood-fill",
+  projectLink: "flood-fill",
+  icon: "fas fa-gem",
+  images: [
+    {
+      name: "Flood Fill",
+      src: "/assets/flood/flood.png",
+      alt: "Screenshot of gameplay",
+    },
+  ],
+  shortDescription:
+    "A puzzle game involving color and physics within a voxel level design.",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default FloodFill;

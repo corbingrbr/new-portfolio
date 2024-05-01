@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
+import P from "../utils/ProjectUtils";
+
 const ProjectList = ({
   projects,
   selectedProject,
@@ -17,8 +19,8 @@ const ProjectList = ({
           <ProjectListItem
             key={ndx}
             project={project}
-            isSelected={project.getTitle() == selectedProject}
-            isFeatured={project.getTitle() == featuredProject}
+            isSelected={P.getName(project) == selectedProject}
+            isFeatured={P.getName(project) == featuredProject}
             setSelectedProject={setSelectedProject}
             setFeaturedProject={setFeaturedProject}
           />

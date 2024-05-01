@@ -1,50 +1,47 @@
 import Project from "../interfaces/project.interface";
 
-export const WebGLCL: Project = {
-  getRepositoryLink(): string {
-    return "https://github.com/corbingrbr/web-gl-cl";
-  },
-  hasRepository(): boolean {
-    return true;
-  },
-  getLinkName(): string {
-    return "webglcl";
-  },
-  getTechnologies(): string[] {
-    return ["js", "webgl"];
-  },
-  getCardIcon(): string {
-    return "fas fa-gem";
-  },
-  getCardImg(): string {
-    return "";
-  },
-  getTitle(): string {
-    return "WebGLCL";
-  },
-  getImages(): string[] {
-    return [
-      "/assets/crystal/face-crystal.png",
-      "/assets/crystal/body-crystal.png",
-      "/assets/crystal/simple-crystal.png",
-    ];
-  },
-  getCardDescription(): string {
-    return "A rewrite of the 'Crystal Lattice' OpenGL project in WebGL";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2014;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return true;
-  },
+const WebGLCL: Project = {
+  name: "WebGLCL",
+  year: 2014,
+  month: 0,
+  technologies: ["js", "webgl"],
+  repositoryLink: "https://github.com/corbingrbr/web-gl-cl",
+  projectLink: "webglcl",
+  icon: "fas fa-gem",
+  images: [
+    {
+      name: "Simple Crystal",
+      src: "/assets/crystal/simple-crystal.png",
+      alt: "Simple Crystal",
+    },
+    {
+      name: "Body Crystal",
+      src: "/assets/crystal/body-crystal.png",
+      alt: "Body Crystal",
+    },
+    {
+      name: "Face Crystal",
+      src: "/assets/crystal/face-crystal.png",
+      alt: "Face Crystal",
+    },
+  ],
+  shortDescription:
+    "A rewrite of the 'Crystal Lattice' OpenGL project in WebGL",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default WebGLCL;

@@ -1,8 +1,6 @@
-import { CheckIcon } from "@heroicons/react/solid";
-import { hasAnImage } from "../utils/utils";
-
 import { Tab } from "@headlessui/react";
 import ProjectIconImage from "./ProjectIconImage";
+import P from "../utils/ProjectUtils";
 
 const FeaturedProject = ({ project }) => {
   return !project ? (
@@ -12,10 +10,10 @@ const FeaturedProject = ({ project }) => {
       <div className="mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-1 lg:gap-x-8">
         {/* Image(s) */}
         <div className="lg:mt-0 lg:col-start-1 lg:row-span-2">
-          {hasAnImage(project) ? (
-            <ImageGallery images={project.getImages()} />
+          {P.hasAnImage(project) ? (
+            <ImageGallery images={P.getImages(project)} />
           ) : (
-            <ProjectIconImage icon={project.getCardIcon()} />
+            <ProjectIconImage icon={P.getIcon(project)} />
           )}
         </div>
 
@@ -23,7 +21,7 @@ const FeaturedProject = ({ project }) => {
         <div className="lg:max-w-lg lg:self-end">
           <div className="">
             <h1 className="text-left text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              {project.getTitle()}
+              {P.getName(project)}
             </h1>
           </div>
 
@@ -34,13 +32,12 @@ const FeaturedProject = ({ project }) => {
 
             <div className="flex items-center">
               <p className="text-lg text-gray-900 sm:text-xl">
-                {project.getYear()}
+                {P.getYear(project)}
               </p>
 
               <div className="ml-4 pl-4 border-l border-gray-300">
                 <div role="list" className="grid grid-cols-12 gap-3">
-                  {project
-                    .getTechnologies()
+                  {P.getTechnologies(project)
                     .sort()
                     .map((technology, ndx) => (
                       <img
@@ -56,17 +53,15 @@ const FeaturedProject = ({ project }) => {
               </div>
             </div>
 
-            {project.hasDescription() && (
-              <div className="mt-4 space-y-6">
-                <p className="text-left text-base text-gray-500">
-                  {project.getCardDescription()}
-                </p>
-              </div>
-            )}
+            <div className="mt-4 space-y-6">
+              <p className="text-left text-base text-gray-500">
+                {P.getShortDescription(project)}
+              </p>
+            </div>
 
             <form>
               <div className="mt-10">
-                <a href={"/projects/" + project.getLinkName()}>
+                <a href={"/projects/" + P.getProjectLink(project)}>
                   <button
                     type="button"
                     className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
@@ -89,8 +84,8 @@ const ImageGallery = ({ images }) => (
       {images.map((image, ndx) => (
         <Tab.Panel key={ndx}>
           <img
-            src={image}
-            alt={image}
+            src={image.src}
+            alt={image.alt}
             className="w-full h-full object-center object-cover sm:rounded-lg"
           />
         </Tab.Panel>

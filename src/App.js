@@ -9,62 +9,17 @@ import {
 } from "react-router-dom";
 
 import ProjectPortfolio from "./components/ProjectPortfolio";
-import ProjectPortfolio2 from "./components/ProjectPortfolio2";
 import ProjectView from "./components/ProjectView";
-import ProjectView2 from "./components/ProjectView2";
-import ProjectView3 from "./components/ProjectView3";
-import ProjectDemo from "./components/ProjectDemo";
-import Header from "./components/Header";
 
-import {
-  MatchThree,
-  NFTree,
-  AmazonFishing,
-  Arrakis,
-  CrystalLattice,
-  DataCenterStateMachine,
-  FloodFill,
-  Ionic,
-  Obj2Spring,
-  Raytracer,
-  VoxelHack,
-  WebGLCL,
-  ReduxJournal,
-  LightLab,
-  MatchThreeRetyped,
-  CCXTTrader,
-  Cucumber,
-  ValidatedEndpoint,
-  RSIMLModel,
-} from "./projects";
+import projects from "./projects";
+import P from "./utils/ProjectUtils";
 
-const projects = [
-  AmazonFishing,
-  Arrakis,
-  CrystalLattice,
-  DataCenterStateMachine,
-  FloodFill,
-  Ionic,
-  Obj2Spring,
-  //Raytracer,
-  /*VoxelHack,*/
-  WebGLCL,
-  /*ReduxJournal,*/
-  LightLab,
-  NFTree,
-  MatchThree,
-  MatchThreeRetyped,
-  CCXTTrader,
-  Cucumber,
-  ValidatedEndpoint,
-  RSIMLModel,
-].sort((a, b) => b.getYear() - a.getYear());
+projects.sort((a, b) => P.getYear(b) - P.getYear(a));
 
 const onlyUnique = (value, index, self) => self.indexOf(value) === index;
 
-const technologies = projects
-  .flatMap((project) => project.getTechnologies())
-  .filter(onlyUnique);
+const getTechnologies = (projects) =>
+  projects.flatMap(P.getTechnologies).filter(onlyUnique);
 
 const App = () => (
   <div className="App bg-gray-100 h-dvh">
@@ -77,16 +32,16 @@ const App = () => (
         <Route
           path="/projects"
           element={
-            <ProjectPortfolio2
+            <ProjectPortfolio
               projects={projects}
-              technologies={technologies}
+              technologies={getTechnologies(projects)}
             />
           }
         />
 
         <Route
           path="/projects/:project_id"
-          element={<ProjectView3 projects={projects} />}
+          element={<ProjectView projects={projects} />}
         />
 
         {/*

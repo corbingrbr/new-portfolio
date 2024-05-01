@@ -1,50 +1,47 @@
 import Project from "../interfaces/project.interface";
 
-export const CrystalLattice: Project = {
-  getRepositoryLink(): string {
-    return "https://github.com/corbingrbr/CrystalLattice";
-  },
-  hasRepository(): boolean {
-    return true;
-  },
-  getLinkName(): string {
-    return "crystal-lattice";
-  },
-  getTechnologies(): string[] {
-    return ["cpp", "opengl"];
-  },
-  getCardIcon(): string {
-    return "fas fa-gem";
-  },
-  getCardImg(): string {
-    return "/assets/crystal/crystal.png";
-  },
-  getImages(): string[] {
-    return [
-      "/assets/crystal/face-crystal.png",
-      "/assets/crystal/body-crystal.png",
-      "/assets/crystal/simple-crystal.png",
-    ];
-  },
-  getTitle(): string {
-    return "Crystal Lattice";
-  },
-  getCardDescription(): string {
-    return "Interactive visualization of three crystal lattice structures.";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2014;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return false;
-  },
+const CrystalLattice: Project = {
+  name: "Crystal Lattice",
+  year: 2014,
+  month: 0,
+  technologies: ["cpp", "opengl"],
+  repositoryLink: "https://github.com/corbingrbr/CrystalLattice",
+  projectLink: "crystal-lattice",
+  icon: "fas fa-gem",
+  images: [
+    {
+      name: "Simple Crystal",
+      src: "/assets/crystal/simple-crystal.png",
+      alt: "Simple Crystal",
+    },
+    {
+      name: "Body Crystal",
+      src: "/assets/crystal/body-crystal.png",
+      alt: "Body Crystal",
+    },
+    {
+      name: "Face Crystal",
+      src: "/assets/crystal/face-crystal.png",
+      alt: "Face Crystal",
+    },
+  ],
+  shortDescription:
+    "Interactive visualization of three crystal lattice structures.",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default CrystalLattice;

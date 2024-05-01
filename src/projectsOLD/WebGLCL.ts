@@ -1,32 +1,36 @@
 import Project from "../interfaces/project.interface";
 
-export const Raytracer: Project = {
+export const WebGLCL = {
   getRepositoryLink(): string {
-    return "https://github.com/corbingrbr/RayTrace";
+    return "https://github.com/corbingrbr/web-gl-cl";
   },
   hasRepository(): boolean {
     return true;
   },
   getLinkName(): string {
-    return "raytracer";
+    return "webglcl";
   },
   getTechnologies(): string[] {
-    return ["cpp"];
+    return ["js", "webgl"];
   },
   getCardIcon(): string {
-    return "fas fa-crosshairs";
+    return "fas fa-gem";
   },
   getCardImg(): string {
     return "";
   },
-  getImages(): string[] {
-    return [];
-  },
   getTitle(): string {
-    return "Raytracer";
+    return "WebGLCL";
+  },
+  getImages(): string[] {
+    return [
+      "/assets/crystal/face-crystal.png",
+      "/assets/crystal/body-crystal.png",
+      "/assets/crystal/simple-crystal.png",
+    ];
   },
   getCardDescription(): string {
-    return "A process which produces images based on a supplied description file.";
+    return "A rewrite of the 'Crystal Lattice' OpenGL project in WebGL";
   },
   hasDescription(): boolean {
     return true;
@@ -41,6 +45,6 @@ export const Raytracer: Project = {
     return true;
   },
   hasDemo(): boolean {
-    return false;
+    return true;
   },
 };

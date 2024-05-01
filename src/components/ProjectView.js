@@ -1,31 +1,21 @@
-import { useState } from "react";
-import {
-  CheckIcon,
-  QuestionMarkCircleIcon,
-  StarIcon,
-} from "@heroicons/react/solid";
-import { ShieldCheckIcon } from "@heroicons/react/outline";
+import { Fragment, useState } from "react";
+import { Disclosure, RadioGroup, Tab } from "@headlessui/react";
+import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/outline";
+import { StarIcon } from "@heroicons/react/solid";
+
 import { useParams } from "react-router-dom";
 import Navigation from "./Navigation";
-import {
-  Dialog,
-  Disclosure,
-  Popover,
-  RadioGroup,
-  Tab,
-  Transition,
-} from "@headlessui/react";
+import { CodeBlock, atomOneDark } from "react-code-blocks";
+import { classNames } from "../utils/utils";
 
-const reviews = { average: 4, totalCount: 1624 };
+import ProjectIconImage from "./ProjectIconImage";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import P from "../utils/ProjectUtils";
 
-export default function ProjectView({ projects }) {
+const ProjectView3 = ({ projects }) => {
   let { project_id } = useParams();
 
-  let project = projects.find((p) => p.getLinkName() === project_id);
+  let project = projects.find((p) => P.getProjectLink(p) === project_id);
 
   if (!project) {
     return <h2>This project does not exist ... </h2>;
@@ -33,149 +23,195 @@ export default function ProjectView({ projects }) {
     // Bread Crumbs
     let crumbs = [
       { name: "Projects", href: "/projects", current: false },
-      { name: `${project.getTitle()}`, href: "#", current: true },
+      { name: `${P.getName(project)}`, href: "#", current: true },
     ];
 
-    let images = project.getImages();
-
     return (
-      <div className="py-5 max-w-screen-xl mx-auto grid grid-cols-1">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1">
         <Navigation pages={crumbs} />
 
         <div className="bg-white m-8 h-full overflow-hidden">
-          {/*<div className="max-w-2xl mx-auto py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">*/}
-          <div className="p-8 lg:grid lg:grid-cols-2 lg:gap-x-8 ">
-            {/* Product details */}
-            <div className="lg:max-w-lg lg:self-end">
-              <div className="">
-                <h1 className="text-left text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                  {project.getTitle()}
-                </h1>
+          <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8 text-left">
+            <div className="mx-auto max-w-2xl lg:max-w-none">
+              {/* Product */}
+              <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+                {/* Project info */}
+                <ProjectInformation project={project} />
+                {
+                  /* Image gallery */
+                  P.hasAnImage(project) ? (
+                    <ImageGallery images={P.getImages(project)} />
+                  ) : (
+                    <ProjectIconImage icon={P.getIcon(project)} />
+                  )
+                }
               </div>
-
-              <section aria-labelledby="information-heading" className="mt-4">
-                <h2 id="information-heading" className="sr-only">
-                  Product information
-                </h2>
-
-                <div className="flex items-center">
-                  <p className="text-lg text-gray-900 sm:text-xl">
-                    {project.getYear()}
-                  </p>
-
-                  <div className="ml-4 pl-4 border-l border-gray-300">
-                    <div role="list" className="grid grid-cols-12 gap-3">
-                      {project
-                        .getTechnologies()
-                        .sort()
-                        .map((technology, ndx) => (
-                          <img
-                            key={ndx}
-                            className="m-auto"
-                            src={`/assets/icons/${technology}.svg`}
-                            alt={`${technology}.svg`}
-                            height={24}
-                            width={24}
-                          />
-                        ))}
-                    </div>
-                  </div>
-                </div>
-
-                {project.hasDescription() && (
-                  <div className="mt-4 space-y-6">
-                    <p className="text-left text-base text-gray-500">
-                      {project.getCardDescription()}
-                    </p>
-                  </div>
-                )}
-                <div className="mt-6 flex items-center">
-                  <CheckIcon
-                    className="flex-shrink-0 w-5 h-5 text-green-500"
-                    aria-hidden="true"
-                  />
-                  <p className="ml-2 text-sm text-gray-500">
-                    In stock and ready to ship
-                  </p>
-                </div>
-              </section>
             </div>
-
-            <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-              <Tab.Group as="div" className="flex flex-col-reverse">
-                {/* Image selector */}
-                <div className="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
-                  {/* Display the tab list of images when more than one is available for the project */}
-                  {images.length > 1 && (
-                    <Tab.List className="grid grid-cols-4 gap-6">
-                      {project.getImages().map((image, ndx) => (
-                        <Tab
-                          key={ndx}
-                          className="relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-4 focus:ring-opacity-50"
-                        >
-                          {({ selected }) => (
-                            <>
-                              <span className="sr-only">{image}</span>
-                              <span className="absolute inset-0 rounded-md overflow-hidden">
-                                <img
-                                  src={image}
-                                  alt=""
-                                  className="w-full h-full object-center object-cover"
-                                />
-                              </span>
-                              <span
-                                className={classNames(
-                                  selected
-                                    ? "ring-indigo-500"
-                                    : "ring-transparent",
-                                  "absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none"
-                                )}
-                                aria-hidden="true"
-                              />
-                            </>
-                          )}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  )}
-                </div>
-
-                <Tab.Panels className="w-full aspect-w-1 aspect-h-1">
-                  {project.getImages().map((image, ndx) => (
-                    <Tab.Panel key={ndx}>
-                      <img
-                        src={image}
-                        alt={image}
-                        className="w-full h-full object-center object-cover sm:rounded-lg"
-                      />
-                    </Tab.Panel>
-                  ))}
-                </Tab.Panels>
-              </Tab.Group>
-            </div>
-
-            {/* Product form */}
-            <div className="mt-10 lg:max-w-lg lg:col-start-1 lg:row-start-2 lg:self-start">
-              <section aria-labelledby="options-heading">
-                <h2 id="options-heading" className="sr-only">
-                  Product options
-                </h2>
-
-                <form>
-                  <div className="mt-10">
-                    <button
-                      type="submit"
-                      className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
-                    >
-                      Demo
-                    </button>
-                  </div>
-                </form>
-              </section>
-            </div>
-          </div>
+          </main>
         </div>
       </div>
     );
   }
-}
+};
+
+export default ProjectView3;
+
+const ImageGallery = ({ images }) => (
+  <Tab.Group as="div" className="flex flex-col-reverse">
+    {/* Image selector */}
+    <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
+      <Tab.List className="grid grid-cols-4 gap-6">
+        {images.map((image) => (
+          <Tab
+            key={image.id}
+            className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
+          >
+            {({ selected }) => (
+              <>
+                <span className="sr-only">{image.name}</span>
+                <span className="absolute inset-0 overflow-hidden rounded-md">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="h-full w-full object-cover object-center"
+                  />
+                </span>
+                <span
+                  className={classNames(
+                    selected ? "ring-indigo-500" : "ring-transparent",
+                    "pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2"
+                  )}
+                  aria-hidden="true"
+                />
+              </>
+            )}
+          </Tab>
+        ))}
+      </Tab.List>
+    </div>
+
+    <Tab.Panels className="aspect-h-1 aspect-w-1 w-full">
+      {images.map((image, ndx) => (
+        <Tab.Panel key={ndx}>
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="h-full w-full object-cover object-center sm:rounded-lg"
+          />
+        </Tab.Panel>
+      ))}
+    </Tab.Panels>
+  </Tab.Group>
+);
+
+const ProjectInformation = ({ project }) => (
+  <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+    <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+      {P.getName(project)}
+    </h1>
+
+    <div className="mt-3">
+      <h2 className="sr-only">Product information</h2>
+      {/*<p className="text-3xl tracking-tight text-gray-900">
+                      {product.price}
+                    </p>*/}
+      <div className="flex items-center">
+        <p className="text-lg text-gray-900 sm:text-xl">{P.getYear(project)}</p>
+
+        <div className="ml-4 pl-4 border-l border-gray-300">
+          <div role="list" className="grid grid-cols-12 gap-3">
+            {P.getTechnologies(project)
+              .sort()
+              .map((technology, ndx) => (
+                <img
+                  key={ndx}
+                  className="m-auto"
+                  src={`/assets/icons/${technology}.svg`}
+                  alt={`${technology}.svg`}
+                  height={24}
+                  width={24}
+                />
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-6">
+      <h3 className="sr-only">Description</h3>
+
+      <div
+        className="space-y-6 text-base text-gray-700"
+        dangerouslySetInnerHTML={{ __html: P.getFullDescription(project) }}
+      />
+    </div>
+
+    <form className="mt-6">
+      <div className="mt-10 flex">
+        <button
+          type="submit"
+          className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+        >
+          Add to bag
+        </button>
+
+        <button
+          type="button"
+          className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+        >
+          <HeartIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
+          <span className="sr-only">Add to favorites</span>
+        </button>
+      </div>
+    </form>
+
+    <section aria-labelledby="details-heading" className="mt-12">
+      <h2 id="details-heading" className="sr-only">
+        Additional details
+      </h2>
+
+      <div className="divide-y divide-gray-200 border-t">
+        {P.getDetails(project).map((detail) => (
+          <Disclosure as="div" key={detail.name}>
+            {({ open }) => (
+              <>
+                <h3>
+                  <Disclosure.Button className="group relative flex w-full items-center justify-between py-6 text-left">
+                    <span
+                      className={classNames(
+                        open ? "text-indigo-600" : "text-gray-900",
+                        "text-sm font-medium"
+                      )}
+                    >
+                      {detail.name}
+                    </span>
+                    <span className="ml-6 flex items-center">
+                      {open ? (
+                        <MinusIcon
+                          className="block h-6 w-6 text-indigo-400 group-hover:text-indigo-500"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <PlusIcon
+                          className="block h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </span>
+                  </Disclosure.Button>
+                </h3>
+                <Disclosure.Panel as="div" className="prose prose-sm pb-6">
+                  <ul role="list">
+                    {detail.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
+        ))}
+      </div>
+    </section>
+  </div>
+);

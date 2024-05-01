@@ -1,33 +1,49 @@
 import Project from "../interfaces/project.interface";
 
-const ValidatedEndpoint: Project = {
-  name: "Validated Endpoint",
-  year: 2023,
-  month: 0,
-  technologies: ["java"],
-  repositoryLink: "",
-  projectLink: "validated-endpoint",
-  icon: "fas fa-shield-check",
-  images: [],
-  shortDescription: "An interface to simplify endpoint design process.",
-  longDescription: "This is this projects loooooooooooong description.",
-  details: [
-    {
-      name: "Features",
-      items: ["Feature One", "Feature Two"],
-    },
-    {
-      name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
-    },
-    {
-      name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
-    },
-  ],
+export const ValidatedEndpoint = {
+  getRepositoryLink(): string {
+    return "https://github.com/corbingrbr/";
+  },
+  hasRepository(): boolean {
+    return false;
+  },
+  getLinkName(): string {
+    return "validated-endpoint";
+  },
+  getTechnologies(): string[] {
+    return ["java"];
+  },
+  getCardIcon(): string {
+    return "fas fa-shield-check";
+  },
+  getCardImg(): string {
+    return "";
+  },
+  getImages(): string[] {
+    return [];
+  },
+  getTitle(): string {
+    return "Validated Endpoint";
+  },
+  getCardDescription(): string {
+    return "An interface to simplify endpoint design process.";
+  },
+  hasDescription(): boolean {
+    return true;
+  },
+  getDescription(): string {
+    return "Missing Project Description";
+  },
+  getYear(): number {
+    return 2023;
+  },
+  hasView(): boolean {
+    return true;
+  },
+  hasDemo(): boolean {
+    return false;
+  },
 };
-
-export default ValidatedEndpoint;
 
 /*ValidatedEndpoint.java
 

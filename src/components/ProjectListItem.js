@@ -1,9 +1,5 @@
-/*import {
-  ChatBubbleLeftIcon,
-  CheckCircleIcon,
-} from "@heroicons/react/24/outline";*/
-
 import { classNames } from "../utils/utils";
+import P from "../utils/ProjectUtils";
 
 const ProjectListItem = ({
   project,
@@ -14,9 +10,9 @@ const ProjectListItem = ({
 }) => {
   return (
     <li
-      onMouseEnter={() => setFeaturedProject(project.getTitle())}
+      onMouseEnter={() => setFeaturedProject(P.getName(project))}
       onMouseLeave={() => setFeaturedProject(undefined)}
-      onClick={() => setSelectedProject(project.getTitle())}
+      onClick={() => setSelectedProject(P.getName(project))}
       className={classNames(
         "flex justify-between gap-x-6 py-5 px-5",
         isSelected ? "bg-gray-100" : isFeatured ? "bg-gray-50" : "bg-white"
@@ -25,20 +21,22 @@ const ProjectListItem = ({
       <div className="flex min-w-0 gap-x-4">
         <span className="h-12 w-12 flex-none rounded-full bg-gray-200">
           <i
-            className={`self-center fa-2x ${project.getCardIcon()} text-gray-400 mt-2`}
+            className={`self-center fa-2x ${P.getIcon(
+              project
+            )} text-gray-400 mt-2`}
           />
         </span>
         <div className="min-w-0 flex-auto">
           <p className="text-sm font-semibold leading-6 text-gray-900 justify-self-start text-left">
-            {project.getTitle()}
+            {P.getName(project)}
           </p>
           <p className="mt-1 truncate text-xs leading-5 text-gray-500 justify-self-start text-left">
-            {project.getCardDescription()}
+            {P.getShortDescription(project)}
           </p>
         </div>
       </div>
       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-        <p className="text-sm leading-6 text-gray-900">{project.getYear()}</p>
+        <p className="text-sm leading-6 text-gray-900">{P.getYear(project)}</p>
 
         {/*<div className="mt-1 flex items-center gap-x-1.5">
             <div className="flex-none rounded-full bg-emerald-500/20 p-1">
@@ -50,7 +48,7 @@ const ProjectListItem = ({
         <dl className="mt-1 flex w-full flex-none justify-between gap-x-8 sm:w-auto">
           <div className="flex -space-x-0.5">
             <dt className="sr-only">Technologies</dt>
-            {project.getTechnologies().map((technology, ndx) => (
+            {P.getTechnologies(project).map((technology, ndx) => (
               <dd key={ndx}>
                 <img
                   key={ndx}

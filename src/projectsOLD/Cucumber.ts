@@ -1,34 +1,49 @@
 import Project from "../interfaces/project.interface";
 
-const Cucumber: Project = {
-  name: "Cucumber",
-  year: 2024,
-  month: 0,
-  technologies: ["ts", "playwright", "cucumber"],
-  repositoryLink: "",
-  projectLink: "cucumber",
-  icon: "fas fa-cucumber",
-  images: [],
-  shortDescription:
-    "A design pattern for playwright/cucumber behavior driven testing",
-  longDescription: "This is this projects loooooooooooong description.",
-  details: [
-    {
-      name: "Features",
-      items: ["Feature One", "Feature Two"],
-    },
-    {
-      name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
-    },
-    {
-      name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
-    },
-  ],
+export const Cucumber = {
+  getRepositoryLink(): string {
+    return "https://github.com/corbingrbr/";
+  },
+  hasRepository(): boolean {
+    return false;
+  },
+  getLinkName(): string {
+    return "cucumber";
+  },
+  getTechnologies(): string[] {
+    return ["ts", "js", "playwright", "cucumber"];
+  },
+  getCardIcon(): string {
+    return "fas fa-cucumber";
+  },
+  getCardImg(): string {
+    return "";
+  },
+  getImages(): string[] {
+    return [];
+  },
+  getTitle(): string {
+    return "Cucumber";
+  },
+  getCardDescription(): string {
+    return "A design pattern for playwright/cucumber behavior driven testing";
+  },
+  hasDescription(): boolean {
+    return true;
+  },
+  getDescription(): string {
+    return "Missing Project Description";
+  },
+  getYear(): number {
+    return 2024;
+  },
+  hasView(): boolean {
+    return true;
+  },
+  hasDemo(): boolean {
+    return false;
+  },
 };
-
-export default Cucumber;
 
 /*
 steps.ts;

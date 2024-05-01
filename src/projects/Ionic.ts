@@ -1,51 +1,52 @@
 import Project from "../interfaces/project.interface";
 
-export const Ionic: Project = {
-  getRepositoryLink(): string {
-    return "https://github.com/corbingrbr/ionic";
-  },
-  hasRepository(): boolean {
-    return true;
-  },
-  getLinkName(): string {
-    return "ionic";
-  },
-  getTechnologies(): string[] {
-    return ["processing", "java"];
-  },
-  getCardIcon(): string {
-    return "fas fa-atom";
-  },
-  getCardImg(): string {
-    return "/assets/ionic/ionic.png";
-  },
-  getImages(): string[] {
-    return [
-      "/assets/ionic/ion1.png",
-      "/assets/ionic/ion2.png",
-      "/assets/ionic/reaction.png",
-      "/assets/ionic/ionic-resize.png",
-    ];
-  },
-  getTitle(): string {
-    return "Ionic";
-  },
-  getCardDescription(): string {
-    return "An interactive demonstration of electron transfer amongst atoms.";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2014;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return true;
-  },
+const Ionic: Project = {
+  name: "Ionic",
+  year: 2014,
+  month: 0,
+  technologies: ["processing", "java"],
+  repositoryLink: "https://github.com/corbingrbr/ionic",
+  projectLink: "ionic",
+  icon: "fas fa-atom",
+  images: [
+    {
+      name: "Ionic 1",
+      src: "/assets/ionic/ion1.png",
+      alt: "Simple Crystal",
+    },
+    {
+      name: "Ionic 2",
+      src: "/assets/ionic/ion2.png",
+      alt: "Body Crystal",
+    },
+    {
+      name: "Reaction",
+      src: "/assets/ionic/reaction.png",
+      alt: "Face Crystal",
+    },
+    {
+      name: "Ionic Resize",
+      src: "/assets/ionic/ionic-resize.png",
+      alt: "Face Crystal",
+    },
+  ],
+  shortDescription:
+    "An interactive demonstration of electron transfer amongst atoms.",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default Ionic;

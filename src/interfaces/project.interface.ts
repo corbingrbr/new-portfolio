@@ -1,4 +1,4 @@
-export default interface Project {
+/*export default interface Project {
   getRepositoryLink(): string;
   hasRepository(): boolean;
   getLinkName(): string;
@@ -13,12 +13,12 @@ export default interface Project {
   getYear(): number;
   hasView(): boolean;
   hasDemo(): boolean;
-}
+}*/
 
-/*import ImageI from "./image.interface";
-import DetailSectionI from "./detail-section.interface";
+import Image from "./image.interface";
+import DetailSection from "./detail-section.interface";
 
-export default interface ProjectI {
+export default interface Project {
   name: string;
   year: number;
   month: number;
@@ -27,7 +27,7 @@ export default interface ProjectI {
   projectLink: string;
   icon: string;
   images: Image[];
-  shortDescription: "";
+  shortDescription: string;
   longDescription: string;
   details: DetailSection[];
-}*/
+}

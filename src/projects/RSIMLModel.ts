@@ -1,46 +1,31 @@
 import Project from "../interfaces/project.interface";
 
-export const RSIMLModel: Project = {
-  getRepositoryLink(): string {
-    return "https://github.com/corbingrbr/";
-  },
-  hasRepository(): boolean {
-    return false;
-  },
-  getLinkName(): string {
-    return "rsi-ml-model";
-  },
-  getTechnologies(): string[] {
-    return ["ts", "tensorflow"];
-  },
-  getCardIcon(): string {
-    return "fa fa-chart-scatter";
-  },
-  getCardImg(): string {
-    return "";
-  },
-  getImages(): string[] {
-    return [];
-  },
-  getTitle(): string {
-    return "RSI ML Model";
-  },
-  getCardDescription(): string {
-    return "A linear regression model trained on rsi related features.";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2024;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return false;
-  },
+const RSIMLModel: Project = {
+  name: "RSI ML Model",
+  year: 2024,
+  month: 0,
+  technologies: ["ts", "tensorflow"],
+  repositoryLink: "",
+  projectLink: "rsi-ml-model",
+  icon: "fa fa-chart-scatter",
+  images: [],
+  shortDescription:
+    "A linear regression model trained on rsi related features.",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default RSIMLModel;

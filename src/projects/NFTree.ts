@@ -1,35 +1,47 @@
-import Project from '../interfaces/project.interface';
+import Project from "../interfaces/project.interface";
 
-export const NFTree: Project = {
-
-    getRepositoryLink(): string { return "" },
-    hasRepository(): boolean { return false },
-    getLinkName(): string { return "nftree" },
-    getTechnologies(): string[] { return ["react", "ethereum", "tailwind"] },
-    getCardIcon(): string { return "fas fa-tree" },
-    getCardImg(): string { return "/assets/nftree/nftree.png" },
-    getImages(): string[] {
-        return [
-            "/assets/nftree/nftree-fit.png",
-            "/assets/nftree/nftree1.png",
-            //"/assets/nftree/nftree2.png",
-            "/assets/nftree/nftree3.png",
-            //"/assets/nftree/nftree4.png",
-            //"/assets/nftree/nftree5.png",
-            //"/assets/nftree/nftree6.png",
-            //"/assets/nftree/nftree7.png",
-            //"/assets/nftree/nftree8.png",
-            //"/assets/nftree/nftree9.png",
-            //"/assets/nftree/nftree10.png",
-            //"/assets/nftree/nftree11.png",
-        ]
+const NFTree: Project = {
+  name: "NFTree",
+  year: 2021,
+  month: 0,
+  technologies: ["react", "ethereum", "tailwind"],
+  repositoryLink: "",
+  projectLink: "nftree",
+  icon: "fas fa-tree",
+  images: [
+    {
+      name: "NFTree Market",
+      src: "/assets/nftree/nftree-fit.png",
+      alt: "NFTree Market",
     },
-    getTitle(): string { return "NFTree" },
-    getCardDescription(): string { return "A NFT smart contract design exploring multi-generational royalties" },
-    hasDescription(): boolean { return true },
-    getDescription(): string { return "Missing Project Description" },
-    getYear(): number { return 2021 },
-    hasView(): boolean { return true },
-    hasDemo(): boolean { return true },
+    {
+      name: "NFTree Creation Form",
+      src: "/assets/nftree/nftree1.png",
+      alt: "NFTree Creation Form",
+    },
+    {
+      name: "NFTree Setting Royalties",
+      src: "/assets/nftree/nftree3.png",
+      alt: "NFTree Setting Royalties",
+    },
+  ],
+  shortDescription:
+    "A NFT smart contract design exploring multi-generational royalties",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
+};
 
-}
+export default NFTree;

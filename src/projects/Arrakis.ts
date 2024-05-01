@@ -1,46 +1,37 @@
 import Project from "../interfaces/project.interface";
 
-export const Arrakis: Project = {
-  getRepositoryLink(): string {
-    return "";
-  },
-  hasRepository(): boolean {
-    return false;
-  },
-  getLinkName(): string {
-    return "arrakis";
-  },
-  getTechnologies(): string[] {
-    return ["cpp", "opengl"];
-  },
-  getCardIcon(): string {
-    return "fas fa-globe-europe";
-  },
-  getCardImg(): string {
-    return "/assets/arrakis/arrakis.png";
-  },
-  getImages(): string[] {
-    return ["/assets/arrakis/arrakis.png"];
-  },
-  getTitle(): string {
-    return "Arrakis";
-  },
-  getCardDescription(): string {
-    return "Rotationary planet design with interesting shader techniques to produce night/day environment.";
-  },
-  hasDescription(): boolean {
-    return true;
-  },
-  getDescription(): string {
-    return "Missing Project Description";
-  },
-  getYear(): number {
-    return 2014;
-  },
-  hasView(): boolean {
-    return true;
-  },
-  hasDemo(): boolean {
-    return false;
-  },
+const Arrakis: Project = {
+  name: "Arrakis",
+  year: 2014,
+  month: 0,
+  technologies: ["cpp", "opengl"],
+  repositoryLink: "",
+  projectLink: "arrakis",
+  icon: "fas fa-globe-europe",
+  images: [
+    {
+      name: "Arrakis",
+      src: "/assets/arrakis/arrakis.png",
+      alt: "Arrakis",
+    },
+  ],
+  shortDescription:
+    "Rotationary planet design with interesting shader techniques to produce night/day environment.",
+  longDescription: "This is this projects loooooooooooong description.",
+  details: [
+    {
+      name: "Features",
+      items: ["Feature One", "Feature Two"],
+    },
+    {
+      name: "Highlights",
+      items: ["Highlights One", "Highlights Two"],
+    },
+    {
+      name: "Improvements",
+      items: ["Improvement One", "Improvement Two"],
+    },
+  ],
 };
+
+export default Arrakis;
