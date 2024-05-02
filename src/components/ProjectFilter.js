@@ -28,7 +28,7 @@ export default function ProjectFilter2({
         aria-labelledby="filter-heading"
         className="relative z-10 border-t border-b border-gray-300 grid items-center"
       >
-        <div className="row-start-1 py-4">
+        <div className="row-start-1 py-4 border-b border-gray-300">
           <div className="justify-start max-w-7xl mx-auto flex space-x-6 divide-x divide-gray-200 text-sm px-4 sm:px-0 lg:px-2">
             <div className="group flex items-center">
               <FolderIcon
@@ -60,15 +60,15 @@ export default function ProjectFilter2({
             </div>
           </div>
         </div>
-        <Disclosure.Panel className="border-t border-gray-300 py-10">
+        <Disclosure.Panel className="py-5">
           <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
-            <div className="grid grid-cols-4 gap-y-10 auto-rows-min">
+            <div className="grid gap-y-10 auto-rows-min">
               <fieldset>
                 <legend className="text-left block font-medium">
                   Category
                 </legend>
                 {/*<div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">*/}
-                <div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6">
                   {filters.category.map((option, ndx) => (
                     <div
                       key={option.value}
@@ -99,15 +99,15 @@ export default function ProjectFilter2({
                   ))}
                 </div>
               </fieldset>
-              <fieldset className="col-span-3">
+              <fieldset>
                 <legend className="text-left block font-medium">
                   Technology
                 </legend>
-                <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 pt-6 space-y-6 sm:pt-4 sm:space-y-4">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6 sm:pt-4">
                   {filters.technology.map((technology, ndx) => (
                     <div
                       key={technology.value}
-                      className="flex items-center text-base sm:text-sm"
+                      className="flex items-center text-base sm:text-sm m-4"
                     >
                       <input
                         id={`technology-${ndx}`}
@@ -140,7 +140,7 @@ export default function ProjectFilter2({
             </div>
           </div>
         </Disclosure.Panel>
-        <div className="row-start-1 py-4">
+        <div className="row-start-1 py-4 border-b border-gray-300">
           <div className="flex justify-end max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
             <Menu as="div" className="relative inline-block">
               <div className="flex">

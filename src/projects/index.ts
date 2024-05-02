@@ -1,6 +1,7 @@
 import AmazonFishing from "./AmazonFishing";
 import Arrakis from "./Arrakis";
 import CrystalLattice from "./CrystalLattice";
+import WebGLCL from "./WebGLCL";
 import DataCenterStateMachine from "./DataCenterStateMachine";
 import FloodFill from "./FloodFill";
 import Ionic from "./Ionic";
@@ -13,6 +14,7 @@ import CCXTTrader from "./CCXTTrader";
 import Cucumber from "./Cucumber";
 import ValidatedEndpoint from "./ValidatedEndpoint";
 import RSIMLModel from "./RSIMLModel";
+import Portfolio from "./Portfolio";
 
 import Project from "../interfaces/project.interface";
 
@@ -32,6 +34,8 @@ const projects: Project[] = [
   Cucumber,
   ValidatedEndpoint,
   RSIMLModel,
+  WebGLCL,
+  Portfolio,
 ];
 
 export default projects;

@@ -12,6 +12,8 @@ import ProjectIconImage from "./ProjectIconImage";
 
 import P from "../utils/ProjectUtils";
 
+console.log(P);
+
 const ProjectView3 = ({ projects }) => {
   let { project_id } = useParams();
 
@@ -146,23 +148,27 @@ const ProjectInformation = ({ project }) => (
       />
     </div>
 
-    <form className="mt-6">
-      <div className="mt-10 flex">
+    <form className="mt-6 flex flex-row">
+      <div className="flex">
         <button
           type="submit"
           className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
         >
-          Add to bag
-        </button>
-
-        <button
-          type="button"
-          className="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
-        >
-          <HeartIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
-          <span className="sr-only">Add to favorites</span>
+          Watch Video
         </button>
       </div>
+
+      {P.hasRepositoryLink(project) && (
+        <a href={P.getRepositoryLink(project)}>
+          <button
+            type="button"
+            className="w-full ml-4 border border-transparent rounded-md py-2 px-3 flex items-center justify-center text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
+          >
+            <i class="fa-brands fa-github fa-2x"></i>
+            <span className="sr-only">Go to repository</span>
+          </button>
+        </a>
+      )}
     </form>
 
     <section aria-labelledby="details-heading" className="mt-12">

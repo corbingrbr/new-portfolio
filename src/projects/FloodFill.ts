@@ -7,7 +7,7 @@ const FloodFill: Project = {
   technologies: ["cpp", "opengl"],
   repositoryLink: "https://github.com/MatheusFaria/flood-fill",
   projectLink: "flood-fill",
-  icon: "fas fa-gem",
+  icon: "fa-light fa-water-arrow-up",
   images: [
     {
       name: "Flood Fill",
@@ -16,7 +16,7 @@ const FloodFill: Project = {
     },
   ],
   shortDescription:
-    "A puzzle game involving color and physics within a voxel level design.",
+    "A puzzle platformer involving color within a voxel level design.",
   longDescription: "This is this projects loooooooooooong description.",
   details: [
     {

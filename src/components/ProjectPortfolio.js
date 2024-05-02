@@ -7,8 +7,6 @@ import Navigation from "./Navigation";
 
 import P from "../utils/ProjectUtils";
 
-console.log("P", P);
-
 const filter_data = {
   technology: [
     { value: "ethereum", label: "Ethereum" },
@@ -32,7 +30,7 @@ const filter_data = {
     { value: "mongodb", label: "MongoDB" },
     { value: "cpp", label: "C++" },
     { value: "opengl", label: "OpenGL" },
-    { value: "processing", label: "Processing.js" },
+    { value: "processing", label: "Processing" },
     { value: "java", label: "Java" },
     { value: "jquery", label: "JQuery" },
     { value: "c", label: "C" },

@@ -11,7 +11,7 @@ const Arrakis: Project = {
   images: [
     {
       name: "Arrakis",
-      src: "/assets/arrakis/arrakis.png",
+      src: "/assets/arrakis/optimized-arrakis.gif",
       alt: "Arrakis",
     },
   ],

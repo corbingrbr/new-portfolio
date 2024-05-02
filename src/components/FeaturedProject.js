@@ -60,8 +60,11 @@ const FeaturedProject = ({ project }) => {
             </div>
 
             <form>
-              <div className="mt-10">
-                <a href={"/projects/" + P.getProjectLink(project)}>
+              <div className="mt-10 flex">
+                <a
+                  href={"/projects/" + P.getProjectLink(project)}
+                  className="flex-grow"
+                >
                   <button
                     type="button"
                     className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
@@ -69,6 +72,18 @@ const FeaturedProject = ({ project }) => {
                     Read More
                   </button>
                 </a>
+
+                {P.hasRepositoryLink(project) && (
+                  <a href={P.getRepositoryLink(project)}>
+                    <button
+                      type="button"
+                      className="w-full ml-4 border border-transparent rounded-md py-2 px-3 flex items-center justify-center text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
+                    >
+                      <i class="fa-brands fa-github fa-2x"></i>
+                      <span className="sr-only">Go to repository</span>
+                    </button>
+                  </a>
+                )}
               </div>
             </form>
           </section>
