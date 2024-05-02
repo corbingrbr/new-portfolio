@@ -69,12 +69,17 @@ export default function ProjectFilter2({
                 </legend>
                 {/*<div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">*/}
                 <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6">
-                  {filters.category.map((option, ndx) => (
+                  {filters.category.map((category, ndx) => (
                     <div
-                      key={option.value}
-                      className="flex items-center text-base sm:text-sm"
+                      key={category.value}
+                      className={classNames(
+                        "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-2 m-2",
+                        category.checked ? "bg-white" : "bg-gray-300"
+                      )}
+                      data-value={category.value}
+                      onClick={onFilterChange}
                     >
-                      <input
+                      {/*<input
                         id={`category-${ndx}`}
                         name="category[]"
                         defaultValue={option.value}
@@ -82,18 +87,18 @@ export default function ProjectFilter2({
                         checked={option.checked}
                         className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
                         onChange={onFilterChange}
-                      />
+                  />*/}
 
                       <span className="ml-2">
                         <i
-                          className={`m-auto w-5 h-5 fas fa-${option.icon} text-gray-400 align-middle`}
+                          className={`m-auto w-5 h-5 fas fa-${category.icon} text-gray-400 align-middle`}
                         />
                       </span>
                       <label
                         htmlFor={`category-${ndx}`}
                         className="text-left ml-3 min-w-0 flex-1 text-gray-600"
                       >
-                        {option.label}
+                        {category.label}
                       </label>
                     </div>
                   ))}
@@ -107,9 +112,14 @@ export default function ProjectFilter2({
                   {filters.technology.map((technology, ndx) => (
                     <div
                       key={technology.value}
-                      className="flex items-center text-base sm:text-sm m-4"
+                      className={classNames(
+                        "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-1 m-2",
+                        technology.checked ? "bg-white" : "bg-gray-300"
+                      )}
+                      data-value={technology.value}
+                      onClick={onFilterChange}
                     >
-                      <input
+                      {/*<input
                         id={`technology-${ndx}`}
                         name="technology[]"
                         defaultValue={technology.value}
@@ -117,7 +127,7 @@ export default function ProjectFilter2({
                         className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
                         checked={technology.checked}
                         onChange={onFilterChange}
-                      />
+                  />*/}
 
                       <img
                         key={ndx}

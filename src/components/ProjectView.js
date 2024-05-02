@@ -12,8 +12,6 @@ import ProjectIconImage from "./ProjectIconImage";
 
 import P from "../utils/ProjectUtils";
 
-console.log(P);
-
 const ProjectView3 = ({ projects }) => {
   let { project_id } = useParams();
 
@@ -182,7 +180,7 @@ const ProjectInformation = ({ project }) => (
             {({ open }) => (
               <>
                 <h3>
-                  <Disclosure.Button className="group relative flex w-full items-center justify-between py-6 text-left">
+                  <Disclosure.Button className="group relative flex w-full items-center justify-between py-6">
                     <span
                       className={classNames(
                         open ? "text-indigo-600" : "text-gray-900",
@@ -209,7 +207,26 @@ const ProjectInformation = ({ project }) => (
                 <Disclosure.Panel as="div" className="prose prose-sm pb-6">
                   <ul role="list">
                     {detail.items.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li key={item}>
+                        <p className="font-bold">Feature One:</p>
+                        <p>
+                          This is some information about feature one. It is very
+                          detailed and therefore requires a lot of commentary on
+                          the matter.
+                        </p>
+                        <span className="not-prose">
+                          <CodeBlock
+                            language="typescript"
+                            text={`const addTwo = (x: number): number => x + 2;`}
+                            theme={atomOneDark}
+                            showLineNumbers={false}
+                          />
+                          <p>
+                            Here I am resuming the conversation once more after
+                            some thoughtful code shared above.
+                          </p>
+                        </span>
+                      </li>
                     ))}
                   </ul>
                 </Disclosure.Panel>

@@ -82,9 +82,10 @@ export default function ProjectPortfolio({ projects }) {
   ).sort(sort == "newest" ? newestFirst : oldestFirst);
 
   let handleFilterChange = (e) => {
+    const value = e.currentTarget.getAttribute("data-value");
     setFilters({
-      technology: filters.technology.map(toggleChangedFilter(e.target.value)),
-      category: filters.category.map(toggleChangedFilter(e.target.value)),
+      technology: filters.technology.map(toggleChangedFilter(value)),
+      category: filters.category.map(toggleChangedFilter(value)),
     });
   };
 
