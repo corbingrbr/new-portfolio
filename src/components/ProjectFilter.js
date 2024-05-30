@@ -22,11 +22,11 @@ export default function ProjectFilter2({
   active_filter_count,
 }) {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 rounded-t-2xl">
       <Disclosure
         as="section"
         aria-labelledby="filter-heading"
-        className="relative z-10 border-t border-b border-gray-300 grid items-center"
+        className="relative z-10  border-b border-gray-300 grid items-center"
       >
         <div className="row-start-1 py-4 border-b border-gray-300">
           <div className="justify-start max-w-7xl mx-auto flex space-x-6 divide-x divide-gray-200 text-sm px-4 sm:px-0 lg:px-2">

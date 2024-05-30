@@ -102,10 +102,20 @@ export default function ProjectPortfolio({ projects }) {
         <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
       </div>
 
-      <div className="bg-white m-8 overflow-hidden">
-        {/*<div className="max-w-2xl mx-auto py-8 px-4 sm:px-6 lg:max-w-full lg:w-full lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8 overflow-hidden">*/}
-        <div className="p-8 lg:grid lg:grid-cols-2 lg:gap-x-8 ">
-          <div className="">
+      <div className="book ml-96">
+        <div className="back"></div>
+        <div className="page6">
+          <div className="lg:mt-0 lg:col-start-2 p-5">
+            <FeaturedProject
+              project={projects.find(
+                projectWithSameTitle(featuredProject || selectedProject)
+              )}
+            />
+          </div>
+        </div>
+        <div className="page5 overflow-hidden pr-2 pt-2">
+          {" "}
+          <div className="project-selection">
             <ProjectFilter
               filters={filters}
               onFilterChange={handleFilterChange}
@@ -126,15 +136,12 @@ export default function ProjectPortfolio({ projects }) {
               />
             </div>
           </div>
-
-          <div className="lg:mt-0 lg:col-start-2 ">
-            <FeaturedProject
-              project={projects.find(
-                projectWithSameTitle(featuredProject || selectedProject)
-              )}
-            />
-          </div>
         </div>
+        <div className="page4"></div>
+        <div className="page3"></div>
+        <div className="page2"></div>
+        <div className="page1"></div>
+        <div className="front"></div>
       </div>
     </div>
   );
