@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const Cucumber: Project = {
   name: "Cucumber",
   year: 2024,
-  month: 0,
+  month: 4,
   technologies: ["ts", "playwright", "cucumber"],
   repositoryLink: "",
   projectLink: "cucumber",
+  viewLinks: [],
   icon: "fas fa-cucumber",
   images: [],
   shortDescription:
@@ -15,15 +16,15 @@ const Cucumber: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

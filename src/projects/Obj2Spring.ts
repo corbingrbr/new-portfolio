@@ -2,11 +2,12 @@ import Project from "../interfaces/project.interface";
 
 const Obj2Spring: Project = {
   name: "Obj2Spring",
-  year: 2014,
-  month: 0,
+  year: 2016,
+  month: 3,
   technologies: ["cpp", "opengl"],
   repositoryLink: "https://github.com/corbingrbr/Obj2SpringSystem",
   projectLink: "obj2spring",
+  viewLinks: [],
   icon: "fab fa-connectdevelop",
   images: [
     {
@@ -16,20 +17,23 @@ const Obj2Spring: Project = {
     },
   ],
   shortDescription:
-    "A visualization of spring systems derived from supplied obj files",
-  longDescription: "This is this projects loooooooooooong description.",
+    "A visualization of spring systems derived from a supplied obj file",
+  longDescription: `This project was for a Computer Animation course at Cal Poly. 
+                    We were to incorporate the recent course material on springs into something of our choice. 
+                    I wanted to create a simulation which would intake a supplied obj file model 
+                    and render it as a set of points connected by springs.`,
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "Object File Handler" }, { name: "Spring System" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "Spring Formula" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "Object File Handler" }],
     },
   ],
 };

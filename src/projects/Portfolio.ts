@@ -2,11 +2,12 @@ import Project from "../interfaces/project.interface";
 
 const Portfolio: Project = {
   name: "Portfolio",
-  year: 2015,
-  month: 0,
+  year: 2016,
+  month: 9,
   technologies: ["html", "css", "js"],
   repositoryLink: "",
   projectLink: "portfolio",
+  viewLinks: [],
   icon: "fa-regular fa-briefcase",
   images: [
     {
@@ -30,15 +31,15 @@ const Portfolio: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

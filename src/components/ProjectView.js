@@ -10,7 +10,7 @@ import { classNames } from "../utils/utils";
 
 import ProjectIconImage from "./ProjectIconImage";
 
-import P from "../utils/ProjectUtils";
+import * as P from "../utils/ProjectUtils";
 
 const ProjectView3 = ({ projects }) => {
   let { project_id } = useParams();
@@ -61,9 +61,9 @@ const ImageGallery = ({ images }) => (
     {/* Image selector */}
     <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
       <Tab.List className="grid grid-cols-4 gap-6">
-        {images.map((image) => (
+        {images.map((image, ndx) => (
           <Tab
-            key={image.id}
+            key={ndx}
             className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
           >
             {({ selected }) => (
@@ -138,31 +138,55 @@ const ProjectInformation = ({ project }) => (
     </div>
 
     <div className="mt-6">
-      <h3 className="sr-only">Description</h3>
+      <h3 className="sr-only">Short Description</h3>
 
       <div
-        className="space-y-6 text-base text-gray-700"
+        className="prose prose-sm mt-4 text-gray-500"
+        dangerouslySetInnerHTML={{ __html: P.getShortDescription(project) }}
+      />
+    </div>
+
+    <div className="mt-6">
+      <h3 className="sr-only">Long Description</h3>
+
+      <div
+        className="prose prose-sm mt-4 text-gray-500"
         dangerouslySetInnerHTML={{ __html: P.getFullDescription(project) }}
       />
     </div>
 
-    <form className="mt-6 flex flex-row">
-      <div className="flex">
-        <button
-          type="submit"
-          className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+    <form className="mt-6 flex flex-row justify-start">
+      {P.getViewLinks(project).map((viewLink, ndx) => (
+        <a
+          href={viewLink.url}
+          target="_blank"
+          key={ndx}
+          className={ndx > 0 ? "ml-4" : ""}
         >
-          Watch Video
-        </button>
-      </div>
-
-      {P.hasRepositoryLink(project) && (
-        <a href={P.getRepositoryLink(project)}>
           <button
             type="button"
-            className="w-full ml-4 border border-transparent rounded-md py-2 px-3 flex items-center justify-center text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
+            className={
+              "items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+            }
           >
-            <i class="fa-brands fa-github fa-2x"></i>
+            {viewLink.label}
+          </button>
+        </a>
+      ))}
+
+      {P.hasRepositoryLink(project) && (
+        <a
+          href={P.getRepositoryLink(project)}
+          target="_blank"
+          className={P.hasViewLinks(project) ? "ml-4" : ""}
+        >
+          <button
+            type="button"
+            className={classNames(
+              "flex items-center justify-center rounded-md border border-transparent py-2 px-3 text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
+            )}
+          >
+            <i className="fa-brands fa-github fa-2x"></i>
             <span className="sr-only">Go to repository</span>
           </button>
         </a>
@@ -208,8 +232,9 @@ const ProjectInformation = ({ project }) => (
                   <ul role="list">
                     {detail.items.map((item) => (
                       <li key={item}>
-                        <p className="font-bold">Feature One:</p>
-                        <p>
+                        <p className="font-medium">{item.name}</p>
+                        <p>{item.additional}</p>
+                        {/*<p>
                           This is some information about feature one. It is very
                           detailed and therefore requires a lot of commentary on
                           the matter.
@@ -224,8 +249,8 @@ const ProjectInformation = ({ project }) => (
                           <p>
                             Here I am resuming the conversation once more after
                             some thoughtful code shared above.
-                          </p>
-                        </span>
+                    </p>
+                    </span>*/}
                       </li>
                     ))}
                   </ul>

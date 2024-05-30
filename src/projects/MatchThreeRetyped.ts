@@ -4,9 +4,10 @@ const MatchThreeRetyped: Project = {
   name: "Match Three Retyped",
   year: 2023,
   month: 0,
-  technologies: ["ts", "jest", "webgl", "threejs", "react", "gsap"],
+  technologies: ["ts", "jest", "webgl", "threejs", "react", "gsap", "tailwind"],
   repositoryLink: "",
   projectLink: "match-three-retyped",
+  viewLinks: [{ label: "Play Game", url: "" }],
   icon: "fas fa-th",
   images: [
     {
@@ -32,20 +33,20 @@ const MatchThreeRetyped: Project = {
     },
   ],
   shortDescription:
-    "A rewrite of the 'Match Three' game in typescript with improvements.",
+    "A rewrite of the <a href='/projects/match-three' class='font font-bold text-indigo-600 hover:text-indigo-700 no-underline hover:underline'>Match Three</a> game in typescript with improvements.",
   longDescription: "This is this projects loooooooooooong description.",
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

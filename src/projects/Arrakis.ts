@@ -7,6 +7,7 @@ const Arrakis: Project = {
   technologies: ["cpp", "opengl"],
   repositoryLink: "",
   projectLink: "arrakis",
+  viewLinks: [],
   icon: "fas fa-globe-europe",
   images: [
     {
@@ -17,19 +18,17 @@ const Arrakis: Project = {
   ],
   shortDescription:
     "Rotationary planet design with interesting shader techniques to produce night/day environment.",
-  longDescription: "This is this projects loooooooooooong description.",
+  longDescription: `This was one of the first self directed projects I produced in a graphics course at Cal Poly. 
+                    The goal was to employ the previous learned techniques involving the composition of transformation matrices and vertex/fragment shaders. 
+                    I chose to create a planet with a randomized distribution of buildings and clouds with a day/night scheme.
+  `,
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
-    },
-    {
-      name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
-    },
-    {
-      name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [
+        { name: "Clouds and Buildings" },
+        { name: "Day and Night Scheme" },
+      ],
     },
   ],
 };

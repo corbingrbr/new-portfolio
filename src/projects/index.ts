@@ -15,6 +15,7 @@ import Cucumber from "./Cucumber";
 import ValidatedEndpoint from "./ValidatedEndpoint";
 import RSIMLModel from "./RSIMLModel";
 import Portfolio from "./Portfolio";
+import PortfolioRetyped from "./PortfolioRetyped";
 
 import Project from "../interfaces/project.interface";
 
@@ -36,6 +37,7 @@ const projects: Project[] = [
   RSIMLModel,
   WebGLCL,
   Portfolio,
+  PortfolioRetyped,
 ];
 
 export default projects;

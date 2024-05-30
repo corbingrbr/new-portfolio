@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const RSIMLModel: Project = {
   name: "RSI ML Model",
   year: 2024,
-  month: 0,
+  month: 5,
   technologies: ["ts", "tensorflow"],
   repositoryLink: "",
   projectLink: "rsi-ml-model",
+  viewLinks: [],
   icon: "fa fa-chart-scatter",
   images: [],
   shortDescription:
@@ -15,15 +16,15 @@ const RSIMLModel: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

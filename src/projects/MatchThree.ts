@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const MatchThree: Project = {
   name: "Match Three",
   year: 2021,
-  month: 0,
+  month: 8,
   technologies: ["js", "webgl", "threejs", "gsap"],
   repositoryLink: "",
   projectLink: "match-three",
+  viewLinks: [],
   icon: "fas fa-th",
   images: [
     {
@@ -37,20 +38,20 @@ const MatchThree: Project = {
     },
   ],
   shortDescription:
-    "Interactive visualization of three crystal lattice structures.",
+    "A simple item grouping game exploring Three.js graphic development.",
   longDescription: "This is this projects loooooooooooong description.",
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

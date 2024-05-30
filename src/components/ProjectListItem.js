@@ -1,5 +1,5 @@
 import { classNames } from "../utils/utils";
-import P from "../utils/ProjectUtils";
+import * as P from "../utils/ProjectUtils";
 
 const ProjectListItem = ({
   project,
@@ -30,9 +30,10 @@ const ProjectListItem = ({
           <p className="text-sm font-semibold leading-6 text-gray-900 justify-self-start text-left">
             {P.getName(project)}
           </p>
-          <p className="mt-1 truncate text-xs leading-5 text-gray-500 justify-self-start text-left">
-            {P.getShortDescription(project)}
-          </p>
+          <p
+            className="mt-1 truncate text-xs leading-5 text-gray-500 justify-self-start text-left"
+            dangerouslySetInnerHTML={{ __html: P.getShortDescription(project) }}
+          ></p>
         </div>
       </div>
       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">

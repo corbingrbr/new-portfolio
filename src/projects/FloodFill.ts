@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const FloodFill: Project = {
   name: "FloodFill",
   year: 2015,
-  month: 0,
+  month: 6,
   technologies: ["cpp", "opengl"],
   repositoryLink: "https://github.com/MatheusFaria/flood-fill",
   projectLink: "flood-fill",
+  viewLinks: [{ label: "Watch Video", url: "" }],
   icon: "fa-light fa-water-arrow-up",
   images: [
     {
@@ -17,20 +18,31 @@ const FloodFill: Project = {
   ],
   shortDescription:
     "A puzzle platformer involving color within a voxel level design.",
-  longDescription: "This is this projects loooooooooooong description.",
+  longDescription: `This was a group final project for one of my Cal Poly Graphics courses involving myself and three other classmates. 
+  The goal was to take a game idea from concept art to demo using the basic OpenGL framework. 
+  This was the most complex project I'd worked on up until this point, 
+  and it introduced me to how version control works within a team environment. 
+  We tackled separate features and the culmination of efforts produced a final product I was very proud of. Check out the video featuring its gameplay below!`,
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [
+        { name: "Concept Art" },
+        { name: "Level Design" },
+        { name: "Menu Screen" },
+        { name: "Lever Mechanism" },
+        { name: "Flood Mechanism" },
+        { name: "Sink Mechanism" },
+      ],
     },
-    {
+    /*{
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
-    },
+      items: [{ name: "" }],
+    },*/
   ],
 };
 

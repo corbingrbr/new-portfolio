@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import ProjectIconImage from "./ProjectIconImage";
-import P from "../utils/ProjectUtils";
+import * as P from "../utils/ProjectUtils";
 
 const FeaturedProject = ({ project }) => {
   return !project ? (
@@ -47,6 +47,7 @@ const FeaturedProject = ({ project }) => {
                         alt={`${technology}.svg`}
                         height={24}
                         width={24}
+                        data-tooltip-target={`${technology}-popover`}
                       />
                     ))}
                 </div>
@@ -54,9 +55,12 @@ const FeaturedProject = ({ project }) => {
             </div>
 
             <div className="mt-4 space-y-6">
-              <p className="text-left text-base text-gray-500">
-                {P.getShortDescription(project)}
-              </p>
+              <p
+                className="text-left text-base text-gray-500"
+                dangerouslySetInnerHTML={{
+                  __html: P.getShortDescription(project),
+                }}
+              ></p>
             </div>
 
             <form>
@@ -79,7 +83,7 @@ const FeaturedProject = ({ project }) => {
                       type="button"
                       className="w-full ml-4 border border-transparent rounded-md py-2 px-3 flex items-center justify-center text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
                     >
-                      <i class="fa-brands fa-github fa-2x"></i>
+                      <i className="fa-brands fa-github fa-2x"></i>
                       <span className="sr-only">Go to repository</span>
                     </button>
                   </a>

@@ -15,23 +15,17 @@ const AmazonFishing: Project = {
   ],
   repositoryLink: "",
   projectLink: "amazon-fishing",
+  viewLinks: [],
   icon: "fas fa-fish",
   images: [],
   shortDescription:
-    "A website produced for a friend's Brazilian fishing and resort experience.",
-  longDescription: "This is this projects loooooooooooong description.",
+    "A website produced for a Brazilian fishing and resort experience.",
+  longDescription:
+    "A buddy of mine's family reached out to me to produce a website for his fish and stay experience located in Brazil. The site was to be fairly simple, featuring a set of images, have a jungle theme, and include a email form to collect any interested clientele.",
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
-    },
-    {
-      name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
-    },
-    {
-      name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "Home Page" }, { name: "Contact Page" }],
     },
   ],
 };

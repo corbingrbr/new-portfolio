@@ -12,9 +12,7 @@ import ProjectPortfolio from "./components/ProjectPortfolio";
 import ProjectView from "./components/ProjectView";
 
 import projects from "./projects";
-import P from "./utils/ProjectUtils";
-
-projects.sort((a, b) => P.getYear(b) - P.getYear(a));
+import * as P from "./utils/ProjectUtils";
 
 const onlyUnique = (value, index, self) => self.indexOf(value) === index;
 

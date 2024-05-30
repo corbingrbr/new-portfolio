@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const ValidatedEndpoint: Project = {
   name: "Validated Endpoint",
   year: 2023,
-  month: 0,
+  month: 10,
   technologies: ["java"],
   repositoryLink: "",
   projectLink: "validated-endpoint",
+  viewLinks: [],
   icon: "fas fa-shield-check",
   images: [],
   shortDescription: "An interface to simplify endpoint design process.",
@@ -14,15 +15,15 @@ const ValidatedEndpoint: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

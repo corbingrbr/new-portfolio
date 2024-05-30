@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
-import P from "../utils/ProjectUtils";
+import * as P from "../utils/ProjectUtils";
 
 const ProjectList = ({
   projects,

@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const NFTree: Project = {
   name: "NFTree",
   year: 2021,
-  month: 0,
+  month: 11,
   technologies: ["react", "ethereum", "tailwind"],
   repositoryLink: "",
   projectLink: "nftree",
+  viewLinks: [{ label: "Watch Video", url: "" }],
   icon: "fas fa-tree",
   images: [
     {
@@ -31,15 +32,15 @@ const NFTree: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };

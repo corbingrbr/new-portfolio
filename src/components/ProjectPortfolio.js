@@ -5,7 +5,7 @@ import ProjectList from "./ProjectList";
 import FeaturedProject from "./FeaturedProject";
 import Navigation from "./Navigation";
 
-import P from "../utils/ProjectUtils";
+import * as P from "../utils/ProjectUtils";
 
 const filter_data = {
   technology: [
@@ -61,8 +61,6 @@ let toggleChangedFilter = (value_to_toggle) => (filter) =>
   filter.value == value_to_toggle
     ? { ...filter, checked: !filter.checked }
     : filter;
-const oldestFirst = (a, b) => P.getYear(a) - P.getYear(b);
-const newestFirst = (a, b) => P.getYear(b) - P.getYear(a);
 
 const projectWithSameTitle = (title) => (project) =>
   title === P.getName(project);
@@ -79,7 +77,7 @@ export default function ProjectPortfolio({ projects }) {
     projects,
     selectedTechnologies,
     selectedCategories
-  ).sort(sort == "newest" ? newestFirst : oldestFirst);
+  ).sort(sort === "newest" ? P.byNewest : P.byOldest);
 
   let handleFilterChange = (e) => {
     const value = e.currentTarget.getAttribute("data-value");

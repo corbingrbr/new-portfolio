@@ -3,10 +3,11 @@ import Project from "../interfaces/project.interface";
 const CCXTTrader: Project = {
   name: "CCXT Trader",
   year: 2024,
-  month: 0,
-  technologies: ["ts", "nextjs"],
+  month: 2,
+  technologies: ["ts", "nextjs", "tailwind"],
   repositoryLink: "",
   projectLink: "ccxt-trader",
+  viewLinks: [],
   icon: "fas fa-chart-candlestick",
   images: [],
   shortDescription:
@@ -15,15 +16,15 @@ const CCXTTrader: Project = {
   details: [
     {
       name: "Features",
-      items: ["Feature One", "Feature Two"],
+      items: [{ name: "" }, { name: "" }],
     },
     {
       name: "Highlights",
-      items: ["Highlights One", "Highlights Two"],
+      items: [{ name: "" }],
     },
     {
       name: "Improvements",
-      items: ["Improvement One", "Improvement Two"],
+      items: [{ name: "" }],
     },
   ],
 };
