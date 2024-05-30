@@ -4,6 +4,7 @@ import ProjectFilter from "./ProjectFilter";
 import ProjectList from "./ProjectList";
 import FeaturedProject from "./FeaturedProject";
 import Navigation from "./Navigation";
+import Book from "./Book";
 
 import * as P from "../utils/ProjectUtils";
 
@@ -98,24 +99,11 @@ export default function ProjectPortfolio({ projects }) {
 
   return (
     <div className="max-w-screen-xl mx-auto grid grid-cols-1">
-      <div className="">
-        <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
-      </div>
+      <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
 
-      <div className="book ml-96">
-        <div className="back"></div>
-        <div className="page6">
-          <div className="lg:mt-0 lg:col-start-2 p-5">
-            <FeaturedProject
-              project={projects.find(
-                projectWithSameTitle(featuredProject || selectedProject)
-              )}
-            />
-          </div>
-        </div>
-        <div className="page5 overflow-hidden pr-2 pt-2">
-          {" "}
-          <div className="project-selection">
+      <Book
+        leftPage={
+          <div className="left-page">
             <ProjectFilter
               filters={filters}
               onFilterChange={handleFilterChange}
@@ -136,13 +124,17 @@ export default function ProjectPortfolio({ projects }) {
               />
             </div>
           </div>
-        </div>
-        <div className="page4"></div>
-        <div className="page3"></div>
-        <div className="page2"></div>
-        <div className="page1"></div>
-        <div className="front"></div>
-      </div>
+        }
+        rightPage={
+          <div className="lg:mt-0 lg:col-start-2 p-5">
+            <FeaturedProject
+              project={projects.find(
+                projectWithSameTitle(featuredProject || selectedProject)
+              )}
+            />
+          </div>
+        }
+      />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navigation({ pages }) {
   return (
     <nav className="flex m-8" aria-label="Breadcrumb">
@@ -7,10 +9,10 @@ export default function Navigation({ pages }) {
       >
         <li className="flex">
           <div className="flex items-center">
-            <a href="/" className="text-gray-500 hover:text-gray-700">
+            <Link to="/" className="text-gray-500 hover:text-gray-700">
               @corbingrbr
               <span className="sr-only">corbingrbr</span>
-            </a>
+            </Link>
           </div>
         </li>
         {pages.map((page, ndx) => (
@@ -26,13 +28,13 @@ export default function Navigation({ pages }) {
               >
                 <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z" />
               </svg>
-              <a
-                href={page.href}
+              <Link
+                to={page.href}
                 className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
                 aria-current={page.current ? "page" : undefined}
               >
                 {page.name}
-              </a>
+              </Link>
             </div>
           </li>
         ))}

@@ -1,13 +1,14 @@
 import { Tab } from "@headlessui/react";
 import ProjectIconImage from "./ProjectIconImage";
 import * as P from "../utils/ProjectUtils";
+import { Link } from "react-router-dom";
 
 const FeaturedProject = ({ project }) => {
   return !project ? (
     <h2 className="text-gray">No Project to Feature</h2>
   ) : (
     <div className="bg-white">
-      <div className="mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-1 lg:gap-x-8">
+      <div className="mx-auto lg:grid lg:grid-cols-1 lg:gap-x-8">
         {/* Image(s) */}
         <div className="lg:mt-0 lg:col-start-1 lg:row-span-2">
           {P.hasAnImage(project) ? (
@@ -65,8 +66,8 @@ const FeaturedProject = ({ project }) => {
 
             <form>
               <div className="mt-10 flex">
-                <a
-                  href={"/projects/" + P.getProjectLink(project)}
+                <Link
+                  to={"/projects/" + P.getProjectLink(project)}
                   className="flex-grow"
                 >
                   <button
@@ -75,7 +76,7 @@ const FeaturedProject = ({ project }) => {
                   >
                     Read More
                   </button>
-                </a>
+                </Link>
 
                 {P.hasRepositoryLink(project) && (
                   <a href={P.getRepositoryLink(project)}>

@@ -44,8 +44,8 @@ code {
 .page6 {
   transform-style: preserve-3d;
   position: absolute;
-  width: 500px;
-  height: 800px;
+  width: 600px;
+  height: 900px;
   top: 0;
   left: 0;
   transform-origin: left center;
@@ -98,13 +98,43 @@ code {
   background: #fdfdfd;
 }
 
-.project-selection {
+.left-page {
   transform: rotateY(180deg);
 }
 
-.front,
-.back {
-  /*transform: scale(1.02);*/
+.front::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: calc(100% + 10px);
+  top: -5px;
+  z-index: 300;
+  border-radius: 5px;
+  right: 70px;
+  transition: 2s ease;
+  /*background: black;*/
+
+  background: linear-gradient(
+    to right,
+    black 0%,
+    #444444 12%,
+    black 25%,
+    #444444 37%,
+    black 50%,
+    #444444 62%,
+    black 75%,
+    #444444 87%,
+    black 100%
+  );
+}
+
+.front {
+  /*background: linear-gradient(
+    to right,
+    darken(#444444, 15%) 0%,
+    #444444 12%,
+    darken(#444444, 15%) 25%
+  );*/
 }
 
 .book:hover .front {
