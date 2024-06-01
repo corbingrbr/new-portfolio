@@ -2,11 +2,16 @@ import { classNames } from "../utils/utils";
 import { Tooltip } from "react-tippy";
 import { useState } from "react";
 
-const Book = ({ leftPage, rightPage, activeBookmark, setActiveBookmark }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Book = ({
+  leftPage,
+  rightPage,
+  activeBookmark,
+  setActiveBookmark,
+  isOpen,
+  setIsOpen,
+}) => {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 mt-10">
       <div className="book col-span-2 col-start-2">
         <Page name="back" rotation={0} scale={1.02} bookIsOpen={isOpen}>
           <span
@@ -19,10 +24,9 @@ const Book = ({ leftPage, rightPage, activeBookmark, setActiveBookmark }) => {
               right: "-70px",
               borderBottomRightRadius: "10px",
               borderTopRightRadius: "10px",
-              background: "#333333",
             }}
             onClick={() => setIsOpen(!isOpen)}
-            className="flex"
+            className="flex open-book-tab"
           >
             <i
               className={classNames(
@@ -57,7 +61,7 @@ const Book = ({ leftPage, rightPage, activeBookmark, setActiveBookmark }) => {
           <Bookmark
             label={"projects"}
             icon={"fa-solid fa-2x fa-computer-classic"}
-            color={"#D97066"}
+            color={"#4F45E4"}
             top={"260px"}
             isActive={activeBookmark === "projects"}
             setActiveBookmark={setActiveBookmark}
@@ -66,7 +70,7 @@ const Book = ({ leftPage, rightPage, activeBookmark, setActiveBookmark }) => {
           <Bookmark
             label={"resume"}
             icon={"fa-solid fa-2x fa-file-user"}
-            color={"#F4CE14"}
+            color={"#CDDC39"}
             top={"340px"}
             isActive={activeBookmark === "resume"}
             setActiveBookmark={setActiveBookmark}
@@ -75,7 +79,7 @@ const Book = ({ leftPage, rightPage, activeBookmark, setActiveBookmark }) => {
           <Bookmark
             label={"artwork"}
             icon={"fa-solid fa-2x fa-brush"}
-            color={"#495E57"}
+            color={"#9BA3AF"}
             top={"420px"}
             isActive={activeBookmark === "artwork"}
             setActiveBookmark={setActiveBookmark}
@@ -115,36 +119,42 @@ const Bookmark = ({
   setActiveBookmark,
   bookIsOpen,
 }) => {
+  const capitalizeFirstLetter = (string) =>
+    string.charAt(0).toUpperCase() + string.slice(1);
+
   return (
-    <Tooltip title={label} position="left" arrow={true}>
-      <span
-        style={{
-          width: "150px",
-          height: "0px",
-          borderBottom: "30px solid " + color,
-          borderTop: "30px solid " + color,
-          borderLeft: "15px solid transparent",
-          float: "right",
-          marginBottom: "20px",
-          fontSize: "17px",
-          fontWeight: 700,
-          position: "absolute",
-          top: top,
-          transform: bookIsOpen
-            ? "rotateY(180deg)"
-            : "rotateY(180deg) translateX(100px)",
-        }}
-        className={classNames(
-          "flex",
-          isActive ? "bookmark-active" : "bookmark"
-        )}
-        onClick={() => {
-          setActiveBookmark(label);
-        }}
+    <span
+      style={{
+        width: "150px",
+        height: "0px",
+        borderBottom: "30px solid " + color,
+        borderTop: "30px solid " + color,
+        borderLeft: "15px solid transparent",
+        float: "right",
+        marginBottom: "20px",
+        fontSize: "17px",
+        fontWeight: 700,
+        position: "absolute",
+        top: top,
+        transform: bookIsOpen
+          ? "rotateY(180deg)"
+          : "rotateY(180deg) translateX(100px)",
+      }}
+      className={classNames("flex", isActive ? "bookmark-active" : "bookmark")}
+      onClick={() => {
+        setActiveBookmark(label);
+      }}
+    >
+      <Tooltip
+        title={capitalizeFirstLetter(label)}
+        position="left"
+        sticky={true}
+        //open={true}
+        className="bookmark-tooltip self-center mt-2"
       >
         <i className={`${icon} text-white self-center ml-5`} />
-      </span>
-    </Tooltip>
+      </Tooltip>
+    </span>
   );
 };
 

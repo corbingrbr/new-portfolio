@@ -13,7 +13,7 @@ import ProjectIconImage from "./ProjectIconImage";
 
 import * as P from "../utils/ProjectUtils";
 
-const ProjectView3 = ({ projects }) => {
+const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
   let { project_id } = useParams();
 
   let project = projects.find((p) => P.getProjectLink(p) === project_id);
@@ -32,6 +32,8 @@ const ProjectView3 = ({ projects }) => {
         <Navigation pages={crumbs} />
 
         <Book
+          isOpen={isBookOpen}
+          setIsOpen={setIsBookOpen}
           leftPage={<ProjectInformation project={project} />}
           rightPage={
             /* Image gallery */
@@ -41,18 +43,8 @@ const ProjectView3 = ({ projects }) => {
               <ProjectIconImage icon={P.getIcon(project)} />
             )
           }
+          activeBookmark={"projects"}
         />
-
-        {/*<div className="bg-white m-8 h-full overflow-hidden">
-          <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8 text-left">
-            <div className="mx-auto max-w-2xl lg:max-w-none">
-            
-              <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-               
-              </div>
-            </div>
-          </main>
-        </div>*/}
       </div>
     );
   }

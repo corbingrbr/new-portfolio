@@ -122,14 +122,22 @@ code {
 .bookmark:hover,
 .bookmark-active {
   right: -100px;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .bookmark {
   right: -80px;
   /*transform-style: preserve-3d;*/
   /*transform-origin: left center;*/
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.open-book-tab:hover {
+  background: #444444;
+}
+
+.open-book-tab {
+  background: #333333;
 }
 
 .notebook-skin {
@@ -155,43 +163,3 @@ code {
   bottom: 0;
   background: #cddc39;
 }
-
-/*
-.book:hover .front {
-  transform: rotateY(-180deg) scale(1.02);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page1 {
-  transform: rotateY(-177deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page3 {
-  transform: rotateY(-170deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page5 {
-  transform: rotateY(-165deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page6 {
-  transform: rotateY(-15deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page4 {
-  transform: rotateY(-10deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .page2 {
-  transform: rotateY(-3deg) scale(1);
-  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
-}
-
-.book:hover .back {
-  transform: rotateY(-0deg) scale(1.02);
-}*/

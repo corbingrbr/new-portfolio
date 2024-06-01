@@ -20,6 +20,7 @@ export default function ProjectFilter2({
   current_sort,
   project_count,
   active_filter_count,
+  handleViewFilters,
 }) {
   return (
     <div className="bg-gray-200 rounded-t-2xl">
@@ -39,7 +40,10 @@ export default function ProjectFilter2({
             </div>
 
             <div>
-              <Disclosure.Button className="group text-gray-700 font-medium flex items-center pl-6">
+              <Disclosure.Button
+                className="group text-gray-700 font-medium flex items-center pl-6"
+                onClick={handleViewFilters}
+              >
                 <FilterIcon
                   className="flex-none w-5 h-5 mr-2 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"

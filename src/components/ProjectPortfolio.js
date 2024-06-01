@@ -66,9 +66,15 @@ let toggleChangedFilter = (value_to_toggle) => (filter) =>
 const projectWithSameTitle = (title) => (project) =>
   title === P.getName(project);
 
-export default function ProjectPortfolio({ projects }) {
+export default function ProjectPortfolio({
+  projects,
+  isBookOpen,
+  setIsBookOpen,
+}) {
   const [filters, setFilters] = useState(createDefaultFilterState(filter_data));
   const [sort, setSort] = useState("newest");
+
+  const [isViewingFilters, setIsViewingFilters] = useState(false);
 
   const selectedTechnologies = filters.technology
     .filter(isChecked)
@@ -104,6 +110,8 @@ export default function ProjectPortfolio({ projects }) {
       <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
 
       <Book
+        isOpen={isBookOpen}
+        setIsOpen={setIsBookOpen}
         leftPage={
           <div className="left-page">
             <ProjectFilter
@@ -114,17 +122,20 @@ export default function ProjectPortfolio({ projects }) {
               current_sort={sort}
               active_filter_count={countActiveFilters(filters)}
               project_count={filteredProjects.length}
+              handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
             />
 
-            <div className="max-h-[800px] overflow-y-scroll">
-              <ProjectList
-                projects={filteredProjects}
-                selectedProject={selectedProject}
-                featuredProject={featuredProject}
-                setSelectedProject={setSelectedProject}
-                setFeaturedProject={setFeaturedProject}
-              />
-            </div>
+            {!isViewingFilters && (
+              <div className="max-h-[800px] overflow-y-scroll">
+                <ProjectList
+                  projects={filteredProjects}
+                  selectedProject={selectedProject}
+                  featuredProject={featuredProject}
+                  setSelectedProject={setSelectedProject}
+                  setFeaturedProject={setFeaturedProject}
+                />
+              </div>
+            )}
           </div>
         }
         rightPage={
