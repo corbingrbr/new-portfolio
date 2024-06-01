@@ -16,16 +16,6 @@ code {
     monospace;
 }
 
-/*body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  background: #ccc;
-}*/
-
 .book {
   transform-style: preserve-3d;
   position: relative;
@@ -50,11 +40,13 @@ code {
   left: 0;
   transform-origin: left center;
   transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 .front,
 .back {
-  /*background: navy;*/
   background: #353f4a;
 }
 
@@ -102,41 +94,69 @@ code {
   transform: rotateY(180deg);
 }
 
+/*This is the drawstring*/
 .front::before {
   content: "";
   position: absolute;
-  width: 35px;
+  width: 30px;
   height: calc(100% + 10px);
   top: -5px;
   z-index: 300;
   border-radius: 5px;
   right: 70px;
   transition: 2s ease;
-  /*background: black;*/
-
   background: linear-gradient(
     to right,
     black 0%,
-    #444444 12%,
+    #333333 12%,
     black 25%,
-    #444444 37%,
+    #333333 37%,
     black 50%,
-    #444444 62%,
+    #333333 62%,
     black 75%,
-    #444444 87%,
+    #333333 87%,
     black 100%
   );
 }
 
-.front {
-  /*background: linear-gradient(
-    to right,
-    darken(#444444, 15%) 0%,
-    #444444 12%,
-    darken(#444444, 15%) 25%
-  );*/
+.bookmark:hover,
+.bookmark-active {
+  right: -100px;
+  transition: transform 1s ease-in-out;
 }
 
+.bookmark {
+  right: -80px;
+  /*transform-style: preserve-3d;*/
+  /*transform-origin: left center;*/
+  transition: transform 1s ease-in-out;
+}
+
+.notebook-skin {
+  height: 200px;
+  background: #e8e8e0;
+  margin-top: 200px;
+  padding: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+  color: #222;
+  text-align: left;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.notebook-skin::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  left: 0;
+  bottom: 0;
+  background: #cddc39;
+}
+
+/*
 .book:hover .front {
   transform: rotateY(-180deg) scale(1.02);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
@@ -174,4 +194,4 @@ code {
 
 .book:hover .back {
   transform: rotateY(-0deg) scale(1.02);
-}
+}*/

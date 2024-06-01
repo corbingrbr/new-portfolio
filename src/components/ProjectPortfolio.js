@@ -97,6 +97,8 @@ export default function ProjectPortfolio({ projects }) {
   const [featuredProject, setFeaturedProject] = useState(projectToShowFirst);
   const [selectedProject, setSelectedProject] = useState(projectToShowFirst);
 
+  const [activeBookmark, setActiveBookmark] = useState("projects");
+
   return (
     <div className="max-w-screen-xl mx-auto grid grid-cols-1">
       <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
@@ -114,7 +116,7 @@ export default function ProjectPortfolio({ projects }) {
               project_count={filteredProjects.length}
             />
 
-            <div className="max-h-[750px] overflow-y-scroll">
+            <div className="max-h-[800px] overflow-y-scroll">
               <ProjectList
                 projects={filteredProjects}
                 selectedProject={selectedProject}
@@ -126,7 +128,7 @@ export default function ProjectPortfolio({ projects }) {
           </div>
         }
         rightPage={
-          <div className="lg:mt-0 lg:col-start-2 p-5">
+          <div className="lg:mt-0 lg:col-start-2">
             <FeaturedProject
               project={projects.find(
                 projectWithSameTitle(featuredProject || selectedProject)
@@ -134,6 +136,8 @@ export default function ProjectPortfolio({ projects }) {
             />
           </div>
         }
+        activeBookmark={activeBookmark}
+        setActiveBookmark={setActiveBookmark}
       />
     </div>
   );
