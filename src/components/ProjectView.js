@@ -23,7 +23,7 @@ const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
   } else {
     // Bread Crumbs
     let crumbs = [
-      { name: "Projects", href: "/projects", current: false },
+      { name: "Projects", href: "/projects", current: false, color: "#4F45E4" },
       { name: `${P.getName(project)}`, href: "#", current: true },
     ];
 
@@ -103,8 +103,8 @@ const ImageGallery = ({ images }) => (
 );
 
 const ProjectInformation = ({ project }) => (
-  <div className="left-page text-left overflow-hidden sm:px-6 sm:pt-6 lg:px-8">
-    <div className="mt-10 px-4 sm:mt-5 sm:px-0 lg:mt-0">
+  <div className="left-page text-left ">
+    <div className="mt-10 px-4 sm:mt-5 sm:px-0 lg:mt-0  pb-4">
       <h1 className="text-3xl font-bold tracking-tight text-gray-900">
         {P.getName(project)}
       </h1>
@@ -137,7 +137,9 @@ const ProjectInformation = ({ project }) => (
           </div>
         </div>
       </div>
+    </div>
 
+    <div className="overflow-y-auto max-h-[700px] bg-gray-100 p-4">
       <div className="mt-6">
         <h3 className="sr-only">Short Description</h3>
 
@@ -194,7 +196,7 @@ const ProjectInformation = ({ project }) => (
         )}
       </form>
 
-      <section aria-labelledby="details-heading" className="mt-12">
+      <section aria-labelledby="details-heading" className="mt-4">
         <h2 id="details-heading" className="sr-only">
           Additional details
         </h2>
@@ -234,24 +236,19 @@ const ProjectInformation = ({ project }) => (
                       {detail.items.map((item) => (
                         <li key={item}>
                           <p className="font-medium">{item.name}</p>
-                          <p>{item.additional}</p>
-                          {/*<p>
-                          This is some information about feature one. It is very
-                          detailed and therefore requires a lot of commentary on
-                          the matter.
-                        </p>
-                        <span className="not-prose">
-                          <CodeBlock
-                            language="typescript"
-                            text={`const addTwo = (x: number): number => x + 2;`}
-                            theme={atomOneDark}
-                            showLineNumbers={false}
-                          />
-                          <p>
-                            Here I am resuming the conversation once more after
-                            some thoughtful code shared above.
-                    </p>
-                    </span>*/}
+                          {item.additional &&
+                            item.additional.map((a) =>
+                              a.type == "code" ? (
+                                <p>
+                                  <NonProseCodeBlock
+                                    text={a.content}
+                                    language={a.language}
+                                  />
+                                </p>
+                              ) : (
+                                <p>{a.content}</p>
+                              )
+                            )}
                         </li>
                       ))}
                     </ul>
@@ -264,4 +261,15 @@ const ProjectInformation = ({ project }) => (
       </section>
     </div>
   </div>
+);
+
+const NonProseCodeBlock = ({ language, text }) => (
+  <span className="not-prose">
+    <CodeBlock
+      language={language}
+      text={text}
+      theme={atomOneDark}
+      showLineNumbers={false}
+    />
+  </span>
 );

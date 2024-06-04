@@ -30,9 +30,11 @@ const DataCenterStateMachine: Project = {
     {
       name: "Features",
       items: [
-        { name: "Data Center Layouts" },
-        { name: "Power Structure" },
+        { name: "Power Structure Tree" },
+        { name: "Data Center Floorplans" },
+        { name: "Live Power Metrics" },
         { name: "Change Requests" },
+        { name: "Power Projections" },
       ],
     },
     {
@@ -41,7 +43,7 @@ const DataCenterStateMachine: Project = {
     },
     {
       name: "Improvements",
-      items: [{ name: "" }],
+      items: [{ name: "Types" }, { name: "Peers" }],
     },
   ],
 };

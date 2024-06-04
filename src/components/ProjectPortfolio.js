@@ -98,7 +98,7 @@ export default function ProjectPortfolio({
     setFilters(createDefaultFilterState(filter_data));
   };
 
-  const projectToShowFirst = "NFTree";
+  const projectToShowFirst = "RSI ML Model";
 
   const [featuredProject, setFeaturedProject] = useState(projectToShowFirst);
   const [selectedProject, setSelectedProject] = useState(projectToShowFirst);
@@ -107,7 +107,11 @@ export default function ProjectPortfolio({
 
   return (
     <div className="max-w-screen-xl mx-auto grid grid-cols-1">
-      <Navigation pages={[{ name: "Projects", href: "/", current: true }]} />
+      <Navigation
+        pages={[
+          { name: "Projects", href: "/", current: true, color: "#4F45E4" },
+        ]}
+      />
 
       <Book
         isOpen={isBookOpen}

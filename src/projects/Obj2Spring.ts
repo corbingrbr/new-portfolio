@@ -25,15 +25,48 @@ const Obj2Spring: Project = {
   details: [
     {
       name: "Features",
-      items: [{ name: "Object File Handler" }, { name: "Spring System" }],
+      items: [
+        { name: "Object File Reader" },
+        { name: "Object Minifier" },
+        { name: "Spring System" },
+      ],
     },
     {
       name: "Highlights",
-      items: [{ name: "Spring Formula" }],
+      items: [
+        {
+          name: "Spring Formula",
+          additional: [
+            {
+              type: "text",
+              content: `This was probably one of the few projects I've created where physics is custom coded in.
+      Utilizing Hooke's Law, the force is calculated from the prior timestep's distance. 
+      From the force we can then find the velocity, and from the velocity we find the next position.`,
+            },
+            {
+              type: "code",
+              language: "typescript",
+              content: "const calculateForce = (x: number) => k * x",
+            },
+          ],
+        },
+      ],
     },
     {
       name: "Improvements",
-      items: [{ name: "Object File Handler" }],
+      items: [
+        {
+          name: "Object Minifier",
+          additional: [
+            {
+              type: "text",
+              content: `I should've realized that this project idea was in fact two project ideas in one: A spring system simulation, and an obj minifier. 
+            Had I had this foresight I'd probably would have chewed off less. 
+            The obj minification was more challenging than I had expected and resulted in it only working for cubes at submission.`,
+            },
+          ],
+        },
+      ],
     },
   ],
 };

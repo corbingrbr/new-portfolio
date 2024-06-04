@@ -12,19 +12,28 @@ const Cucumber: Project = {
   images: [],
   shortDescription:
     "A design pattern for playwright/cucumber behavior driven testing",
-  longDescription: "This is this projects loooooooooooong description.",
+  longDescription: `A company I worked for requested assistance 
+                  with scaling the testing framework for their new platform. 
+                  Contractors had previously created custom tests for each page element. 
+                  This approach would have become costly at the scale the project required.
+                  Recognizing the inefficiencies, I presented something more scalable for 
+                  the behavior driven testing by partially applying the test environment details.
+                  `,
   details: [
     {
       name: "Features",
-      items: [{ name: "" }, { name: "" }],
+      items: [
+        { name: "Structured Behavior Language" },
+        { name: "Test Reuseability" },
+      ],
     },
     {
       name: "Highlights",
-      items: [{ name: "" }],
+      items: [{ name: "Leadership" }],
     },
     {
       name: "Improvements",
-      items: [{ name: "" }],
+      items: [{ name: "Test Environments" }],
     },
   ],
 };

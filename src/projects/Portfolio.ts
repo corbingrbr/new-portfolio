@@ -26,20 +26,21 @@ const Portfolio: Project = {
       alt: "Projects",
     },
   ],
-  shortDescription: "My first site designed to host my projects.",
-  longDescription: "This is this projects loooooooooooong description.",
+  shortDescription: "The first site I designed to host my projects.",
+  longDescription:
+    "When I created this to host my work, I had little knowledge about the benefits of ui kits. Bootstrap would have likely made the task easier and more polished, however I had fun trying to come up with my own design.",
   details: [
     {
       name: "Features",
-      items: [{ name: "" }, { name: "" }],
+      items: [{ name: "Landing Page" }, { name: "Project Viewer" }],
     },
     {
       name: "Highlights",
-      items: [{ name: "" }],
+      items: [{ name: "GRBR CSS Animations" }],
     },
     {
       name: "Improvements",
-      items: [{ name: "" }],
+      items: [{ name: "UI Kit" }],
     },
   ],
 };

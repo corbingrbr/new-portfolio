@@ -28,7 +28,11 @@ const NFTree: Project = {
   ],
   shortDescription:
     "A NFT smart contract design exploring multi-generational royalties",
-  longDescription: "This is this projects loooooooooooong description.",
+  longDescription: `This was my submission for the Consensys Boot Camp 2021 final project. 
+    The project was to be of our own choice, and I wanted to explore how royalty payouts 
+    could be triggered, by a single token sale, across generations of NFT works, hence the name NFTree. 
+    This project was interesting, not so much for the data structure, but rather for the deployment process.
+    Check out the video I produced showing off my submission!`,
   details: [
     {
       name: "Features",

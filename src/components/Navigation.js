@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { classNames } from "../utils/utils";
 
 export default function Navigation({ pages }) {
   return (
@@ -30,7 +31,13 @@ export default function Navigation({ pages }) {
               </svg>
               <Link
                 to={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                className={classNames(
+                  "ml-4 text-sm font-medium",
+                  page.color
+                    ? "text-indigo-600 font-bold"
+                    : "text-gray-500 hover:text-gray-700"
+                )}
+                styles={page.color ? { color: page.color } : {}}
                 aria-current={page.current ? "page" : undefined}
               >
                 {page.name}

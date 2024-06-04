@@ -5,5 +5,10 @@ export default interface DetailSection {
 
 interface DetailItem {
   name: string;
-  additional?: string;
+  additional?: AdditionalDetail[];
 }
+
+type AdditionalText = { type: "text"; content: string };
+type AdditionalCode = { type: "code"; language: string; content: string };
+
+type AdditionalDetail = AdditionalText | AdditionalCode;

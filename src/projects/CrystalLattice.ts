@@ -52,7 +52,7 @@ const CrystalLattice: Project = {
     },
     {
       name: "Highlights",
-      items: [{ name: "Spring Formula" }],
+      items: [{ name: "Published Paper" }],
     },
     {
       name: "Improvements",
