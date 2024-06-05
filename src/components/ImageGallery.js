@@ -25,11 +25,10 @@ const ImageGallery = ({ images }) => (
                   <span
                     className={classNames(
                       selected ? "ring-indigo-500" : "ring-transparent",
-                      " absolute inset-0 rounded-md ring-2 ring-offset-2"
+                      "pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2"
                     )}
                     aria-hidden="true"
                   />
-                  <p>HELP</p>
                 </>
               )}
             </Tab>
