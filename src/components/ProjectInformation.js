@@ -86,7 +86,7 @@ const ProjectInformation = ({ project }) => (
             <button
               type="button"
               className={classNames(
-                "flex items-center justify-center rounded-md border border-transparent py-2 px-3 text-base font-medium text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-500"
+                "flex items-center justify-center rounded-md border border-transparent py-2 px-3 text-base font-medium  bg-gray-200 hover:bg-gray-300 text-gray-500 hover:text-gray-600"
               )}
             >
               <i className="fa-brands fa-github fa-2x"></i>

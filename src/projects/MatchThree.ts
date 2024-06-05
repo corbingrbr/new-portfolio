@@ -46,7 +46,7 @@ const MatchThree: Project = {
   )}, 
       and was looking for a concept to apply my learnings. A match three game seemed simple enough, 
       however it would require destroying/creating meshes which isn't common in most of the examples featured online. 
-      I built the basic game loop, however a pesky bug would appear every now which would ruin the board structure. 
+      I built the basic game loop, however a pesky bug would appear infrequently and ruin the board structure. 
       I had a difficult time identifying if the bug belonged to the animation, or my underlying board logic. 
       Due to this, I decided to start over with ${createLinkOfText(
         "/projects/match-three-retyped",
@@ -57,9 +57,9 @@ const MatchThree: Project = {
       name: "Features",
       items: [
         { name: "Game Flow" },
-        { name: "GSAP Animations" },
+        { name: "Animations" },
         { name: "Group Identification" },
-        { name: "Board Item Alpha Masks" },
+        { name: "Alpha Masks" },
       ],
     },
     {

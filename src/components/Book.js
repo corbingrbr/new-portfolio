@@ -12,17 +12,17 @@ const Book = ({
 }) => {
   return (
     <div className="grid grid-cols-2 mt-10">
-      <p className="text-justify ">
+      {/*<p className="text-justify ">
         I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
         at
         <a class="underline decoration-sky-500">My Company, Inc</a>. Outside of
         work, I like to{" "}
         <a class="underline decoration-pink-500">watch pod-racing</a> and have{" "}
         <a class="underline decoration-indigo-500">light-saber</a> fights.
-      </p>
+  </p>*/}
 
       <div className="book col-span-2 col-start-2">
-        <Page name="back" rotation={0} scale={1.02} bookIsOpen={isOpen}>
+        <Page name="back" rotation={3} scale={1.02} bookIsOpen={isOpen}>
           <span
             style={{
               position: "absolute",
