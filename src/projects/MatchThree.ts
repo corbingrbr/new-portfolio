@@ -1,10 +1,11 @@
 import Project from "../interfaces/project.interface";
+import { createLinkOfText } from "../utils/utils";
 
 const MatchThree: Project = {
   name: "Match Three",
   year: 2021,
   month: 8,
-  technologies: ["js", "webgl", "threejs", "gsap"],
+  technologies: ["js", "webgl", "threejs", "gsap"].sort(),
   repositoryLink: "",
   projectLink: "match-three",
   viewLinks: [],
@@ -39,13 +40,18 @@ const MatchThree: Project = {
   ],
   shortDescription:
     "A simple item grouping game exploring Three.js graphic development.",
-  longDescription: `I had recently taken the three.js course offered by Bruno Simon at three.xyz, 
+  longDescription: `I had recently taken this ${createLinkOfText(
+    "https://threejs-journey.com/",
+    "course"
+  )}, 
       and was looking for a concept to apply my learnings. A match three game seemed simple enough, 
       however it would require destroying/creating meshes which isn't common in most of the examples featured online. 
       I built the basic game loop, however a pesky bug would appear every now which would ruin the board structure. 
-      I had a difficult time identifying if the bug belonged the animation portion, or my underlying board logic. 
-      Due to this, I decided to start over with 
-      <a href='/projects//match-three-retyped' class='font font-bold text-indigo-600 hover:text-indigo-700 no-underline hover:underline'>Match Three Retyped</a>.`,
+      I had a difficult time identifying if the bug belonged to the animation, or my underlying board logic. 
+      Due to this, I decided to start over with ${createLinkOfText(
+        "/projects/match-three-retyped",
+        "Match Three Retyped"
+      )}.`,
   details: [
     {
       name: "Features",

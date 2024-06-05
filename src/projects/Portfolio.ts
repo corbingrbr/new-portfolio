@@ -4,7 +4,7 @@ const Portfolio: Project = {
   name: "Portfolio",
   year: 2016,
   month: 9,
-  technologies: ["html", "css", "js"],
+  technologies: ["html", "css", "js"].sort(),
   repositoryLink: "",
   projectLink: "portfolio",
   viewLinks: [],
@@ -12,18 +12,18 @@ const Portfolio: Project = {
   images: [
     {
       name: "Home Page",
-      src: "/assets/portfolio/home-page.png",
+      src: "/assets/portfolio/portfolio.gif",
       alt: "Home Page",
-    },
-    {
-      name: "Home Page Interaction",
-      src: "/assets/portfolio/home-page-interaction.png",
-      alt: "Interaction on Home Page",
     },
     {
       name: "Projects",
       src: "/assets/portfolio/projects.png",
       alt: "Projects",
+    },
+    {
+      name: "Repository Page",
+      src: "/assets/portfolio/repository-page.png",
+      alt: "Repository Page",
     },
   ],
   shortDescription: "The first site I designed to host my projects.",

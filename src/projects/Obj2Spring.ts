@@ -4,7 +4,7 @@ const Obj2Spring: Project = {
   name: "Obj2Spring",
   year: 2016,
   month: 3,
-  technologies: ["cpp", "opengl"],
+  technologies: ["cpp", "opengl"].sort(),
   repositoryLink: "https://github.com/corbingrbr/Obj2SpringSystem",
   projectLink: "obj2spring",
   viewLinks: [],

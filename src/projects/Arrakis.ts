@@ -4,7 +4,7 @@ const Arrakis: Project = {
   name: "Arrakis",
   year: 2014,
   month: 0,
-  technologies: ["cpp", "opengl"],
+  technologies: ["cpp", "opengl"].sort(),
   repositoryLink: "",
   projectLink: "arrakis",
   viewLinks: [],

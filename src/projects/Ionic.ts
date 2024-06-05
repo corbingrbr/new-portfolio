@@ -4,7 +4,7 @@ const Ionic: Project = {
   name: "Ionic",
   year: 2015,
   month: 7,
-  technologies: ["processing", "java"],
+  technologies: ["processing", "java"].sort(),
   repositoryLink: "https://github.com/corbingrbr/ionic",
   projectLink: "ionic",
   viewLinks: [],

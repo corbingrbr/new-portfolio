@@ -1,10 +1,11 @@
 import Project from "../interfaces/project.interface";
+import { createLinkOfText } from "../utils/utils";
 
 const WebGLCL: Project = {
   name: "WebGLCL",
   year: 2016,
   month: 7,
-  technologies: ["js", "webgl"],
+  technologies: ["js", "webgl"].sort(),
   repositoryLink: "https://github.com/corbingrbr/web-gl-cl",
   projectLink: "webglcl",
   viewLinks: [
@@ -35,8 +36,10 @@ const WebGLCL: Project = {
       alt: "Face Crystal",
     },
   ],
-  shortDescription:
-    "A rewrite of the <a href='/projects/crystal-lattice' class='font font-bold text-indigo-600 hover:text-indigo-700 no-underline hover:underline'>Crystal Lattice</a> OpenGL project in WebGL",
+  shortDescription: `A rewrite of the ${createLinkOfText(
+    "/projects/crystal-lattice",
+    "Crystal Lattice"
+  )} OpenGL project in WebGL`,
   longDescription: `After I had produced the previous work in C++ and OpenGL, I was having issues making the project accessible to all hardware/os of students/faculty. 
     Partially to alleviate myself of this concern, as well as learn something new, I opted to rewrite the project in javascript and WebGL. 
     This ensured that as long as a person had access to a popular internet browser, they'd have access to this`,

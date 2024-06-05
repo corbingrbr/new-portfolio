@@ -121,18 +121,16 @@ const ProjectInformation = ({ project }) => (
 
           <div className="ml-4 pl-4 border-l border-gray-300">
             <div role="list" className="grid grid-cols-12 gap-3">
-              {P.getTechnologies(project)
-                .sort()
-                .map((technology, ndx) => (
-                  <img
-                    key={ndx}
-                    className="m-auto"
-                    src={`/assets/icons/${technology}.svg`}
-                    alt={`${technology}.svg`}
-                    height={24}
-                    width={24}
-                  />
-                ))}
+              {P.getTechnologies(project).map((technology, ndx) => (
+                <img
+                  key={ndx}
+                  className="m-auto"
+                  src={`/assets/icons/${technology}.svg`}
+                  alt={`${technology}.svg`}
+                  height={24}
+                  width={24}
+                />
+              ))}
             </div>
           </div>
         </div>

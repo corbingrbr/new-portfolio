@@ -4,7 +4,7 @@ const CCXTTrader: Project = {
   name: "CCXT Trader",
   year: 2024,
   month: 2,
-  technologies: ["ts", "nextjs", "tailwind"],
+  technologies: ["ts", "nextjs", "tailwind"].sort(),
   repositoryLink: "",
   projectLink: "ccxt-trader",
   viewLinks: [],
@@ -19,7 +19,7 @@ const CCXTTrader: Project = {
                     I took the opportunity to try out TaskEither's from the fp-ts for the first time. 
                     The Task comes from the asynchronous nature of interacting with the ccxt library, 
                     and the Either because we don't know if the interactions will always be successful. 
-                    Utilizing TaskEither greatly improved my sense of error handling completeness when designing multistep asynchronous code.`,
+                    Utilizing TaskEither greatly improved my sense of error handling completeness when chaining multiple asynchronous calls.`,
   details: [
     {
       name: "Features",

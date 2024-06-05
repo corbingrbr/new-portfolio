@@ -4,7 +4,7 @@ const Cucumber: Project = {
   name: "Cucumber",
   year: 2024,
   month: 4,
-  technologies: ["ts", "playwright", "cucumber"],
+  technologies: ["ts", "playwright", "cucumber"].sort(),
   repositoryLink: "",
   projectLink: "cucumber",
   viewLinks: [],
@@ -22,10 +22,7 @@ const Cucumber: Project = {
   details: [
     {
       name: "Features",
-      items: [
-        { name: "Structured Behavior Language" },
-        { name: "Test Reuseability" },
-      ],
+      items: [{ name: "Structured Language" }, { name: "Test Reuseability" }],
     },
     {
       name: "Highlights",

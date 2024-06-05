@@ -12,7 +12,7 @@ const AmazonFishing: Project = {
     "nodejs",
     "mailchimp",
     "bootstrap",
-  ],
+  ].sort(),
   repositoryLink: "",
   projectLink: "amazon-fishing",
   viewLinks: [],

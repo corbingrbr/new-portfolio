@@ -4,16 +4,26 @@ const NFTree: Project = {
   name: "NFTree",
   year: 2021,
   month: 11,
-  technologies: ["react", "ethereum", "tailwind"],
+  technologies: ["react", "ethereum", "tailwind"].sort(),
   repositoryLink: "",
   projectLink: "nftree",
-  viewLinks: [{ label: "Watch Video", url: "" }],
+  viewLinks: [
+    {
+      label: "Watch Video",
+      url: "https://www.loom.com/embed/c278611602164f2e89bc3266e241f632?sid=013e4c5d-d152-4412-92d1-8ace5bc7093c",
+    },
+  ],
   icon: "fas fa-tree",
   images: [
     {
+      name: "NFTree Market Item",
+      src: "/assets/nftree/nftree-market-item.png",
+      alt: "NFTree Market Item",
+    },
+    {
       name: "NFTree Market",
       src: "/assets/nftree/nftree-fit.png",
-      alt: "NFTree Market",
+      alt: "NFTree Market Item",
     },
     {
       name: "NFTree Creation Form",

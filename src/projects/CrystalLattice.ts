@@ -1,10 +1,11 @@
 import Project from "../interfaces/project.interface";
+import { createLinkOfText } from "../utils/utils";
 
 const CrystalLattice: Project = {
   name: "Crystal Lattice",
   year: 2016,
   month: 3,
-  technologies: ["cpp", "opengl"],
+  technologies: ["cpp", "opengl"].sort(),
   repositoryLink: "https://github.com/corbingrbr/CrystalLattice",
   projectLink: "crystal-lattice",
   viewLinks: [
@@ -37,9 +38,13 @@ const CrystalLattice: Project = {
   ],
   shortDescription:
     "An interactive visualization of three crystal lattice structures for the Cal Poly Chemistry Department.",
-  longDescription: `This was my second project commissioned by the Cal Poly Chemistry Department and it also served as my college capstone project. 
+  longDescription: `This was my second project commissioned by the Cal Poly Chemistry Department and also my college capstone project. 
                     I was to produce a visualization of three different crystal lattice structures: 'Simple', 'Body-Centered', and 'Face-Centered'.
-                    Each crystal structure was to receive several perspectives: 'Layering', 'Unit Cell', and 'Composite'`,
+                    Each crystal structure was to receive several perspectives: 'Layering', 'Unit Cell', and 'Composite'. 
+                    This project was a success, however I ended up translating it to javascript and webgl to improve its audience reach in my project ${createLinkOfText(
+                      "/projects/webglcl",
+                      "WebGLCL"
+                    )}`,
   details: [
     {
       name: "Features",

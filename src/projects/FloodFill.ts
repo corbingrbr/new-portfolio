@@ -4,10 +4,10 @@ const FloodFill: Project = {
   name: "FloodFill",
   year: 2015,
   month: 6,
-  technologies: ["cpp", "opengl"],
-  repositoryLink: "https://github.com/MatheusFaria/flood-fill",
+  technologies: ["cpp", "opengl"].sort(),
+  repositoryLink: "https://github.com/corbingrbr/flood-fill",
   projectLink: "flood-fill",
-  viewLinks: [{ label: "Watch Video", url: "" }],
+  viewLinks: [{ label: "Watch Video", url: "https://youtu.be/hfMVrTvxlYY" }],
   icon: "fa-light fa-water-arrow-up",
   images: [
     {
@@ -21,7 +21,7 @@ const FloodFill: Project = {
   longDescription: `This was a group final project for one of my Cal Poly Graphics courses involving myself and three other classmates. 
   The goal was to take a game idea from concept art to demo using the basic OpenGL framework. 
   This was the most complex project I'd worked on up until this point, 
-  and it introduced me to how version control works within a team environment. 
+  and it introduced me to how version control works within a team. 
   We tackled separate features and the culmination of efforts produced a final product I was very proud of. Check out the video featuring its gameplay below!`,
   details: [
     {
@@ -30,9 +30,10 @@ const FloodFill: Project = {
         { name: "Concept Art" },
         { name: "Level Design" },
         { name: "Menu Screen" },
-        { name: "Lever Mechanism" },
         { name: "Flood Mechanism" },
         { name: "Sink Mechanism" },
+        { name: "Block Removal" },
+        { name: "Lever Mechanism" },
       ],
     },
     /*{
