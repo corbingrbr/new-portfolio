@@ -15,7 +15,7 @@ const ProjectListItem = ({
       onClick={() => setSelectedProject(P.getName(project))}
       className={classNames(
         "flex justify-between gap-x-6 py-5 px-5",
-        isSelected ? "bg-gray-100" : isFeatured ? "bg-gray-50" : "bg-white"
+        isSelected ? "bg-gray-100" : isFeatured ? "bg-gray-100" : "bg-white"
       )}
     >
       <div className="flex min-w-0 gap-x-4">
@@ -38,13 +38,6 @@ const ProjectListItem = ({
       </div>
       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
         <p className="text-sm leading-6 text-gray-900">{P.getYear(project)}</p>
-
-        {/*<div className="mt-1 flex items-center gap-x-1.5">
-            <div className="flex-none rounded-full bg-emerald-500/20 p-1">
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            </div>
-            <p className="text-xs leading-5 text-gray-500">Online</p>
-</div>*/}
 
         <dl className="mt-1 flex w-full flex-none justify-between gap-x-8 sm:w-auto">
           <div className="flex -space-x-0.5">

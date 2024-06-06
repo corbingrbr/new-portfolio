@@ -85,38 +85,36 @@ const ImageGallery2 = ({ images }) => {
   }, ["ArrowRight", "Tab"]);
 
   return (
-    <div className="sm:px-6 sm:pt-5 lg:px-8">
-      <div className="flex flex-col-reverse">
-        {/* Image selector */}
-        <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-          <div className="grid grid-cols-4 gap-6">
-            {images.map((image, ndx) => (
-              <span
-                key={ndx}
-                className={classNames(
-                  "overflow-hidden rounded-md",
-                  selectedTab === ndx ? "ring-indigo-500" : "ring-transparent",
-                  "ring-2 ring-offset-2"
-                )}
-                onClick={() => setSelectedTab(ndx)}
-              >
-                <img
-                  src={image.src}
-                  className="h-full w-full object-cover object-center"
-                />
-              </span>
-            ))}
-          </div>
+    <div className="flex flex-col-reverse">
+      {/* Image selector */}
+      <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
+        <div className="grid grid-cols-4 gap-6">
+          {images.map((image, ndx) => (
+            <span
+              key={ndx}
+              className={classNames(
+                "overflow-hidden rounded-md",
+                selectedTab === ndx ? "ring-indigo-500" : "ring-transparent",
+                "ring-2 ring-offset-2"
+              )}
+              onClick={() => setSelectedTab(ndx)}
+            >
+              <img
+                src={image.src}
+                className="h-full w-full object-cover object-center"
+              />
+            </span>
+          ))}
         </div>
+      </div>
 
-        {/* Displayed Image */}
-        <div className="aspect-h-1 aspect-w-1 w-full">
-          <img
-            src={images[selectedTab].src}
-            alt={images[selectedTab].alt}
-            className="h-full w-full object-cover object-center sm:rounded-lg"
-          />
-        </div>
+      {/* Displayed Image */}
+      <div className="aspect-h-1 aspect-w-1 w-full">
+        <img
+          src={images[selectedTab].src}
+          alt={images[selectedTab].alt}
+          className="h-full w-full object-cover object-center sm:rounded-lg"
+        />
       </div>
     </div>
   );

@@ -106,12 +106,12 @@ export default function ProjectPortfolio({
   const [activeBookmark, setActiveBookmark] = useState("projects");
 
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1">
-      <Navigation
+    <div className="max-w-screen-xl mx-auto grid grid-cols-1 h-full">
+      {/*<Navigation
         pages={[
           { name: "Projects", href: "/", current: true, color: "#4F45E4" },
         ]}
-      />
+      />*/}
 
       <Book
         isOpen={isBookOpen}

@@ -23,7 +23,7 @@ const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
 
     return (
       <div className="max-w-screen-xl mx-auto grid grid-cols-1">
-        <Navigation pages={crumbs} />
+        {/*<Navigation pages={crumbs} />*/}
 
         <Book
           isOpen={isBookOpen}

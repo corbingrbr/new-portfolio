@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  height: 1000px;
 }
 
 code {
@@ -35,8 +36,8 @@ code {
 .page6 {
   transform-style: preserve-3d;
   position: absolute;
-  width: 600px;
-  height: 900px;
+  /*width: 600px;
+  height: 900px;*/
   top: 0;
   left: 0;
   transform-origin: left center;

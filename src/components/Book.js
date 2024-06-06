@@ -11,7 +11,7 @@ const Book = ({
   setIsOpen,
 }) => {
   return (
-    <div className="grid grid-cols-2 mt-10">
+    <div className="grid grid-cols-2 h-3/4">
       {/*<p className="text-justify ">
         I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
         at
@@ -127,7 +127,7 @@ const Book = ({
 
 const Page = ({ name, rotation, scale, bookIsOpen, children }) => (
   <div
-    className={classNames(name, "p-5 ")}
+    className={classNames(name, "p-5 h-full w-full")}
     style={
       bookIsOpen
         ? {
