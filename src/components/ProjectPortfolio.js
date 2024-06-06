@@ -117,30 +117,32 @@ export default function ProjectPortfolio({
         isOpen={isBookOpen}
         setIsOpen={setIsBookOpen}
         leftPage={
-          <div className="left-page h-full">
-            <ProjectFilter
-              filters={filters}
-              onFilterChange={handleFilterChange}
-              onClearFilters={handleClearFilters}
-              setSort={setSort}
-              current_sort={sort}
-              active_filter_count={countActiveFilters(filters)}
-              project_count={filteredProjects.length}
-              handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
-              isViewingFilters={isViewingFilters}
-            />
+          <div className="left-page h-full overflow-hidden rounded-2xl">
+            <div className="flex flex-col h-full">
+              <ProjectFilter
+                filters={filters}
+                onFilterChange={handleFilterChange}
+                onClearFilters={handleClearFilters}
+                setSort={setSort}
+                current_sort={sort}
+                active_filter_count={countActiveFilters(filters)}
+                project_count={filteredProjects.length}
+                handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
+                isViewingFilters={isViewingFilters}
+              />
 
-            {!isViewingFilters && (
-              <div className="max-h-[800px] overflow-y-scroll rounded-b-2xl">
-                <ProjectList
-                  projects={filteredProjects}
-                  selectedProject={selectedProject}
-                  featuredProject={featuredProject}
-                  setSelectedProject={setSelectedProject}
-                  setFeaturedProject={setFeaturedProject}
-                />
-              </div>
-            )}
+              {!isViewingFilters && (
+                <div className="grow overflow-auto">
+                  <ProjectList
+                    projects={filteredProjects}
+                    selectedProject={selectedProject}
+                    featuredProject={featuredProject}
+                    setSelectedProject={setSelectedProject}
+                    setFeaturedProject={setFeaturedProject}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         }
         rightPage={

@@ -42,16 +42,14 @@ const ProjectInformation = ({ project }) => (
 
       <div className="grow overflow-auto">
         <div className="bg-gray-100 p-4">
-          <div className="mt-6">
-            <h3 className="sr-only">Short Description</h3>
+          <h3 className="sr-only">Short Description</h3>
 
-            <div
-              className="prose prose-sm mt-4 text-gray-500"
-              dangerouslySetInnerHTML={{
-                __html: P.getShortDescription(project),
-              }}
-            />
-          </div>
+          <div
+            className="prose prose-sm text-gray-500"
+            dangerouslySetInnerHTML={{
+              __html: P.getShortDescription(project),
+            }}
+          />
 
           <div className="mt-6">
             <h3 className="sr-only">Long Description</h3>
