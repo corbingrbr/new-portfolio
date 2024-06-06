@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import { classNames } from "../utils/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /*
 const ImageGallery = ({ images }) => (
@@ -55,8 +55,34 @@ const ImageGallery = ({ images }) => (
 );
 */
 
+const useKeyDown = (callback, keys) => {
+  const onKeyDown = (event) => {
+    const wasAnyKeyPressed = keys.some((key) => event.key === key);
+    if (wasAnyKeyPressed) {
+      event.preventDefault();
+      callback();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onKeyDown]);
+};
+
+// Example usage:
+
 const ImageGallery2 = ({ images }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+
+  useKeyDown(() => {
+    setSelectedTab(selectedTab - 1 < 0 ? images.length - 1 : selectedTab - 1);
+  }, ["ArrowLeft" /*"ArrowRight", "Tab"*/]);
+
+  useKeyDown(() => {
+    setSelectedTab((selectedTab + 1) % images.length);
+  }, ["ArrowRight", "Tab"]);
 
   return (
     <div className="sm:px-6 sm:pt-5 lg:px-8">
@@ -75,7 +101,6 @@ const ImageGallery2 = ({ images }) => {
                 onClick={() => setSelectedTab(ndx)}
               >
                 <img
-                  onClick={() => console.log("CLUCKIN")}
                   src={image.src}
                   className="h-full w-full object-cover object-center"
                 />
@@ -85,10 +110,7 @@ const ImageGallery2 = ({ images }) => {
         </div>
 
         {/* Displayed Image */}
-        <div
-          className="aspect-h-1 aspect-w-1 w-full"
-          onClick={() => console.log("FUCKIN WORKKK")}
-        >
+        <div className="aspect-h-1 aspect-w-1 w-full">
           <img
             src={images[selectedTab].src}
             alt={images[selectedTab].alt}

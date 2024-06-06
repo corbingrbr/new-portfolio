@@ -117,7 +117,7 @@ export default function ProjectPortfolio({
         isOpen={isBookOpen}
         setIsOpen={setIsBookOpen}
         leftPage={
-          <div className="left-page">
+          <div className="left-page h-full">
             <ProjectFilter
               filters={filters}
               onFilterChange={handleFilterChange}
@@ -127,10 +127,11 @@ export default function ProjectPortfolio({
               active_filter_count={countActiveFilters(filters)}
               project_count={filteredProjects.length}
               handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
+              isViewingFilters={isViewingFilters}
             />
 
             {!isViewingFilters && (
-              <div className="max-h-[800px] overflow-y-scroll">
+              <div className="max-h-[800px] overflow-y-scroll rounded-b-2xl">
                 <ProjectList
                   projects={filteredProjects}
                   selectedProject={selectedProject}

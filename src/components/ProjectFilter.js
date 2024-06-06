@@ -21,13 +21,19 @@ export default function ProjectFilter2({
   project_count,
   active_filter_count,
   handleViewFilters,
+  isViewingFilters,
 }) {
   return (
-    <div className="bg-gray-200 rounded-t-2xl">
+    <div
+      className={classNames(
+        "bg-gray-200 ",
+        isViewingFilters ? "rounded-2xl h-full" : "rounded-t-2xl"
+      )}
+    >
       <Disclosure
         as="section"
         aria-labelledby="filter-heading"
-        className="relative z-10  border-b border-gray-300 grid items-center"
+        className="relative z-10  border-gray-300 grid items-center"
       >
         <div className="row-start-1 py-4 border-b border-gray-300">
           <div className="justify-start max-w-7xl mx-auto flex space-x-6 divide-x divide-gray-200 text-sm px-4 sm:px-0 lg:px-2">
@@ -64,7 +70,7 @@ export default function ProjectFilter2({
             </div>
           </div>
         </div>
-        <Disclosure.Panel className="py-5">
+        <Disclosure.Panel className="py-5 h-full">
           <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
             <div className="grid gap-y-10 auto-rows-min">
               <fieldset>

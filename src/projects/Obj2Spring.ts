@@ -62,7 +62,7 @@ const Obj2Spring: Project = {
               type: "text",
               content: `I should've realized that this project idea was in fact two project ideas in one: A spring system simulation, and an obj minifier. 
             Had I had this foresight I'd probably would have chewed off less. 
-            The obj minification was more challenging than I had expected and resulted in it only working for cubes at submission.`,
+            The obj minification was more challenging than I had expected and only worked for cubes at submission.`,
             },
           ],
         },
