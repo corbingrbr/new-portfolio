@@ -22,7 +22,7 @@ const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
     ];
 
     return (
-      <div className="aspect-[4/3] h-4/5 max-h-[850px]">
+      <div className="aspect-[4/3] h-4/5 max-h-[900px]">
         {/*<Navigation pages={crumbs} />*/}
 
         <Book
@@ -37,7 +37,7 @@ const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
               <ProjectIconImage icon={P.getIcon(project)} />
             )
           }
-          activeBookmark={"projects"}
+          activeBookmark={""}
         />
       </div>
     );

@@ -106,7 +106,7 @@ export default function ProjectPortfolio({
   const [activeBookmark, setActiveBookmark] = useState("projects");
 
   return (
-    <div className="aspect-[4/3] h-4/5 max-h-[850px]">
+    <div className="aspect-[4/3] h-4/5  max-h-[900px]">
       {/*<Navigation
         pages={[
           { name: "Projects", href: "/", current: true, color: "#4F45E4" },

@@ -75,7 +75,7 @@ const Book = ({
           bookIsOpen={isOpen}
         ></Page>
         <Page name="page1" rotation={-177} scale={1.0} bookIsOpen={isOpen}>
-          <Bookmark
+          {/*<Bookmark
             label={"contents"}
             href={"/contents"}
             icon={"fa-solid fa-2x fa-signs-post"}
@@ -84,7 +84,7 @@ const Book = ({
             isActive={activeBookmark === "contents"}
             setActiveBookmark={setActiveBookmark}
             bookIsOpen={isOpen}
-          />
+              />*/}
           <Bookmark
             label={"projects"}
             href={"/projects"}

@@ -106,7 +106,7 @@ export default function ProjectFilter2({
                       </span>
                       <label
                         htmlFor={`category-${ndx}`}
-                        className="text-left ml-3 min-w-0 flex-1 text-gray-600"
+                        className="lg:text-md text-left ml-3 min-w-0 flex-1 text-gray-600"
                       >
                         {category.label}
                       </label>
