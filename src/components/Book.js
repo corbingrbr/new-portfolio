@@ -11,7 +11,7 @@ const Book = ({
   setIsOpen,
 }) => {
   return (
-    <div className="grid grid-cols-2 h-3/4">
+    <div className="grid grid-cols-2 h-full">
       {/*<p className="text-justify ">
         I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
         at
@@ -61,7 +61,6 @@ const Book = ({
           rotation={-165}
           scale={1.0}
           bookIsOpen={isOpen}
-          className="overflow-y-auto"
           scrollable={true}
         >
           {leftPage}
@@ -127,7 +126,11 @@ const Book = ({
 
 const Page = ({ name, rotation, scale, bookIsOpen, children }) => (
   <div
-    className={classNames(name, "p-5 h-full w-full")}
+    className={classNames(
+      name,
+      name === "front" ? "p-5" : "p-5",
+      "h-full w-full"
+    )}
     style={
       bookIsOpen
         ? {

@@ -26,7 +26,7 @@ const getTechnologies = (projects) =>
 const App = () => {
   const [isBookOpen, setIsBookOpen] = useState(false);
   return (
-    <div className="App bg-gray-100 h-dvh">
+    <div className="App bg-gray-100 h-screen grid place-items-center">
       <Router>
         <Routes>
           {/*<Route path="/" element={<Welcome />} />*/}

@@ -106,7 +106,7 @@ export default function ProjectPortfolio({
   const [activeBookmark, setActiveBookmark] = useState("projects");
 
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1 h-full">
+    <div className="aspect-[4/3] h-4/5 max-h-[850px]">
       {/*<Navigation
         pages={[
           { name: "Projects", href: "/", current: true, color: "#4F45E4" },
@@ -146,7 +146,7 @@ export default function ProjectPortfolio({
           </div>
         }
         rightPage={
-          <div className="lg:mt-0 lg:col-start-2">
+          <div className="h-full overflow-hidden rounded-2xl">
             <FeaturedProject
               project={projects.find(
                 projectWithSameTitle(featuredProject || selectedProject)
