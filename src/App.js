@@ -11,10 +11,11 @@ import {
 
 import ProjectPortfolio from "./components/ProjectPortfolio";
 import ProjectView from "./components/ProjectView";
+import ArtworkPortfolio from "./components/ArtworkPortfolio";
 
+import artworks from "./artworks";
 import projects from "./projects";
 import * as P from "./utils/ProjectUtils";
-import { set } from "fp-ts";
 
 import { useState } from "react";
 
@@ -50,6 +51,17 @@ const App = () => {
             element={
               <ProjectView
                 projects={projects}
+                isBookOpen={isBookOpen}
+                setIsBookOpen={setIsBookOpen}
+              />
+            }
+          />
+
+          <Route
+            path="/artwork"
+            element={
+              <ArtworkPortfolio
+                artworks={artworks}
                 isBookOpen={isBookOpen}
                 setIsBookOpen={setIsBookOpen}
               />

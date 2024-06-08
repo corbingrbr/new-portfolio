@@ -1,7 +1,7 @@
 import Project from "../interfaces/project.interface";
 
 const DataCenterStateMachine: Project = {
-  name: "DataCenterStateMachine",
+  name: "DCIM",
   year: 2018,
   month: 2,
   technologies: [
@@ -15,7 +15,7 @@ const DataCenterStateMachine: Project = {
     "bootstrap",
   ].sort(),
   repositoryLink: "",
-  projectLink: "data-center-state-machine",
+  projectLink: "dcim",
   viewLinks: [],
   icon: "fas fa-server",
   images: [],
