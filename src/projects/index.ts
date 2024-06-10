@@ -2,7 +2,7 @@ import AmazonFishing from "./AmazonFishing";
 import Arrakis from "./Arrakis";
 import CrystalLattice from "./CrystalLattice";
 import WebGLCL from "./WebGLCL";
-import DataCenterStateMachine from "./DataCenterStateMachine";
+import DCIM from "./DCIM";
 import FloodFill from "./FloodFill";
 import Ionic from "./Ionic";
 import Obj2Spring from "./Obj2Spring";
@@ -23,7 +23,7 @@ const projects: Project[] = [
   AmazonFishing,
   Arrakis,
   CrystalLattice,
-  DataCenterStateMachine,
+  DCIM,
   FloodFill,
   Ionic,
   Obj2Spring,

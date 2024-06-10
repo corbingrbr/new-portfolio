@@ -13,7 +13,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
         leftPage={
           <div className="left-page h-full overflow-hidden rounded-2xl">
             <div className="h-full grid place-items-center">
-              <p className="text-center w-2/3">
+              <p className="text-left w-2/3">
                 Thank you for checking out my{" "}
                 <span className="underline decoration-wavy decoration-2 underline-offset-4 decoration-sky-500 font-semibold">
                   site!
@@ -31,8 +31,8 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                   accomplishments!
                 </span>
                 <br />
-                <br /> I am a continuous learner; something which I think the
-                diversity of the projects featured here speaks to.
+                <br /> Curiousity compels me, and the diversity of projects
+                featured here reflects that.
                 <br />
                 <br /> On the right is my{" "}
                 <span className="underline decoration-2 underline-offset-4 decoration-wavy decoration-cyan-300 font-semibold">
@@ -41,29 +41,37 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                 .
                 <br />
                 <br />
-                For any inquiries, find me below
+                For any inquiries, find me{" "}
+                <span
+                  className="underline decoration-2 underline-offset-4 decoration-wavy
+                decoration-indigo-500 font-semibold"
+                >
+                  below
+                </span>
+                .
                 <br />
                 <br />
-                <div className="mt-10">
-                  <span className="border-2 border-dashed rounded-md border-gray-400 p-5 m-2">
+                <div className="flex justify-between mt-10">
+                  <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
+                    <a>
+                      <i className={`self-center fa-xl fa-solid fa-envelope`} />
+                    </a>
+                  </span>
+                  <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5">
                     <a>
                       <i
-                        className={`self-center fa-xl fa-solid fa-envelope text-gray-400`}
+                        className={`self-center fa-xl fa-brands fa-instagram`}
                       />
                     </a>
                   </span>
-                  <span className="border-2 border-dashed rounded-md border-gray-400 p-5 m-2">
+                  <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
                     <a>
-                      <i
-                        className={`self-center fa-xl fa-brands fa-instagram text-gray-400`}
-                      />
+                      <i className={`self-center fa-xl fa-brands fa-github`} />
                     </a>
                   </span>
-                  <span className="border-2 border-dashed rounded-md border-gray-400 p-5 m-2">
+                  <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
                     <a>
-                      <i
-                        className={`self-center fa-xl fa-brands fa-github text-gray-400`}
-                      />
+                      <i className={`self-center fa-xl fa-brands fa-threads`} />
                     </a>
                   </span>
                 </div>

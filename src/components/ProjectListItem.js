@@ -15,8 +15,9 @@ const ProjectListItem = ({
       onClick={() => setSelectedProject(P.getName(project))}
       className={classNames(
         "flex justify-between gap-x-6 py-5 px-5",
-        isSelected ? "bg-gray-100" : isFeatured ? "bg-gray-100" : "bg-white",
-        "focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100"
+        isFeatured && "bg-gray-100",
+        isSelected && "outline outline-4 outline-teal-300",
+        "first:mt-1 last:mb-2"
       )}
     >
       <div className="flex min-w-0 gap-x-4">

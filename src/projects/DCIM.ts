@@ -1,6 +1,6 @@
 import Project from "../interfaces/project.interface";
 
-const DataCenterStateMachine: Project = {
+const DCIM: Project = {
   name: "DCIM",
   year: 2018,
   month: 2,
@@ -48,4 +48,4 @@ const DataCenterStateMachine: Project = {
   ],
 };
 
-export default DataCenterStateMachine;
+export default DCIM;

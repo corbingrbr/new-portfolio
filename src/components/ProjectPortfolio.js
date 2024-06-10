@@ -134,9 +134,7 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
         rightPage={
           <div className="h-full overflow-hidden rounded-2xl">
             <FeaturedProject
-              project={projects.find(
-                projectWithSameTitle(featuredProject || selectedProject)
-              )}
+              project={projects.find(projectWithSameTitle(selectedProject))}
             />
           </div>
         }

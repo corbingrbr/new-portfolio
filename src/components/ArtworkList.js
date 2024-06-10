@@ -1,3 +1,5 @@
+import { classNames } from "../utils/utils";
+
 const ArtworkList = ({
   artworks,
   selectedArtwork,
@@ -6,7 +8,7 @@ const ArtworkList = ({
   setFeaturedArtwork,
 }) => {
   return (
-    <ul className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+    <ul className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-3 bg-white">
       {artworks.map((artwork, ndx) => (
         <ArtworkItem
           key={ndx}
@@ -28,8 +30,14 @@ const ArtworkItem = ({
   setSelectedArtwork,
   setFeaturedArtwork,
 }) => (
-  <li className="relative" onClick={() => setFeaturedArtwork(artwork)}>
-    <div className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+  <li
+    className={classNames(
+      isFeatured && "ring-4 ring-indigo-500 ring-offset-2 ring-offset-gray-100",
+      "relative hover:bg-gray-100 rounded-lg"
+    )}
+    onClick={() => setFeaturedArtwork(artwork)}
+  >
+    <div className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100">
       <img
         src={artwork.source}
         alt=""

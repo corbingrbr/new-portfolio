@@ -31,8 +31,6 @@ const App = () => {
     <div className="App bg-gray-100 h-screen grid place-items-center">
       <Router>
         <Routes>
-          {/*<Route path="/" element={<Welcome />} />*/}
-
           <Route path="*" element={<Navigate to="/projects" replace />} />
 
           <Route
