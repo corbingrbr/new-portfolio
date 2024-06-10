@@ -6,10 +6,7 @@ const ArtworkList = ({
   setFeaturedArtwork,
 }) => {
   return (
-    <ul
-      role="list"
-      className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8"
-    >
+    <ul className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
       {artworks.map((artwork, ndx) => (
         <ArtworkItem
           key={ndx}

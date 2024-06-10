@@ -17,8 +17,8 @@ const Cucumber: Project = {
                   with scaling the testing framework for their new platform. 
                   Contractors had previously created custom tests for each page element. 
                   This approach would have become costly at the scale the project required.
-                  Recognizing the inefficiencies, I presented something more scalable for 
-                  the behavior driven testing by partially applying the test environment details.
+                  Recognizing the inefficiencies, I created some flexible utility functions covering 
+                  a majority of testing requirements, which reduced code and maintenance considerably.
                   `,
   details: [
     {

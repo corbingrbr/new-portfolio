@@ -12,6 +12,7 @@ import {
 import ProjectPortfolio from "./components/ProjectPortfolio";
 import ProjectView from "./components/ProjectView";
 import ArtworkPortfolio from "./components/ArtworkPortfolio";
+import Resume from "./components/Resume";
 
 import artworks from "./artworks";
 import projects from "./projects";
@@ -54,6 +55,13 @@ const App = () => {
                 isBookOpen={isBookOpen}
                 setIsBookOpen={setIsBookOpen}
               />
+            }
+          />
+
+          <Route
+            path="/resume"
+            element={
+              <Resume isBookOpen={isBookOpen} setIsBookOpen={setIsBookOpen} />
             }
           />
 

@@ -119,16 +119,6 @@ export default function ProjectFilter2({
                       data-value={technology.value}
                       onClick={onFilterChange}
                     >
-                      {/*<input
-                        id={`technology-${ndx}`}
-                        name="technology[]"
-                        defaultValue={technology.value}
-                        type="checkbox"
-                        className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                        checked={technology.checked}
-                        onChange={onFilterChange}
-                  />*/}
-
                       <img
                         key={ndx}
                         className="ml-2"
@@ -181,10 +171,10 @@ export default function ProjectFilter2({
                           onClick={() => setSort(option.value)}
                           className={classNames(
                             "cursor-pointer",
-                            option.value == current_sort
+                            option.value === current_sort
                               ? "font-medium text-gray-900"
                               : "text-gray-500",
-                            option.value == current_sort ? "bg-gray-100" : "",
+                            option.value === current_sort ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm"
                           )}
                         >

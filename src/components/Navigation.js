@@ -4,10 +4,7 @@ import { classNames } from "../utils/utils";
 export default function Navigation({ pages }) {
   return (
     <nav className="flex m-8" aria-label="Breadcrumb">
-      <ol
-        role="list"
-        className="bg-white rounded-md shadow px-6 flex space-x-4"
-      >
+      <ol className="bg-white rounded-md shadow px-6 flex space-x-4">
         <li className="flex">
           <div className="flex items-center">
             <Link to="/" className="text-gray-500 hover:text-gray-700">

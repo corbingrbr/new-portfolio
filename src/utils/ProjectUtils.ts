@@ -15,7 +15,7 @@ export const getTechnologies = (project: Project): string[] =>
   project.technologies;
 export const getCategories = (project: Project): string[] => project.categories;
 export const hasRepositoryLink = (project: Project): boolean =>
-  project.repositoryLink != undefined && project.repositoryLink !== "";
+  project.repositoryLink === undefined && project.repositoryLink !== "";
 export const getRepositoryLink = (project: Project): string =>
   project.repositoryLink;
 export const hasAnImage = (project: Project): boolean =>

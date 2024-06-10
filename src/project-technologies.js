@@ -13,8 +13,8 @@ const projectTechnologies = [
   { value: "nodejs", label: "NodeJS" },
   { value: "mailchimp", label: "Mailchimp" },
   { value: "bootstrap", label: "Bootstrap" },
-  { value: "csharp", label: "C#" },
-  { value: "material-ui", label: "Material UI" },
+  /*{ value: "csharp", label: "C#" },
+  { value: "material-ui", label: "Material UI" },*/
   { value: "sql", label: "SQL" },
   { value: "mongodb", label: "MongoDB" },
   { value: "cpp", label: "C++" },

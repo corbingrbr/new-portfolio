@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Navigation from "./Navigation";
+//import Navigation from "./Navigation";
 import Book from "./Book";
 import ProjectInformation from "./ProjectInformation";
 import ImageGallery from "./ImageGallery";
@@ -16,10 +16,10 @@ const ProjectView3 = ({ projects, isBookOpen, setIsBookOpen }) => {
     return <h2>This project does not exist ... </h2>;
   } else {
     // Bread Crumbs
-    let crumbs = [
+    /*let crumbs = [
       { name: "Projects", href: "/projects", current: false, color: "#4F45E4" },
       { name: `${P.getName(project)}`, href: "#", current: true },
-    ];
+    ];*/
 
     return (
       <div className="aspect-[4/3] h-4/5 max-h-[900px]">

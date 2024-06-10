@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import ProjectFilter from "./ProjectFilter";
 import ProjectList from "./ProjectList";
 import FeaturedProject from "./FeaturedProject";
-import Navigation from "./Navigation";
 import Book from "./Book";
 
 import * as P from "../utils/ProjectUtils";
@@ -30,7 +29,7 @@ const isChecked = (option) => option.checked;
 const getValue = (filter) => filter.value;
 
 let toggleChangedFilter = (value_to_toggle) => (filter) =>
-  filter.value == value_to_toggle
+  filter.value === value_to_toggle
     ? { ...filter, checked: !filter.checked }
     : filter;
 
@@ -61,7 +60,9 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
   const selectedTechnologies = filters.technology
     .filter(isChecked)
     .map(getValue);
+
   const selectedCategories = filters.category.filter(isChecked).map(getValue);
+
   let filteredProjects = filterProjects(
     projects,
     selectedTechnologies,
@@ -80,10 +81,13 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
     setFilters(createDefaultFilterState(filter_data));
   };
 
-  const projectToShowFirst = "RSI ML Model";
+  const [featuredProject, setFeaturedProject] = useState(
+    P.getName(projects[0])
+  );
 
-  const [featuredProject, setFeaturedProject] = useState(projectToShowFirst);
-  const [selectedProject, setSelectedProject] = useState(projectToShowFirst);
+  const [selectedProject, setSelectedProject] = useState(
+    P.getName(projects[0])
+  );
 
   const [activeBookmark, setActiveBookmark] = useState("projects");
 

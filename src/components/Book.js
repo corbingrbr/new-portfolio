@@ -12,15 +12,6 @@ const Book = ({
 }) => {
   return (
     <div className="grid grid-cols-2 h-full">
-      {/*<p className="text-justify ">
-        I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
-        at
-        <a class="underline decoration-sky-500">My Company, Inc</a>. Outside of
-        work, I like to{" "}
-        <a class="underline decoration-pink-500">watch pod-racing</a> and have{" "}
-        <a class="underline decoration-indigo-500">light-saber</a> fights.
-  </p>*/}
-
       <div className="book col-span-2 col-start-2">
         <Page name="back" rotation={3} scale={1.02} bookIsOpen={isOpen}>
           <span
@@ -96,22 +87,22 @@ const Book = ({
             bookIsOpen={isOpen}
           />
           <Bookmark
-            label={"resume"}
-            href={"/resume"}
-            icon={"fa-solid fa-2x fa-file-user"}
-            color={"#CDDC39"}
+            label={"artwork"}
+            href={"/artwork"}
+            icon={"fa-solid fa-2x fa-brush"}
+            color={"#AD4CDB"}
             top={"340px"}
-            isActive={activeBookmark === "resume"}
+            isActive={activeBookmark === "artwork"}
             setActiveBookmark={setActiveBookmark}
             bookIsOpen={isOpen}
           />
           <Bookmark
-            label={"artwork"}
-            href={"/artwork"}
-            icon={"fa-solid fa-2x fa-brush"}
-            color={"#9BA3AF"}
+            label={"resume"}
+            href={"/resume"}
+            icon={"fa-solid fa-2x fa-file-user"}
+            color={"#8FE1A2"}
             top={"420px"}
-            isActive={activeBookmark === "artwork"}
+            isActive={activeBookmark === "resume"}
             setActiveBookmark={setActiveBookmark}
             bookIsOpen={isOpen}
           />

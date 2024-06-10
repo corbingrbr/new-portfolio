@@ -67,6 +67,7 @@ const ProjectInformation = ({ project }) => (
               <a
                 href={viewLink.url}
                 target="_blank"
+                rel="noreferrer"
                 key={ndx}
                 className={ndx > 0 ? "ml-4" : ""}
               >
@@ -85,6 +86,7 @@ const ProjectInformation = ({ project }) => (
               <a
                 href={P.getRepositoryLink(project)}
                 target="_blank"
+                rel="noreferrer"
                 className={P.hasViewLinks(project) ? "ml-4" : ""}
               >
                 <button
@@ -139,13 +141,13 @@ const ProjectInformation = ({ project }) => (
                         as="div"
                         className="prose prose-sm pb-6"
                       >
-                        <ul role="list">
+                        <ul>
                           {detail.items.map((item) => (
                             <li key={item}>
                               <p className="font-medium">{item.name}</p>
                               {item.additional &&
                                 item.additional.map((a) =>
-                                  a.type == "code" ? (
+                                  a.type === "code" ? (
                                     <p>
                                       <NonProseCodeBlock
                                         text={a.content}
