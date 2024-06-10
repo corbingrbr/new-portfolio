@@ -5,6 +5,7 @@ const CCXTTrader: Project = {
   year: 2024,
   month: 2,
   technologies: ["ts", "nextjs", "tailwind"].sort(),
+  categories: ["backend"],
   repositoryLink: "",
   projectLink: "ccxt-trader",
   viewLinks: [],

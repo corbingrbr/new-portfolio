@@ -6,6 +6,7 @@ const WebGLCL: Project = {
   year: 2016,
   month: 7,
   technologies: ["js", "webgl"].sort(),
+  categories: ["graphics", "frontend"],
   repositoryLink: "https://github.com/corbingrbr/web-gl-cl",
   projectLink: "webglcl",
   viewLinks: [

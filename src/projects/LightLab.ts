@@ -5,6 +5,7 @@ const LightLab: Project = {
   year: 2013,
   month: 0,
   technologies: ["html", "css", "jquery", "js", "c", "cpp", "adafruit"].sort(),
+  categories: ["embedded", "frontend", "graphics"],
   repositoryLink: "https://github.com/corbingrbr/LightLab",
   projectLink: "light-lab",
   viewLinks: [{ label: "Watch Video", url: "https://youtu.be/KjPLm4snhxk" }],

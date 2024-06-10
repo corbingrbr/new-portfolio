@@ -6,6 +6,7 @@ const PortfolioRetyped: Project = {
   year: 2024,
   month: 5,
   technologies: ["nextjs", "react", "tailwind", "ts"].sort(),
+  categories: ["frontend"],
   repositoryLink: "",
   projectLink: "portfolio-retyped",
   viewLinks: [],

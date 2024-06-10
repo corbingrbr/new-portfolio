@@ -5,6 +5,7 @@ const ValidatedEndpoint: Project = {
   year: 2023,
   month: 10,
   technologies: ["java"],
+  categories: ["backend", "testing"],
   repositoryLink: "",
   projectLink: "validated-endpoint",
   viewLinks: [],

@@ -13,6 +13,7 @@ export const getYear = (project: Project): number => project.year;
 export const getMonth = (project: Project): number => project.month;
 export const getTechnologies = (project: Project): string[] =>
   project.technologies;
+export const getCategories = (project: Project): string[] => project.categories;
 export const hasRepositoryLink = (project: Project): boolean =>
   project.repositoryLink != undefined && project.repositoryLink !== "";
 export const getRepositoryLink = (project: Project): string =>

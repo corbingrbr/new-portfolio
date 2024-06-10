@@ -5,6 +5,7 @@ const Cucumber: Project = {
   year: 2024,
   month: 4,
   technologies: ["ts", "playwright", "cucumber"].sort(),
+  categories: ["frontend", "testing"],
   repositoryLink: "",
   projectLink: "cucumber",
   viewLinks: [],

@@ -8,42 +8,12 @@ import Book from "./Book";
 
 import * as P from "../utils/ProjectUtils";
 
+import projectTechnologies from "../project-technologies";
+import projectCategories from "../project-categories";
+
 const filter_data = {
-  technology: [
-    { value: "ethereum", label: "Ethereum" },
-    { value: "react", label: "React" },
-    { value: "tailwind", label: "Tailwind CSS" },
-    { value: "js", label: "JavaScript" },
-    { value: "ts", label: "TypeScript" },
-    { value: "webgl", label: "WebGL" },
-    { value: "threejs", label: "Three.js" },
-    { value: "git", label: "Git" },
-    { value: "gsap", label: "GSAP" },
-    { value: "html", label: "HTML" },
-    { value: "css", label: "CSS" },
-    { value: "nodejs", label: "Node.js" },
-    { value: "mailchimp", label: "Mailchimp" },
-    { value: "bootstrap", label: "Bootstrap" },
-    { value: "unity", label: "Unity" },
-    { value: "csharp", label: "C#" },
-    { value: "material-ui", label: "Material UI" },
-    { value: "sql", label: "SQL" },
-    { value: "mongodb", label: "MongoDB" },
-    { value: "cpp", label: "C++" },
-    { value: "opengl", label: "OpenGL" },
-    { value: "processing", label: "Processing" },
-    { value: "java", label: "Java" },
-    { value: "jquery", label: "JQuery" },
-    { value: "c", label: "C" },
-    { value: "adafruit", label: "Adafruit" },
-  ],
-  category: [
-    { value: "graphics", icon: "gamepad", label: "Graphics" },
-    { value: "embedded", icon: "microchip", label: "Embedded" },
-    { value: "blockchain", icon: "link", label: "Blockchain" },
-    { value: "frontend", icon: "image", label: "Frontend" },
-    { value: "backend", icon: "database", label: "Backend" },
-  ],
+  technology: projectTechnologies,
+  category: projectCategories,
 };
 
 const createDefaultFilterState = (filters) => ({
@@ -55,6 +25,7 @@ const countActiveFilters = (filters) =>
   [...filters.technology, ...filters.category].filter(
     (filter) => filter.checked
   ).length;
+
 const isChecked = (option) => option.checked;
 const getValue = (filter) => filter.value;
 
@@ -66,11 +37,22 @@ let toggleChangedFilter = (value_to_toggle) => (filter) =>
 const projectWithSameTitle = (title) => (project) =>
   title === P.getName(project);
 
-export default function ProjectPortfolio({
-  projects,
-  isBookOpen,
-  setIsBookOpen,
-}) {
+const filterProjects = (projects, selectedTechnologies, selectedCategories) =>
+  projects.filter((project) =>
+    filterProject(project, selectedTechnologies, selectedCategories)
+  );
+
+// TODO: Classify Projects by category and then filter them here
+const filterProject = (project, selectedTechnologies, selectedCategories) =>
+  hasEverySelectedOption(selectedTechnologies, P.getTechnologies(project)) &&
+  hasEverySelectedOption(selectedCategories, P.getCategories(project));
+
+const hasEverySelectedOption = (selectedOptions, projectOptions) =>
+  selectedOptions.every((selectedOption) =>
+    projectOptions.includes(selectedOption)
+  );
+
+const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
   const [filters, setFilters] = useState(createDefaultFilterState(filter_data));
   const [sort, setSort] = useState("newest");
 
@@ -159,18 +141,6 @@ export default function ProjectPortfolio({
       />
     </div>
   );
-}
-
-const filterProjects = (projects, selectedTechnologies, selectedCategories) =>
-  projects.filter((project) =>
-    filterProject(project, selectedTechnologies, selectedCategories)
-  );
-
-// TODO: Classify Projects by category and then filter them here
-const filterProject = (project, selectedTechnologies, selectedCategories) => {
-  const project_technologies = P.getTechnologies(project);
-
-  return selectedTechnologies.every((selected_technology) =>
-    project_technologies.includes(selected_technology)
-  );
 };
+
+export default ProjectPortfolio;

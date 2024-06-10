@@ -89,16 +89,6 @@ export default function ProjectFilter2({
                       data-value={category.value}
                       onClick={onFilterChange}
                     >
-                      {/*<input
-                        id={`category-${ndx}`}
-                        name="category[]"
-                        defaultValue={option.value}
-                        type="checkbox"
-                        checked={option.checked}
-                        className="flex-shrink-0 h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                        onChange={onFilterChange}
-                  />*/}
-
                       <span className="ml-2">
                         <i
                           className={`m-auto w-5 h-5 fas fa-${category.icon} text-gray-400 align-middle`}

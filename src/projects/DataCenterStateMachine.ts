@@ -14,6 +14,7 @@ const DataCenterStateMachine: Project = {
     "css",
     "bootstrap",
   ].sort(),
+  categories: ["backend", "database", "frontend", "graphics", "testing"],
   repositoryLink: "",
   projectLink: "dcim",
   viewLinks: [],

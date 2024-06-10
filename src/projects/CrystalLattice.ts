@@ -6,6 +6,7 @@ const CrystalLattice: Project = {
   year: 2016,
   month: 3,
   technologies: ["cpp", "opengl"].sort(),
+  categories: ["graphics"],
   repositoryLink: "https://github.com/corbingrbr/CrystalLattice",
   projectLink: "crystal-lattice",
   viewLinks: [

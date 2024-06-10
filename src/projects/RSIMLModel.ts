@@ -5,6 +5,7 @@ const RSIMLModel: Project = {
   year: 2024,
   month: 5,
   technologies: ["ts", "tensorflow"].sort(),
+  categories: ["machine-learning"],
   repositoryLink: "",
   projectLink: "rsi-ml-model",
   viewLinks: [],

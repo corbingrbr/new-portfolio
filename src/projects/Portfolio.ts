@@ -5,6 +5,7 @@ const Portfolio: Project = {
   year: 2016,
   month: 9,
   technologies: ["html", "css", "js"].sort(),
+  categories: ["frontend"],
   repositoryLink: "",
   projectLink: "portfolio",
   viewLinks: [],

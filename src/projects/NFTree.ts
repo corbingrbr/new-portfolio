@@ -5,6 +5,7 @@ const NFTree: Project = {
   year: 2021,
   month: 11,
   technologies: ["react", "ethereum", "tailwind"].sort(),
+  categories: ["blockchain", "backend", "frontend"],
   repositoryLink: "",
   projectLink: "nftree",
   viewLinks: [

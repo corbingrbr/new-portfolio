@@ -5,6 +5,7 @@ const FloodFill: Project = {
   year: 2015,
   month: 6,
   technologies: ["cpp", "opengl"].sort(),
+  categories: ["graphics"],
   repositoryLink: "https://github.com/corbingrbr/flood-fill",
   projectLink: "flood-fill",
   viewLinks: [{ label: "Watch Video", url: "https://youtu.be/hfMVrTvxlYY" }],

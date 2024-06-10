@@ -7,6 +7,7 @@ export default interface Project {
   year: number;
   month: number;
   technologies: string[];
+  categories: string[];
   repositoryLink: string;
   projectLink: string;
   viewLinks: ViewLink[];
