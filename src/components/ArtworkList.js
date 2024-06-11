@@ -32,7 +32,7 @@ const ArtworkItem = ({
 }) => (
   <li
     className={classNames(
-      isFeatured && "ring-4 ring-indigo-500 ring-offset-2 ring-offset-gray-100",
+      isFeatured && "ring-4 ring-sky-600 ring-offset-2 ring-offset-gray-100",
       "relative hover:bg-gray-100 rounded-lg"
     )}
     onClick={() => setFeaturedArtwork(artwork)}
@@ -51,7 +51,7 @@ const ArtworkItem = ({
       {artwork.name}
     </p>
     <p className="pointer-events-none block text-sm font-medium text-gray-500">
-      {artwork.month} - {artwork.year}
+      {artwork.month}/{artwork.day}/{artwork.year}
     </p>
   </li>
 );

@@ -18,7 +18,7 @@ import artworks from "./artworks";
 import projects from "./projects";
 import * as P from "./utils/ProjectUtils";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const onlyUnique = (value, index, self) => self.indexOf(value) === index;
 
@@ -27,6 +27,13 @@ const getTechnologies = (projects) =>
 
 const App = () => {
   const [isBookOpen, setIsBookOpen] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsBookOpen(true), 1000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
   return (
     <div className="App bg-gray-100 h-screen grid place-items-center">
       <Router>

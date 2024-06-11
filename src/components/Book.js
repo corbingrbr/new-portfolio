@@ -90,7 +90,7 @@ const Book = ({
             label={"artwork"}
             href={"/artwork"}
             icon={"fa-solid fa-2x fa-brush"}
-            color={"#AD4CDB"}
+            color={"#367BC3"}
             top={"340px"}
             isActive={activeBookmark === "artwork"}
             setActiveBookmark={setActiveBookmark}

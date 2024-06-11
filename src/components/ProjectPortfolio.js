@@ -82,11 +82,11 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
   };
 
   const [featuredProject, setFeaturedProject] = useState(
-    P.getName(projects[0])
+    filteredProjects.length > 0 ? P.getName(filteredProjects[0]) : projects[0]
   );
 
   const [selectedProject, setSelectedProject] = useState(
-    P.getName(projects[0])
+    filteredProjects.length > 0 ? P.getName(filteredProjects[0]) : projects[0]
   );
 
   const [activeBookmark, setActiveBookmark] = useState("projects");

@@ -32,7 +32,7 @@ const MatchThreeRetyped: Project = {
                     )} by ${createLinkOfText(
     "https://pmnd.rs/",
     "pmnd.rs"
-  )} utilizing the react-three-fiber library that I'd found insightful. 
+  )} utilizing the react-three-fiber library that I found insightful. 
                     It presented an organized means of scaling actions and state management through the use of a store.`,
   details: [
     {

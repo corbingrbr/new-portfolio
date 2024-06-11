@@ -11,7 +11,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
         isOpen={isBookOpen}
         setIsOpen={setIsBookOpen}
         leftPage={
-          <div className="left-page h-full overflow-hidden rounded-2xl">
+          <div className="left-page h-full overflow-hidden rounded-2xl bg-gray-100">
             <div className="h-full grid place-items-center">
               <p className="text-left w-2/3">
                 Thank you for checking out my{" "}
@@ -28,7 +28,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                   className="underline decoration-2 underline-offset-4 decoration-wavy
                 decoration-indigo-500 font-semibold"
                 >
-                  accomplishments!
+                  journey!
                 </span>
                 <br />
                 <br /> Curiousity compels me, and the diversity of projects
@@ -51,7 +51,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                 .
                 <br />
                 <br />
-                <div className="flex justify-between mt-10">
+                <div className="flex justify-around mt-10">
                   <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
                     <a>
                       <i className={`self-center fa-xl fa-solid fa-envelope`} />
@@ -64,11 +64,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                       />
                     </a>
                   </span>
-                  <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
-                    <a>
-                      <i className={`self-center fa-xl fa-brands fa-github`} />
-                    </a>
-                  </span>
+
                   <span className="border-2 border-dashed rounded-md border-gray-400 hover:border-gray-700 text-gray-500 hover:text-gray-700 p-5 ">
                     <a>
                       <i className={`self-center fa-xl fa-brands fa-threads`} />

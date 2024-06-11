@@ -19,7 +19,7 @@ const FeaturedProject = ({ project }) => {
         </div>
 
         {/* Project Title, Year, Technologies, and Description */}
-        <div className="lg:max-w-lg lg:self-end">
+        <div className="w-full lg:self-end">
           <div className="">
             <h1 className="text-left text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               {P.getName(project)}

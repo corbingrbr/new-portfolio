@@ -31,7 +31,7 @@ const FeaturedArtwork = ({ artwork }) => {
 
             <div className="flex items-center">
               <p className="text-lg text-gray-900 sm:text-xl">
-                {artwork.month} - {artwork.year}
+                {artwork.month}/{artwork.day}/{artwork.year}
               </p>
             </div>
 

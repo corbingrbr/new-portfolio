@@ -16,7 +16,7 @@ const ProjectListItem = ({
       className={classNames(
         "flex justify-between gap-x-6 py-5 px-5",
         isFeatured && "bg-gray-100",
-        isSelected && "outline outline-4 outline-teal-300",
+        isSelected && "outline outline-4 outline-indigo-400",
         "first:mt-1 last:mb-2"
       )}
     >

@@ -78,8 +78,12 @@ const ArtworkPortfolio = ({ artworks, isBookOpen, setIsBookOpen }) => {
     setFilters(createDefaultFilterState(filterData));
   };
 
-  const [featuredArtwork, setFeaturedArtwork] = useState(artworks[0]);
-  const [selectedArtwork, setSelectedArtwork] = useState(artworks[0]);
+  const [featuredArtwork, setFeaturedArtwork] = useState(
+    filteredArtworks.length > 0 ? filteredArtworks[0] : artworks[0]
+  );
+  const [selectedArtwork, setSelectedArtwork] = useState(
+    filteredArtworks.length > 0 ? filteredArtworks[0] : artworks[0]
+  );
 
   const [activeBookmark, setActiveBookmark] = useState("artwork");
 
