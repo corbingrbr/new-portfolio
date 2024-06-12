@@ -88,6 +88,7 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
                 projectCount={filteredProjects.length}
                 handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
                 isViewingFilters={isViewingFilters}
+                color={"indigo-600"}
               />
 
               {!isViewingFilters && (

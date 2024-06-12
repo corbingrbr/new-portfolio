@@ -86,6 +86,7 @@ const ArtworkPortfolio = ({ artworks, isBookOpen, setIsBookOpen }) => {
                 project_count={filteredArtworks.length}
                 handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
                 isViewingFilters={isViewingFilters}
+                color="sky-600"
               />
 
               {!isViewingFilters && (

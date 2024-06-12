@@ -15,7 +15,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
             <div className="h-full grid place-items-center">
               <p className="text-left w-2/3">
                 Thank you for checking out my{" "}
-                <span className="underline decoration-wavy decoration-2 underline-offset-4 decoration-sky-500 font-semibold">
+                <span className="underline decoration-2 underline-offset-4 decoration-wavy decoration-lime-400 font-semibold">
                   site!
                 </span>
                 <br />
@@ -26,16 +26,16 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                 to share my{" "}
                 <span
                   className="underline decoration-2 underline-offset-4 decoration-wavy
-                decoration-indigo-500 font-semibold"
+                decoration-lime-400 font-semibold"
                 >
                   journey!
                 </span>
                 <br />
                 <br /> Curiousity compels me, and the diversity of projects
-                featured here reflects that.
+                featured here I think reflects that.
                 <br />
                 <br /> On the right is my{" "}
-                <span className="underline decoration-2 underline-offset-4 decoration-wavy decoration-cyan-300 font-semibold">
+                <span className="underline decoration-2 underline-offset-4 decoration-wavy decoration-lime-400 font-semibold">
                   resume
                 </span>{" "}
                 .
@@ -44,7 +44,7 @@ const Resume = ({ isBookOpen, setIsBookOpen }) => {
                 For any inquiries, find me{" "}
                 <span
                   className="underline decoration-2 underline-offset-4 decoration-wavy
-                decoration-indigo-500 font-semibold"
+                decoration-lime-400 font-semibold"
                 >
                   below
                 </span>

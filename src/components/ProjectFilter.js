@@ -23,8 +23,8 @@ const ProjectFilter = ({
   activeFilterCount,
   handleViewFilters,
   isViewingFilters,
+  color,
 }) => {
-  console.log("ACTIVE FC", activeFilterCount);
   return (
     <div
       className={classNames(
@@ -80,72 +80,10 @@ const ProjectFilter = ({
                   key={ndx}
                   label={category.label}
                   options={category.options}
+                  color={color}
                   onFilterChange={onFilterChange}
                 />
               ))}
-              {/*<fieldset>
-                <legend className="text-left block font-medium">
-                  Category
-                </legend>
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6">
-                  {filters.category.map((category, ndx) => (
-                    <div
-                      key={category.value}
-                      className={classNames(
-                        "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-2 m-2",
-                        category.checked ? "bg-white" : "bg-gray-300"
-                      )}
-                      data-value={category.value}
-                      onClick={onFilterChange}
-                    >
-                      <span className="ml-2">
-                        <i
-                          className={`m-auto w-5 h-5 fas fa-${category.icon} text-gray-400 align-middle`}
-                        />
-                      </span>
-                      <label
-                        htmlFor={`category-${ndx}`}
-                        className="lg:text-md text-left ml-3 min-w-0 flex-1 text-gray-600"
-                      >
-                        {category.label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend className="text-left block font-medium">
-                  Technology
-                </legend>
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6 sm:pt-4">
-                  {filters.technology.map((technology, ndx) => (
-                    <div
-                      key={technology.value}
-                      className={classNames(
-                        "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-1 m-2",
-                        technology.checked ? "bg-white" : "bg-gray-300"
-                      )}
-                      data-value={technology.value}
-                      onClick={onFilterChange}
-                    >
-                      <img
-                        key={ndx}
-                        className="ml-2"
-                        src={`/assets/icons/${technology.value}.svg`}
-                        alt={`${technology.value}.svg`}
-                        height={24}
-                        width={24}
-                      />
-                      <label
-                        htmlFor={`technology-${ndx}`}
-                        className="text-left ml-3 min-w-0 flex-1 text-gray-600"
-                      >
-                        {technology.label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </fieldset>*/}
             </div>
           </div>
         </Disclosure.Panel>
@@ -202,7 +140,7 @@ const ProjectFilter = ({
   );
 };
 
-const FilterFieldSet = ({ label, options, onFilterChange }) => {
+const FilterFieldSet = ({ label, options, color, onFilterChange }) => {
   return (
     <fieldset key={label}>
       <legend className="text-left block font-medium">{label}</legend>
@@ -211,6 +149,7 @@ const FilterFieldSet = ({ label, options, onFilterChange }) => {
           <FilterOption
             key={ndx}
             option={option}
+            color={color}
             onFilterChange={onFilterChange}
           />
         ))}
@@ -219,12 +158,14 @@ const FilterFieldSet = ({ label, options, onFilterChange }) => {
   );
 };
 
-const FilterOption = ({ option, onFilterChange }) => (
+const FilterOption = ({ option, color, onFilterChange }) => (
   <div
     key={option.value}
     className={classNames(
-      "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-2 m-2",
-      option.checked ? "bg-white" : "bg-gray-300"
+      "flex items-center text-base sm:text-sm hover:bg-gray-200 rounded-md p-2 m-2",
+      option.checked ? "bg-gray-200" : "bg-gray-300",
+      option.checked &&
+        `ring-2 ring-${color} ring-offset-2 ring-offset-gray-100`
     )}
     data-value={option.value}
     onClick={onFilterChange}
