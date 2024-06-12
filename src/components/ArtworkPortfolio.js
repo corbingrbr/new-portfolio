@@ -4,78 +4,59 @@ import FeaturedArtwork from "./FeaturedArtwork";
 import Book from "./Book";
 
 import * as A from "../utils/ArtworkUtils";
+import * as F from "../utils/FilterUtils";
 
-import artworkCategories from "../artwork-categories";
+import artworkMediums from "../artwork-mediums";
 import artworkTags from "../artwork-tags";
 
 import ProjectFilter from "./ProjectFilter";
 
-const filterData = {
-  category: artworkCategories,
-  technology: artworkTags,
-};
+const MEDIUMS_NDX = 0;
+const TAGS_NDX = 1;
 
-const createDefaultFilterState = (filters) => ({
-  category: filters.category.map((cat) => ({ ...cat, checked: false })),
-  technology: filters.technology.map((tech) => ({ ...tech, checked: false })),
-});
-
-const countActiveFilters = (filters) =>
-  [...filters.technology, ...filters.category].filter(
-    (filter) => filter.checked
-  ).length;
-
-const isChecked = (option) => option.checked;
-const getValue = (filter) => filter.value;
-
-let toggleChangedFilter = (value_to_toggle) => (filter) =>
-  filter.value === value_to_toggle
-    ? { ...filter, checked: !filter.checked }
-    : filter;
+const filterCategories = [
+  { label: "Mediums", options: artworkMediums },
+  { label: "Tags", options: artworkTags },
+];
 
 const artworkWithSameTitle = (title) => (artwork) => title === artwork.name;
 
-const filterArtworks = (artworks, selectedTags, selectedCategories) =>
+const filterArtworks = (artworks, selectedMediums, selectedTags) =>
   artworks.filter((artwork) =>
-    filterArtwork(artwork, selectedTags, selectedCategories)
+    filterArtwork(artwork, selectedMediums, selectedTags)
   );
 
 // TODO: Classify Projects by category and then filter them here
-const filterArtwork = (artwork, selectedTags, selectedCategories) =>
-  hasEverySelectedOption(selectedTags, A.getTags(artwork)) &&
-  hasEverySelectedOption(selectedCategories, A.getCategories(artwork));
-
-const hasEverySelectedOption = (selectedOptions, projectOptions) =>
-  selectedOptions.every((selectedOption) =>
-    projectOptions.includes(selectedOption)
-  );
+const filterArtwork = (artwork, selectedMediums, selectedTags) =>
+  F.hasEverySelectedOption(selectedTags, A.getTags(artwork)) &&
+  F.hasEverySelectedOption(selectedMediums, A.getMediums(artwork));
 
 const ArtworkPortfolio = ({ artworks, isBookOpen, setIsBookOpen }) => {
-  const [filters, setFilters] = useState(createDefaultFilterState(filterData));
+  const [filters, setFilters] = useState(
+    F.createDefaultFilterState(filterCategories)
+  );
   const [sort, setSort] = useState("newest");
 
   const [isViewingFilters, setIsViewingFilters] = useState(false);
 
-  const selectedTags = filters.technology.filter(isChecked).map(getValue);
-
-  const selectedCategories = filters.category.filter(isChecked).map(getValue);
-
   let filteredArtworks = filterArtworks(
     artworks,
-    selectedTags,
-    selectedCategories
+    filters[MEDIUMS_NDX].options.filter(F.isChecked).map(F.getValue),
+    filters[TAGS_NDX].options.filter(F.isChecked).map(F.getValue)
   ).sort(sort === "newest" ? A.byNewest : A.byOldest);
 
   let handleFilterChange = (e) => {
     const value = e.currentTarget.getAttribute("data-value");
-    setFilters({
-      category: filters.category.map(toggleChangedFilter(value)),
-      technology: filters.technology.map(toggleChangedFilter(value)),
-    });
+    setFilters(
+      filters.map((category) => ({
+        ...category,
+        options: category.options.map(F.toggleChangedFilter(value)),
+      }))
+    );
   };
 
   let handleClearFilters = () => {
-    setFilters(createDefaultFilterState(filterData));
+    setFilters(F.createDefaultFilterState(filterCategories));
   };
 
   const [featuredArtwork, setFeaturedArtwork] = useState(
@@ -96,12 +77,12 @@ const ArtworkPortfolio = ({ artworks, isBookOpen, setIsBookOpen }) => {
           <div className="left-page h-full overflow-hidden rounded-2xl">
             <div className="flex flex-col h-full">
               <ProjectFilter
-                filters={filters}
+                filterCategories={filters}
                 onFilterChange={handleFilterChange}
                 onClearFilters={handleClearFilters}
                 setSort={setSort}
                 current_sort={sort}
-                active_filter_count={countActiveFilters(filters)}
+                active_filter_count={F.countActiveFilters(filters)}
                 project_count={filteredArtworks.length}
                 handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
                 isViewingFilters={isViewingFilters}

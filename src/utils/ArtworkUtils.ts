@@ -11,7 +11,7 @@ export const getMonth = (artwork: Artwork): number => artwork.month;
 export const getDay = (artwork: Artwork): number => artwork.day;
 
 export const getTags = (artwork: Artwork): string[] => artwork.tags;
-export const getCategories = (artwork: Artwork): string[] => artwork.categories;
+export const getMediums = (artwork: Artwork): string[] => artwork.mediums;
 
 export const getDescription = (artwork: Artwork): string | undefined =>
   artwork.description;

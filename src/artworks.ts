@@ -8,7 +8,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 31,
     tags: ["vr"],
-    categories: [],
+    mediums: ["vr", "digital"],
     description: "",
   },
   {
@@ -18,7 +18,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 12,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -28,7 +28,7 @@ const artworks: Artwork[] = [
     month: 5,
     day: 8,
     tags: ["pixel"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -38,7 +38,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 21,
     tags: [],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -48,7 +48,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 11,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -58,7 +58,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 20,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -68,7 +68,7 @@ const artworks: Artwork[] = [
     month: 11,
     day: 19,
     tags: [],
-    categories: [],
+    mediums: ["pencil"],
     description: "",
   },
   {
@@ -78,7 +78,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 20,
     tags: ["traditional", "acrylic"],
-    categories: [],
+    mediums: ["acrylic"],
     description: "",
   },
   {
@@ -87,8 +87,8 @@ const artworks: Artwork[] = [
     year: 2023,
     month: 5,
     day: 9,
-    tags: ["inktober"],
-    categories: [],
+    tags: ["pixel"],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -98,7 +98,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 3,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -108,7 +108,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 14,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -118,7 +118,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 7,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -128,7 +128,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 7,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -138,7 +138,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 24,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -148,7 +148,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 11,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -158,7 +158,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 18,
     tags: [],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -168,7 +168,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 19,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -178,7 +178,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 9,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -188,7 +188,7 @@ const artworks: Artwork[] = [
     month: 5,
     day: 28,
     tags: [],
-    categories: [],
+    mediums: ["pencil"],
     description: "",
   },
   {
@@ -198,7 +198,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 25,
     tags: [],
-    categories: [],
+    mediums: ["pen"],
     description: "",
   },
   {
@@ -207,8 +207,8 @@ const artworks: Artwork[] = [
     year: 2023,
     month: 7,
     day: 18,
-    tags: [],
-    categories: [],
+    tags: ["pixel"],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -218,7 +218,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 8,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -228,7 +228,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 5,
     tags: [],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -238,7 +238,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 13,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -248,7 +248,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 15,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -258,7 +258,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 25,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -268,7 +268,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 18,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -278,7 +278,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 22,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -288,7 +288,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 21,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -298,7 +298,7 @@ const artworks: Artwork[] = [
     month: 10,
     day: 10,
     tags: ["inktober"],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
   {
@@ -308,7 +308,7 @@ const artworks: Artwork[] = [
     month: 1,
     day: 16,
     tags: [],
-    categories: [],
+    mediums: ["digital"],
     description: "",
   },
 ];

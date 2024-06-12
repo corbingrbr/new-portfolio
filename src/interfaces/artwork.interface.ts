@@ -7,8 +7,8 @@ export default interface Artwork {
   year: number;
   month: number;
   day: number;
+  mediums: string[];
   tags: string[];
-  categories: string[];
   source: string;
   description?: string;
 }

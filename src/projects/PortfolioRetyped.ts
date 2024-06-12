@@ -14,7 +14,7 @@ const PortfolioRetyped: Project = {
   images: [
     {
       name: "Projects List",
-      src: "/assets/portfolio-retyped/projects-list.png",
+      src: "/assets/portfolio-retyped/portfolio.gif",
       alt: "Projects List",
     },
   ],

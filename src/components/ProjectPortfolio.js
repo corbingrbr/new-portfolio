@@ -6,79 +6,58 @@ import FeaturedProject from "./FeaturedProject";
 import Book from "./Book";
 
 import * as P from "../utils/ProjectUtils";
+import * as F from "../utils/FilterUtils";
 
 import projectTechnologies from "../project-technologies";
 import projectCategories from "../project-categories";
 
-const filter_data = {
-  technology: projectTechnologies,
-  category: projectCategories,
-};
+const CATEGORIES_NDX = 0;
+const TECHNOLOGIES_NDX = 1;
 
-const createDefaultFilterState = (filters) => ({
-  technology: filters.technology.map((tech) => ({ ...tech, checked: false })),
-  category: filters.category.map((cat) => ({ ...cat, checked: false })),
-});
-
-const countActiveFilters = (filters) =>
-  [...filters.technology, ...filters.category].filter(
-    (filter) => filter.checked
-  ).length;
-
-const isChecked = (option) => option.checked;
-const getValue = (filter) => filter.value;
-
-let toggleChangedFilter = (value_to_toggle) => (filter) =>
-  filter.value === value_to_toggle
-    ? { ...filter, checked: !filter.checked }
-    : filter;
+const filterCategories = [
+  { label: "Categories", options: projectCategories },
+  { label: "Technologies", options: projectTechnologies },
+];
 
 const projectWithSameTitle = (title) => (project) =>
   title === P.getName(project);
 
-const filterProjects = (projects, selectedTechnologies, selectedCategories) =>
+const filterProjects = (projects, selectedCategories, selectedTechnologies) =>
   projects.filter((project) =>
-    filterProject(project, selectedTechnologies, selectedCategories)
+    filterProject(project, selectedCategories, selectedTechnologies)
   );
 
 // TODO: Classify Projects by category and then filter them here
-const filterProject = (project, selectedTechnologies, selectedCategories) =>
-  hasEverySelectedOption(selectedTechnologies, P.getTechnologies(project)) &&
-  hasEverySelectedOption(selectedCategories, P.getCategories(project));
-
-const hasEverySelectedOption = (selectedOptions, projectOptions) =>
-  selectedOptions.every((selectedOption) =>
-    projectOptions.includes(selectedOption)
-  );
+const filterProject = (project, selectedCategories, selectedTechnologies) =>
+  F.hasEverySelectedOption(selectedCategories, P.getCategories(project)) &&
+  F.hasEverySelectedOption(selectedTechnologies, P.getTechnologies(project));
 
 const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
-  const [filters, setFilters] = useState(createDefaultFilterState(filter_data));
+  const [filters, setFilters] = useState(
+    F.createDefaultFilterState(filterCategories)
+  );
   const [sort, setSort] = useState("newest");
 
   const [isViewingFilters, setIsViewingFilters] = useState(false);
 
-  const selectedTechnologies = filters.technology
-    .filter(isChecked)
-    .map(getValue);
-
-  const selectedCategories = filters.category.filter(isChecked).map(getValue);
-
   let filteredProjects = filterProjects(
     projects,
-    selectedTechnologies,
-    selectedCategories
+    filters[CATEGORIES_NDX].options.filter(F.isChecked).map(F.getValue),
+    filters[TECHNOLOGIES_NDX].options.filter(F.isChecked).map(F.getValue)
   ).sort(sort === "newest" ? P.byNewest : P.byOldest);
 
   let handleFilterChange = (e) => {
     const value = e.currentTarget.getAttribute("data-value");
-    setFilters({
-      technology: filters.technology.map(toggleChangedFilter(value)),
-      category: filters.category.map(toggleChangedFilter(value)),
-    });
+    setFilters(
+      filters.map((category) => ({
+        ...category,
+        options: category.options.map(F.toggleChangedFilter(value)),
+      }))
+    );
   };
 
   let handleClearFilters = () => {
-    setFilters(createDefaultFilterState(filter_data));
+    setFilters(F.createDefaultFilterState(filterCategories));
   };
 
   const [featuredProject, setFeaturedProject] = useState(
@@ -93,12 +72,6 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
 
   return (
     <div className="aspect-[4/3] h-4/5  max-h-[900px]">
-      {/*<Navigation
-        pages={[
-          { name: "Projects", href: "/", current: true, color: "#4F45E4" },
-        ]}
-      />*/}
-
       <Book
         isOpen={isBookOpen}
         setIsOpen={setIsBookOpen}
@@ -106,13 +79,13 @@ const ProjectPortfolio = ({ projects, isBookOpen, setIsBookOpen }) => {
           <div className="left-page h-full overflow-hidden rounded-2xl">
             <div className="flex flex-col h-full">
               <ProjectFilter
-                filters={filters}
+                filterCategories={filters}
                 onFilterChange={handleFilterChange}
                 onClearFilters={handleClearFilters}
                 setSort={setSort}
-                current_sort={sort}
-                active_filter_count={countActiveFilters(filters)}
-                project_count={filteredProjects.length}
+                currentSort={sort}
+                activeFilterCount={F.countActiveFilters(filters)}
+                projectCount={filteredProjects.length}
                 handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
                 isViewingFilters={isViewingFilters}
               />

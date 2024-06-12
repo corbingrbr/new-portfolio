@@ -6,23 +6,25 @@ import {
   FilterIcon,
   FolderIcon,
 } from "@heroicons/react/solid";
+import { filter } from "fp-ts/lib/ReadonlyNonEmptyArray";
 
 const sortOptions = [
   { value: "newest", name: "Newest" },
   { value: "oldest", name: "Oldest" },
 ];
 
-export default function ProjectFilter2({
-  filters,
+const ProjectFilter = ({
+  filterCategories,
   onFilterChange,
   onClearFilters,
   setSort,
-  current_sort,
-  project_count,
-  active_filter_count,
+  currentSort,
+  projectCount,
+  activeFilterCount,
   handleViewFilters,
   isViewingFilters,
-}) {
+}) => {
+  console.log("ACTIVE FC", activeFilterCount);
   return (
     <div
       className={classNames(
@@ -42,7 +44,7 @@ export default function ProjectFilter2({
                 className="flex-none w-5 h-5 mr-2 text-gray-400 "
                 aria-hidden="true"
               />
-              {project_count} Projects
+              {projectCount} Projects
             </div>
 
             <div>
@@ -54,8 +56,8 @@ export default function ProjectFilter2({
                   className="flex-none w-5 h-5 mr-2 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
                 />
-                {active_filter_count > 0
-                  ? `${active_filter_count} Filters`
+                {activeFilterCount > 0
+                  ? `${activeFilterCount} Filters`
                   : "Filter"}
               </Disclosure.Button>
             </div>
@@ -73,11 +75,18 @@ export default function ProjectFilter2({
         <Disclosure.Panel className="py-5 h-full">
           <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
             <div className="grid gap-y-10 auto-rows-min">
-              <fieldset>
+              {filterCategories.map((category, ndx) => (
+                <FilterFieldSet
+                  key={ndx}
+                  label={category.label}
+                  options={category.options}
+                  onFilterChange={onFilterChange}
+                />
+              ))}
+              {/*<fieldset>
                 <legend className="text-left block font-medium">
                   Category
                 </legend>
-                {/*<div className="pt-6 space-y-6 sm:pt-4 sm:space-y-4">*/}
                 <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6">
                   {filters.category.map((category, ndx) => (
                     <div
@@ -136,7 +145,7 @@ export default function ProjectFilter2({
                     </div>
                   ))}
                 </div>
-              </fieldset>
+              </fieldset>*/}
             </div>
           </div>
         </Disclosure.Panel>
@@ -171,10 +180,10 @@ export default function ProjectFilter2({
                           onClick={() => setSort(option.value)}
                           className={classNames(
                             "cursor-pointer",
-                            option.value === current_sort
+                            option.value === currentSort
                               ? "font-medium text-gray-900"
                               : "text-gray-500",
-                            option.value === current_sort ? "bg-gray-100" : "",
+                            option.value === currentSort ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm"
                           )}
                         >
@@ -191,4 +200,59 @@ export default function ProjectFilter2({
       </Disclosure>
     </div>
   );
-}
+};
+
+const FilterFieldSet = ({ label, options, onFilterChange }) => {
+  return (
+    <fieldset key={label}>
+      <legend className="text-left block font-medium">{label}</legend>
+      <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 pt-6">
+        {options.map((option, ndx) => (
+          <FilterOption
+            key={ndx}
+            option={option}
+            onFilterChange={onFilterChange}
+          />
+        ))}
+      </div>
+    </fieldset>
+  );
+};
+
+const FilterOption = ({ option, onFilterChange }) => (
+  <div
+    key={option.value}
+    className={classNames(
+      "flex items-center text-base sm:text-sm hover:bg-gray-100 rounded-md p-2 m-2",
+      option.checked ? "bg-white" : "bg-gray-300"
+    )}
+    data-value={option.value}
+    onClick={onFilterChange}
+  >
+    {option.icon && (
+      <span className="ml-2">
+        <i
+          className={`m-auto w-5 h-5 fas fa-${option.icon} text-gray-400 align-middle`}
+        />
+      </span>
+    )}
+    {option.img && (
+      <img
+        className="ml-2"
+        src={option.img}
+        alt={option.img}
+        height={24}
+        width={24}
+      />
+    )}
+
+    <label
+      htmlFor={`${option.label}`}
+      className="lg:text-md text-left ml-3 min-w-0 flex-1 text-gray-600"
+    >
+      {option.label}
+    </label>
+  </div>
+);
+
+export default ProjectFilter;
