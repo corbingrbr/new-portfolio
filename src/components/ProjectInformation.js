@@ -143,7 +143,7 @@ const ProjectInformation = ({ project }) => (
                       >
                         <ul>
                           {detail.items.map((item) => (
-                            <li key={item}>
+                            <li key={`${detail.name}-${item.name}`}>
                               <p className="font-medium">{item.name}</p>
                               {item.additional &&
                                 item.additional.map((a) =>

@@ -9,7 +9,9 @@ const MatchThreeRetyped: Project = {
   categories: ["graphics", "frontend", "testing"],
   repositoryLink: "",
   projectLink: "match-three-retyped",
-  viewLinks: [{ label: "Play Game", url: "" }],
+  viewLinks: [
+    /*{ label: "Play Game", url: "" }*/
+  ],
   icon: "fa-duotone fa-grid-round-5",
   images: [
     {
