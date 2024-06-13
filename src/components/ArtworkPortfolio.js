@@ -81,10 +81,10 @@ const ArtworkPortfolio = ({ artworks, isBookOpen, setIsBookOpen }) => {
                 onFilterChange={handleFilterChange}
                 onClearFilters={handleClearFilters}
                 setSort={setSort}
-                current_sort={sort}
-                active_filter_count={F.countActiveFilters(filters)}
-                project_count={filteredArtworks.length}
-                handleViewFilters={() => setIsViewingFilters(!isViewingFilters)}
+                currentSort={sort}
+                activeFilterCount={F.countActiveFilters(filters)}
+                projectCount={filteredArtworks.length}
+                setIsViewingFilters={setIsViewingFilters}
                 isViewingFilters={isViewingFilters}
                 color="sky-600"
               />

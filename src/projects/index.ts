@@ -34,7 +34,7 @@ const projects: Project[] = [
   CCXTTrader,
   Cucumber,
   ValidatedEndpoint,
-  RSIMLModel,
+  /*RSIMLModel,*/
   WebGLCL,
   Portfolio,
   PortfolioRetyped,

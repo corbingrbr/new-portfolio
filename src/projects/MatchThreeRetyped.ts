@@ -10,7 +10,7 @@ const MatchThreeRetyped: Project = {
   repositoryLink: "",
   projectLink: "match-three-retyped",
   viewLinks: [{ label: "Play Game", url: "" }],
-  icon: "fas fa-th",
+  icon: "fa-duotone fa-grid-round-5",
   images: [
     {
       name: "Match Three Game",

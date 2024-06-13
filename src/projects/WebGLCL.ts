@@ -22,6 +22,11 @@ const WebGLCL: Project = {
   icon: "fas fa-gem",
   images: [
     {
+      name: "Face Crystal Animation",
+      src: "/assets/crystal/webglcl.gif",
+      alt: "Face Crystal Animation",
+    },
+    {
       name: "Simple Crystal",
       src: "/assets/crystal/simple-crystal.png",
       alt: "Simple Crystal",

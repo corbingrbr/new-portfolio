@@ -14,7 +14,8 @@ const ValidatedEndpoint: Project = {
   shortDescription:
     "An interface and implementation to simplify an endpoint design process.",
   longDescription: `A team I was on was struggling to maintain a consistent approach to endpoint design across its members. 
-  					This impacted pull request turnaround and caused need for a solution. A solution that would constrain, yet be flexible enough, for a majority of our endpoint designs. 
+  					This was impacting pull request turnaround and prompted the need for a solution. 
+					A solution that would constrain, yet be flexible enough, for a majority of our endpoint work. 
 					It also had to fit in with our existing Java code structure. 
 					I presented the solution that was ultimately adopted by the team. 
 					Its inspiration came from my recent functional programming learnings.`,

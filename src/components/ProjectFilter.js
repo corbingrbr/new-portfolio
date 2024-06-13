@@ -21,25 +21,27 @@ const ProjectFilter = ({
   currentSort,
   projectCount,
   activeFilterCount,
-  handleViewFilters,
+  setIsViewingFilters,
   isViewingFilters,
   color,
 }) => {
   return (
     <div
       className={classNames(
-        "bg-gray-200 ",
+        "bg-gray-100 flex flex-col",
         isViewingFilters ? "rounded-2xl h-full" : "rounded-t-2xl"
       )}
     >
-      <Disclosure
-        as="section"
+      <div
         aria-labelledby="filter-heading"
-        className="relative z-10  border-gray-300 grid items-center"
+        className="relative z-10 border-gray-300 bg-gray-200 flex items-center flex-0"
       >
-        <div className="row-start-1 py-4 border-b border-gray-300">
+        <div className="flex-0 bg-gray-200 py-4 border-b border-gray-300">
           <div className="justify-start max-w-7xl mx-auto flex space-x-6 divide-x divide-gray-200 text-sm px-4 sm:px-0 lg:px-2">
-            <div className="group flex items-center">
+            <div
+              className="group flex items-center"
+              onClick={() => setIsViewingFilters(false)}
+            >
               <FolderIcon
                 className="flex-none w-5 h-5 mr-2 text-gray-400 "
                 aria-hidden="true"
@@ -48,9 +50,9 @@ const ProjectFilter = ({
             </div>
 
             <div>
-              <Disclosure.Button
+              <button
                 className="group text-gray-700 font-medium flex items-center pl-6"
-                onClick={handleViewFilters}
+                onClick={() => setIsViewingFilters(!isViewingFilters)}
               >
                 <FilterIcon
                   className="flex-none w-5 h-5 mr-2 text-gray-400 group-hover:text-gray-500"
@@ -59,7 +61,7 @@ const ProjectFilter = ({
                 {activeFilterCount > 0
                   ? `${activeFilterCount} Filters`
                   : "Filter"}
-              </Disclosure.Button>
+              </button>
             </div>
             <div className="pl-6">
               <button
@@ -72,22 +74,7 @@ const ProjectFilter = ({
             </div>
           </div>
         </div>
-        <Disclosure.Panel className="py-5 h-full">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
-            <div className="grid gap-y-10 auto-rows-min">
-              {filterCategories.map((category, ndx) => (
-                <FilterFieldSet
-                  key={ndx}
-                  label={category.label}
-                  options={category.options}
-                  color={color}
-                  onFilterChange={onFilterChange}
-                />
-              ))}
-            </div>
-          </div>
-        </Disclosure.Panel>
-        <div className="row-start-1 py-4 border-b border-gray-300">
+        <div className="flex-1 py-4 border-b border-gray-300">
           <div className="flex justify-end max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
             <Menu as="div" className="relative inline-block">
               <div className="flex">
@@ -135,7 +122,24 @@ const ProjectFilter = ({
             </Menu>
           </div>
         </div>
-      </Disclosure>
+      </div>
+      {isViewingFilters && (
+        <div className="flex-1 py-5 h-full">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
+            <div className="grid gap-y-10 auto-rows-min">
+              {filterCategories.map((category, ndx) => (
+                <FilterFieldSet
+                  key={ndx}
+                  label={category.label}
+                  options={category.options}
+                  color={color}
+                  onFilterChange={onFilterChange}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -162,8 +166,8 @@ const FilterOption = ({ option, color, onFilterChange }) => (
   <div
     key={option.value}
     className={classNames(
-      "flex items-center text-base sm:text-sm hover:bg-gray-200 rounded-md p-2 m-2",
-      option.checked ? "bg-gray-200" : "bg-gray-300",
+      "flex items-center text-base sm:text-sm hover:bg-gray-300 rounded-md p-2 m-2",
+      option.checked ? "bg-gray-300" : "bg-gray-200",
       option.checked &&
         `ring-2 ring-${color} ring-offset-2 ring-offset-gray-100`
     )}
@@ -173,7 +177,7 @@ const FilterOption = ({ option, color, onFilterChange }) => (
     {option.icon && (
       <span className="ml-2">
         <i
-          className={`m-auto w-5 h-5 fas fa-${option.icon} text-gray-400 align-middle`}
+          className={`m-auto w-5 h-5 fas fa-${option.icon} text-gray-600 align-middle`}
         />
       </span>
     )}

@@ -8,7 +8,7 @@ const ArtworkList = ({
   setFeaturedArtwork,
 }) => {
   return (
-    <ul className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-3 bg-white">
+    <ul className="p-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-3 bg-gray-50">
       {artworks.map((artwork, ndx) => (
         <ArtworkItem
           key={ndx}

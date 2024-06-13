@@ -10,7 +10,7 @@ const MatchThree: Project = {
   repositoryLink: "",
   projectLink: "match-three",
   viewLinks: [],
-  icon: "fas fa-th",
+  icon: "fa-duotone fa-grid-round-5",
   images: [
     {
       name: "Prototype",

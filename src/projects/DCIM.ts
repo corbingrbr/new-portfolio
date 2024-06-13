@@ -18,7 +18,7 @@ const DCIM: Project = {
   repositoryLink: "",
   projectLink: "dcim",
   viewLinks: [],
-  icon: "fas fa-server",
+  icon: "fa-duotone fa-server",
   images: [],
   shortDescription:
     "A web application for datacenter asset and power management.",

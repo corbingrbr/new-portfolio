@@ -22,6 +22,11 @@ const CrystalLattice: Project = {
   icon: "fas fa-gem",
   images: [
     {
+      name: "Simple Crystal Animation",
+      src: "/assets/crystal/crystallattice.gif",
+      alt: "Simple Crystal Animation",
+    },
+    {
       name: "Simple Crystal",
       src: "/assets/crystal/simple-crystal.png",
       alt: "Simple Crystal",
