@@ -124,7 +124,7 @@ const ProjectFilter = ({
         </div>
       </div>
       {isViewingFilters && (
-        <div className="flex-1 py-5 h-full">
+        <div className="flex-1 py-5 h-full overflow-y-scroll">
           <div className="max-w-7xl mx-auto grid grid-cols-1 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
             <div className="grid gap-y-10 auto-rows-min">
               {filterCategories.map((category, ndx) => (
