@@ -8,7 +8,16 @@ interface DetailItem {
   additional?: AdditionalDetail[];
 }
 
-type AdditionalText = { type: "text"; content: string };
-type AdditionalCode = { type: "code"; language: string; content: string };
+export enum DetailTypes {
+  TEXT = "text",
+  CODE = "code",
+}
+
+type AdditionalText = { type: DetailTypes.TEXT; content: string };
+type AdditionalCode = {
+  type: DetailTypes.CODE;
+  language: string;
+  content: string;
+};
 
 type AdditionalDetail = AdditionalText | AdditionalCode;

@@ -137,7 +137,8 @@ code {
 
 .notebook-skin {
   height: 200px;
-  background: #e5e9ea;
+  /*background: #e5e9ea;*/
+  background: #dddddd;
   margin-top: 200px;
   padding: 50px;
   font-size: 50px;

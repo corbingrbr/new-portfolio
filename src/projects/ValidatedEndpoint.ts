@@ -1,3 +1,4 @@
+import { DetailTypes } from "../interfaces/detail-section.interface";
 import Project from "../interfaces/project.interface";
 
 const ValidatedEndpoint: Project = {
@@ -13,24 +14,117 @@ const ValidatedEndpoint: Project = {
   images: [],
   shortDescription:
     "An interface and implementation to simplify an endpoint design process.",
-  longDescription: `A team I was on was struggling to maintain a consistent approach to endpoint design across its members. 
-  					This was impacting pull request turnaround and prompted the need for a solution. 
-					A solution that would constrain, yet be flexible enough, for a majority of our endpoint work. 
-					It also had to fit in with our existing Java code structure. 
+  longDescription: `A team I was on was struggling to maintain a consistent approach to endpoint design across its members. T
+  					This was impacting pull request turnaround and prompted the need for a solution that would align our efforts. 
+					It had be a solution that would constrain, yet be flexible enough, for a majority of our endpoint work. 
+					It also needed to fit in with our existing Java code structure. 
 					I presented the solution that was ultimately adopted by the team. 
-					Its inspiration came from my recent functional programming learnings.`,
+					Functional programming guided my design choices in its development.`,
   details: [
     {
       name: "Features",
-      items: [{ name: "EndpointStrategy" }, { name: "ValidatedEndpoint" }],
+      items: [
+        {
+          name: "Endpoint Strategy",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `My solution began as an ordered list of operations that an endpoint that validates should do:<br/><br/>
+							
+			  				1. Extract request data<br/>
+							2. Validate request data<br/>
+							3. Process request<br/>
+							4. Return response<br/><br/>
+						
+						I then made an interface to reflect these steps.
+							`,
+            },
+            {
+              type: DetailTypes.CODE,
+              language: "java",
+              content: `
+			interface EndpointStrategy<RequestData, ResponseData> {
+				
+			public abstract RequestData extractRequestData(HTTPHeader request);
+				
+			public abstract Either<String, RequestData> validateRequestData(RequestData requestData);
+				
+			public abstract Either<String, ResponseData> processRequest(HTTPHeader header, RequestData requestData);
+
+			public abstract Object[] getResponse(HTTPHeader header, ResponseData responseData);
+
+			}`,
+            },
+          ],
+        },
+        {
+          name: "Validated Endpoint",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `I wanted the implementation of this to look like a functional pipe, composing the above interface functions. 
+		  		An Either class already existed within our code base, however it lacked the ability to map functions. In an ideal world the code would have looked like something like below:`,
+            },
+            {
+              type: DetailTypes.CODE,
+              language: "ts",
+              content: `
+				const endpoint = ({header: HTTPHeader}) => 
+					pipe(
+						header,
+						extractRequestData,
+						E.chain(validateRequestData),
+						E.chain(processRequest),
+						E.fold(
+							(error) => getErrorResponse(error),
+							(responseData) => getResponse(responseData)
+						)
+					)`,
+            },
+          ],
+        },
+      ],
     },
     {
       name: "Highlights",
-      items: [{ name: "Either" }, { name: "Generics" }],
+      items: [
+        {
+          name: "Either",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `Even though the Either class in our java library didn't lend itself to use in a pipe, it still simplified the design and intentions of our final implementation.
+				As a result, my teammates had ease incorporating it into their work, and our turnaround on endpoints as a team became quicker.`,
+            },
+          ],
+        },
+        {
+          name: "Generics",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `The use of generics in the interface provided the flexibility necessary for it to be applicable to all endpoints. 
+			  It also provided an opportunity for us to express the shape of the data we expected to receive and respond with. 
+			  This form of code documentation is priceless.`,
+            },
+          ],
+        },
+      ],
     },
     {
       name: "Improvements",
-      items: [{ name: "Pipe" }],
+      items: [
+        {
+          name: "Pipe",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content:
+                "Find an Either class that is usable in a pipe, improving the composition of the interface functions in this situation, as well as others going forward.",
+            },
+          ],
+        },
+      ],
     },
   ],
 };

@@ -1,4 +1,6 @@
 import Project from "../interfaces/project.interface";
+import { DetailTypes } from "../interfaces/detail-section.interface";
+import { styleText } from "../utils/utils";
 
 const Cucumber: Project = {
   name: "Cucumber",
@@ -18,20 +20,107 @@ const Cucumber: Project = {
                   Contractors had previously created custom tests for each page element. 
                   This approach would have become costly at the scale the project required.
                   Recognizing the inefficiencies, I created some flexible utility functions covering 
-                  a majority of testing requirements, which reduced code and maintenance considerably.
+                  a majority of testing needs, which reduced the amount of code and maintenance costs considerably.
                   `,
   details: [
     {
       name: "Features",
-      items: [{ name: "Structured Language" }, { name: "Test Reuseability" }],
+      items: [
+        {
+          name: "Locators",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `One of the first things brought up by a coworker was the need to identify page elements with greater confidence. 
+              Instead of element ids or classnames, he suggested the use of test-ids. 
+              This simple markup tactic, separates the concerns of styling from that of testing, and eases your ability to identify page elements inside tests. I also extended this for identifying particular pages.
+              This concept laid the groundwork for getting greater re-useability out of test functions.`,
+            },
+          ],
+        },
+        {
+          name: "Structured Language",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `The testing framework was using BDD (Behavior Driven Development) which maps english plaintext instructions to programmatic ones. 
+              The work I adopted had each test written as a unique english phrase which mapped to a unique function. 
+              The scalability of this approach was already apparent.
+              After reading up on cucumberjs documentation, I leveraged 'step arguments' to reduce this surface area.
+              I made a small set of phrases which resembled actions a user might conduct on a website: 
+              <br/><br/>'User is on the ${styleText(
+                "text-lime-600",
+                "{string}"
+              )} page',<br/>'User clicks the ${styleText(
+                "text-lime-600",
+                "{string}"
+              )}',<br/>'User fills in form ${styleText(
+                "text-lime-600",
+                "{table}"
+              )}'.<br/><br/> 
+              The dynamic part of the phrase could be used to identify a page, or page element using one of the locators described above.
+              This in part provided a structured, re-usable language to describe the actions a user takes in any particular test.`,
+            },
+          ],
+        },
+        {
+          name: "Step Composability",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `The step phrases I created were made to be as simple as possible, because it is from simplicity that you can create complexity.
+          Using the steps I described above I could create a login test like so: </br></br>
+          1. User is on the ${styleText("text-lime-600", "Login")} page <br/>
+          2. User fills in form <br/>
+          | ${styleText("text-lime-600", "username")} | ${styleText(
+                "text-lime-600",
+                "test-username"
+              )} |<br/>
+          | ${styleText("text-lime-600", "password")} | ${styleText(
+                "text-lime-600",
+                "test-password"
+              )} |<br/>
+          3. User clicks the ${styleText("text-lime-600", "Login Button")}<br/>
+          4. User should navigate to the ${styleText(
+            "text-lime-600",
+            "Home"
+          )} page
+          `,
+            },
+          ],
+        },
+      ],
     },
     {
       name: "Highlights",
-      items: [{ name: "Leadership" }],
+      items: [
+        {
+          name: "Leadership",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `This was an opportunity for me to shape the philosophy of a tool from the ground up at the company, and I'm happy about the direction I took it. 
+          I owe a lot of my intuition for how the code should be written to my recent readings on functional programming. 
+          Its emphasis on small testable, composable functions put me on the right track.`,
+            },
+          ],
+        },
+      ],
     },
     {
       name: "Improvements",
-      items: [{ name: "Test Environments" }],
+      items: [
+        {
+          name: "Test Pipeline",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `Now that there was a nice way to write and organize tests, it was time to focus on the scoping of test executions and its accompanying performance. 
+              This was something I didn't stick around to see, but would have found intriguing.`,
+            },
+          ],
+        },
+      ],
     },
   ],
 };

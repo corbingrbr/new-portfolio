@@ -144,7 +144,9 @@ const ProjectInformation = ({ project }) => (
                         <ul>
                           {detail.items.map((item) => (
                             <li key={`${detail.name}-${item.name}`}>
-                              <p className="font-medium">{item.name}</p>
+                              <p className="font-medium text-indigo-500">
+                                {item.name}
+                              </p>
                               {item.additional &&
                                 item.additional.map((a) =>
                                   a.type === "code" ? (
@@ -155,7 +157,11 @@ const ProjectInformation = ({ project }) => (
                                       />
                                     </p>
                                   ) : (
-                                    <p>{a.content}</p>
+                                    <p
+                                      dangerouslySetInnerHTML={{
+                                        __html: a.content,
+                                      }}
+                                    />
                                   )
                                 )}
                             </li>

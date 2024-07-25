@@ -35,7 +35,7 @@ const App = () => {
     };
   }, []);
   return (
-    <div className="App bg-gray-100 h-screen grid place-items-center">
+    <div className="App bg-gray-400 h-screen grid place-items-center">
       <Router>
         <Routes>
           <Route path="*" element={<Navigate to="/projects" replace />} />

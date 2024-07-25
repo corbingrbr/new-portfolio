@@ -1,4 +1,5 @@
 import Project from "../interfaces/project.interface";
+import { DetailTypes } from "../interfaces/detail-section.interface";
 
 const Obj2Spring: Project = {
   name: "Obj2Spring",
@@ -39,13 +40,13 @@ const Obj2Spring: Project = {
           name: "Spring Formula",
           additional: [
             {
-              type: "text",
+              type: DetailTypes.TEXT,
               content: `This was probably one of the few projects I've created where physics is custom coded in.
       Utilizing Hooke's Law, the force is calculated from the prior timestep's distance. 
       From the force we can then find the velocity, and from the velocity we find the next position.`,
             },
             {
-              type: "code",
+              type: DetailTypes.CODE,
               language: "typescript",
               content: "const calculateForce = (x: number) => k * x",
             },
@@ -60,7 +61,7 @@ const Obj2Spring: Project = {
           name: "Object Minifier",
           additional: [
             {
-              type: "text",
+              type: DetailTypes.TEXT,
               content: `I should've realized that this project idea was in fact two project ideas in one: A spring system simulation, and an obj minifier. 
             Had I had this foresight I'd probably would have chewed off less. 
             The obj minification was more challenging than I had expected and only worked for cubes at submission.`,
