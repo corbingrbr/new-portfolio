@@ -28,9 +28,38 @@ const Obj2Spring: Project = {
     {
       name: "Features",
       items: [
-        { name: "Object File Reader" },
-        { name: "Object Minifier" },
-        { name: "Spring System" },
+        {
+          name: "Object File Reader",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `This was already a utility we had at our disposal from other projects. 
+              I was leveraging it here to get access to obj file data when attempting the minification process as well as when producing the spring systems.
+              `,
+            },
+          ],
+        },
+        {
+          name: "Object Minifier",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `This was supposed to receive a supplied obj, and then reduce the amount of points in it while still retaining its general shape. 
+              The goal here was to improve the performance while simulating complex shapes.
+              `,
+            },
+          ],
+        },
+        {
+          name: "Spring System",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `The spring system was constructed by establishing a spring between each point in a provided set of points. 
+              Then by utilizing the spring formula like discussed below, the joined points positions could be simulated for every timestep.`,
+            },
+          ],
+        },
       ],
     },
     {
@@ -41,14 +70,20 @@ const Obj2Spring: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `This was probably one of the few projects I've created where physics is custom coded in.
-      Utilizing Hooke's Law, the force is calculated from the prior timestep's distance. 
-      From the force we can then find the velocity, and from the velocity we find the next position.`,
+              content: `This probably one of the only projects I've written thats emphasis is that of the physics. 
+              Using Hookes Law, I wrote code to simulate a group of points that are joined together by springs.
+              `,
             },
             {
               type: DetailTypes.CODE,
               language: "typescript",
               content: "const calculateForce = (x: number) => k * x",
+            },
+            {
+              type: DetailTypes.TEXT,
+              content: `For each timestep you calculate the force by using the distance between two points in the prior timestep. 
+              You can then use that force to update the velocity. 
+              Lastly, you add the velocity to the point's previous position and you have its new position.`,
             },
           ],
         },
@@ -62,8 +97,8 @@ const Obj2Spring: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `I should've realized that this project idea was in fact two project ideas in one: A spring system simulation, and an obj minifier. 
-            Had I had this foresight I'd probably would have chewed off less. 
+              content: `I should've realized that this project idea was two project ideas in one: A spring system simulation, and an obj minifier. 
+            Had I known better I'd probably would have chewed off less. 
             The obj minification was more challenging than I had expected and only worked for cubes at submission.`,
             },
           ],

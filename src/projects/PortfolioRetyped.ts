@@ -72,9 +72,9 @@ const PortfolioRetyped: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `I wanted to feature technologies used in a project like a badge of achievement, something akin to a boyscout badge. 
-              This is partly to encourage myself to reach out of my comfort zone and experience new design philosophies.
-              For a developer, a list of technologies can often silohuette the structure a project may have before looking at any code. 
+              content: `I wanted to feature technologies used in a project like a badge of achievement. 
+              I did this in the hope that it would engage my desire to collect, which would encourage me to reach out of my comfort zone, and experience new design philosophies.
+              As a bonus, a list of technologies can often silohuette the design structure of a project before seeing any of its code. 
               I enjoy this gained perspective when reminiscing on past projects.`,
             },
           ],
@@ -84,9 +84,9 @@ const PortfolioRetyped: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `I wanted to use the already listed technologies as a means of filtering projects. 
-              This was easy enough, however once I included my artwork tab, I wanted to leverage it for those works as well. 
-              I went back and added greater flexibility to the filter component to accommodate.`,
+              content: `I wanted to use the already gathered listed technologies as a means of filtering projects. 
+              This was easy enough, however once I decided to included my artwork tab, I realized I could leverage the filter for the art as well. 
+              I went back and added greater flexibility to the filter component to accommodate for this.`,
             },
           ],
         },
@@ -100,7 +100,7 @@ const PortfolioRetyped: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `I still get so excited to see it.`,
+              content: `I still get excited to see it.`,
             },
           ],
         },

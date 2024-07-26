@@ -28,12 +28,19 @@ const Book = ({
             onClick={() => setIsOpen(!isOpen)}
             className="flex open-book-tab"
           >
-            <i
-              className={classNames(
-                "fa-solid fa-2x text-white self-center ml-10",
-                isOpen ? "fa-right-to-bracket" : "fa-left-to-bracket"
-              )}
-            ></i>
+            <Tooltip
+              title={isOpen ? "Close" : "Open"}
+              position="right"
+              sticky={true}
+              className="bookmark-tooltip self-center mt-2"
+            >
+              <i
+                className={classNames(
+                  "fa-solid fa-2x text-white self-center ml-10",
+                  isOpen ? "fa-right-to-bracket" : "fa-left-to-bracket"
+                )}
+              ></i>
+            </Tooltip>
           </span>
         </Page>
         <Page name="page2" rotation={-3} scale={1.0} bookIsOpen={isOpen} />
