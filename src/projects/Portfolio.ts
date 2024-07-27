@@ -30,8 +30,8 @@ const Portfolio: Project = {
   ],
   shortDescription: "The first site I designed to host my projects.",
   longDescription: `This was an exciting time. 
-    I'd finally gotten enough custom projects under my belt to create a portfolio, and boy I needed one.
-    Job fairs were just around the corner, and I wanted to have something to show for talents.`,
+    I'd finally gotten enough custom projects under my belt to create a portfolio, and I needed one.
+    Job fairs were just around the corner, and I wanted to have something to show for my efforts.`,
   details: [
     {
       name: "Features",

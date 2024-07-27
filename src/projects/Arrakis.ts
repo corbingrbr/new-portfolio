@@ -1,3 +1,4 @@
+import { DetailTypes } from "../interfaces/detail-section.interface";
 import Project from "../interfaces/project.interface";
 
 const Arrakis: Project = {
@@ -27,8 +28,28 @@ const Arrakis: Project = {
     {
       name: "Features",
       items: [
-        { name: "Clouds and Buildings" },
-        { name: "Day and Night Scheme" },
+        {
+          name: "Clouds and Buildings",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `When I first started using arrays and random, there was nothing going to stop me. I loved making generative state. 
+              For both the clouds and buildings I generated random sets of positions, scalars, and rotation and plotted the respective objects around the sphere to simulate a planet surface.  `,
+            },
+          ],
+        },
+        {
+          name: "Day and Night Scheme",
+          additional: [
+            {
+              type: DetailTypes.TEXT,
+              content: `We had recently learned about shaders and shading techniques in our graphics course and I used this to produce a day and night effect on my planet. 
+              The planetary sphere was shaded with phong, however the buildings required a bit more technique. 
+              I manipulated the color of the building texture's pixels based on whether it had line of sight to the sun in the scene.
+              Determining this was not straightfoward.`,
+            },
+          ],
+        },
       ],
     },
   ],
