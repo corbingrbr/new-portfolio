@@ -21,7 +21,51 @@ const DCIM: Project = {
   projectLink: "dcim",
   viewLinks: [],
   icon: "fa-duotone fa-server",
-  images: [],
+  images: [
+    {
+      name: "Floorplan Map",
+      src: "/assets/dcim/floorplan-map.png",
+      alt: "Floorplan Map",
+    },
+    {
+      name: "",
+      src: "/assets/dcim/rack-view.png",
+      alt: "",
+    },
+    {
+      name: "",
+      src: "/assets/dcim/equipment-table.png",
+      alt: "",
+    },
+
+    {
+      name: "",
+      src: "/assets/dcim/requests.png",
+      alt: "",
+    },
+
+    {
+      name: "",
+      src: "/assets/dcim/new-equipment.png",
+      alt: "",
+    },
+    {
+      name: "",
+      src: "/assets/dcim/new-rack.png",
+      alt: "",
+    },
+
+    {
+      name: "",
+      src: "/assets/dcim/selecting-new-rack-item-type.png",
+      alt: "",
+    },
+    {
+      name: "",
+      src: "/assets/dcim/new-rack-item.png",
+      alt: "",
+    },
+  ],
   shortDescription:
     "A web application for datacenter asset and power management.",
   longDescription: `This was for my first opportunity out of college and I was 

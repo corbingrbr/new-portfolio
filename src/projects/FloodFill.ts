@@ -138,7 +138,7 @@ const FloodFill: Project = {
           additional: [
             {
               type: DetailTypes.TEXT,
-              content: `We made a decent set of game mechanisms that I think could have carried the game further. Would have been cool to see where it'd have gone with some more time.`,
+              content: `We made a decent set of game mechanisms that I think could have carried the game further. Would have been cool to see where it'd have gone.`,
             },
           ],
         },

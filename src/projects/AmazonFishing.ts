@@ -19,7 +19,18 @@ const AmazonFishing: Project = {
   projectLink: "amazon-fishing",
   viewLinks: [],
   icon: "fas fa-fish",
-  images: [],
+  images: [
+    {
+      name: "Header",
+      src: "/assets/amazon-fishing/header.png",
+      alt: "Header",
+    },
+    {
+      name: "Footer",
+      src: "/assets/amazon-fishing/footer.png",
+      alt: "Footer",
+    },
+  ],
   shortDescription:
     "A website produced for a Brazilian fish and stay experience.",
   longDescription: `A buddy of mine's father reached out to me to produce a website for his fish and stay experience in Brazil. 
