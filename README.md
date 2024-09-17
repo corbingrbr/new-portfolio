@@ -1,4 +1,4 @@
-See this project running at corbingruber.com
+See this project running at [corbingruber.com](https://corbingruber.com)
 
 # Getting Started with Create React App
 
